@@ -31,10 +31,7 @@
 #endif
 
 //For supported communication primitives.
-#include <commlib.h>
-#include <common.h>
-//#include "../pidcomm_lib/support/commlib.h"
-//#include "../pidcomm_lib/support/common.h"
+#include <pidcomm.h>
 
 int main(){
     struct dpu_set_t dpu, set, set_array[16];
@@ -118,6 +115,7 @@ int main(){
         }
     }
     if(flag==1) printf("Functionality check success~!\n");
+    pidcomm_broadcast(set, 8, 0, original_data+1);
 
     //Print reduced result
     // for(int element=0; element<4; element++){
