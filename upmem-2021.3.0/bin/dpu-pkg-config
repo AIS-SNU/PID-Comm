@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ "$UPMEM_HOME" != "" ]]
+then
+    PKG_CONFIG_PATH="${UPMEM_HOME}/share/pkgconfig" pkg-config --define-variable=prefix="${UPMEM_HOME}" "$@"
+else
+    PKG_CONFIG_PATH=/usr/share/pkgconfig pkg-config "$@"
+fi

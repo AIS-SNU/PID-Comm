@@ -1,0 +1,18 @@
+# Copyright 2020 UPMEM. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+if _libs["libdpu.so"].has("Py_dpu_log_read", "cdecl"):
+    Py_dpu_log_read = _libs["libdpu.so"].get("Py_dpu_log_read", "cdecl")
+    Py_dpu_log_read.argtypes = [struct_dpu_set_t, ctypes.py_object]
+    Py_dpu_log_read.restype = dpu_error_t
+
+if _libs["libdpu.so"].has("Py_dpu_prepare_xfers", "cdecl"):
+    Py_dpu_prepare_xfers = _libs["libdpu.so"].get("Py_dpu_prepare_xfers", "cdecl")
+    Py_dpu_prepare_xfers.argtypes = [struct_dpu_set_t, py_object, POINTER(c_size_t)]
+    Py_dpu_prepare_xfers.restype = dpu_error_t
+
+if _libs["libdpu.so"].has("Py_dpu_get_symbol_names", "cdecl"):
+    Py_dpu_get_symbol_names = _libs["libdpu.so"].get("Py_dpu_get_symbol_names", "cdecl")
+    Py_dpu_get_symbol_names.argtypes = [POINTER(struct_dpu_program_t)]
+    Py_dpu_get_symbol_names.restype = py_object

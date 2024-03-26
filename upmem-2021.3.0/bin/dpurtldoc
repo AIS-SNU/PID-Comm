@@ -1,0 +1,125 @@
+#!/usr/bin/env python3
+
+import argparse
+from typing import List, Optional
+import os
+import xml.etree.ElementTree as ET
+
+class Description:
+    def __init__(self, name):
+        self.name = name
+        self.brief = []
+        self.detailed = []
+        self.code = []
+        self.children = []
+
+    def __str__(self):
+        return self._pretty('')
+
+    def _pretty(self, prefix: str) -> str:
+        desc = prefix + self.name + '\n'
+        for line in self.brief:
+            desc += '    ' + prefix + line.strip() + '\n'
+
+        if len(self.detailed) != 0:
+            desc += '\n'
+
+        for line in self.detailed:
+            desc += '    ' + prefix + line.strip() + '\n'
+        for child in self.children:
+            child_name = child.name
+
+            if child_name == 'Parameters' or child_name == 'Returns' or child_name == 'Be careful' or child_name == 'Throws':
+                desc += child._pretty(prefix + '  ')
+
+        for line in self.code:
+            line = line.replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&').replace('&quot;', '"')
+            desc += '    ' + prefix + line + '\n'
+
+        return desc
+
+
+def desc_from_xml_node(node) -> Optional[Description]:
+    label = node.tag
+    name = node.attrib.get('name')
+
+    if label != 'paragraph' or name is None:
+        return None
+
+    desc = Description(name)
+
+    for child in node:
+        child_label = child.tag
+
+        if child_label == 'brief':
+            desc.brief.append(child.text)
+        elif child_label == 'detailed':
+            desc.detailed.append(child.text)
+        elif child_label == 'code':
+            desc.code.append(child.text)
+        elif child_label == 'paragraph':
+            child_desc = desc_from_xml_node(child)
+            desc.children.append(child_desc)
+
+    return desc
+
+
+def fetch_docs() -> List[Description]:
+    package_dir = os.path.dirname(os.path.dirname(__file__))
+    file = os.path.join(package_dir, 'share', 'upmem', 'include', 'doc', 'rtldoc.xml')
+    root = ET.parse(file).getroot()
+
+    docs = []
+
+    for child in root:
+        doc = desc_from_xml_node(child)
+        if doc is not None:
+            docs.append(doc)
+
+    return docs
+
+
+def find_doc_of(request: str, docs: List[Description]) -> List[Description]:
+    matches = []
+
+    for doc in docs:
+        if request == doc.name:
+            matches.append(doc)
+
+        matches.extend(find_doc_of(request, doc.children))
+
+    return matches
+
+
+def find_doc_like(request: str, docs: List[Description]) -> List[Description]:
+    matches = []
+
+    for doc in docs:
+        if request in doc.name:
+            matches.append(doc)
+
+        matches.extend(find_doc_like(request, doc.children))
+
+    return matches
+
+
+def find_docs(requests: List[str], match_like: bool) -> None:
+    docs = fetch_docs()
+
+    find_fn = find_doc_like if match_like else find_doc_of
+
+    for request in requests:
+        matches = find_fn(request, docs)
+
+        for match in matches:
+            print(match)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser('dpurtldoc')
+    parser.add_argument('-like', action='store_true', help='search for any topic including the specified keyword')
+    parser.add_argument('topic', nargs='+', help='requested item')
+
+    args = parser.parse_args()
+
+    find_docs(args.topic, args.like)

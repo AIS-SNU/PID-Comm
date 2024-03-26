@@ -1,0 +1,986 @@
+<doxc>
+    <paragraph name='alloc.h'>
+        <brief>Provides a way to manage heap allocation.</brief>
+        <paragraph name='Functions'>
+            <paragraph name='mem_alloc'>
+                <brief>Allocates a buffer of the given size in the heap.</brief>
+                <detailed>
+                The allocated buffer is aligned on 64 bits, in order to ensure compatibility
+                with the maximum buffer alignment constraint. As a consequence, a buffer
+                allocated with this function is also compatible with data transfers to/from MRAM.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    size : the allocated buffer's size, in bytes
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                The allocated buffer address.
+                </detailed>
+                </paragraph>
+                <paragraph name='Throws'>
+                    <detailed>
+                    a : fault if there is no memory left
+                    </detailed>
+                </paragraph>
+                <code>
+                void * mem_alloc(size_t size);
+                </code>
+            </paragraph>
+            <paragraph name='mem_reset'>
+                <brief>Resets the heap.</brief>
+                <detailed>
+                Every allocated buffer becomes invalid, since subsequent allocations restart from the beginning
+                of the heap.
+                
+                </detailed>
+                <paragraph name='Returns'>
+                <detailed>
+                The heap initial address.
+                </detailed>
+                </paragraph>
+                <code>
+                void * mem_reset(void);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='atomic_bit.h'>
+        <brief>Provides direct access to the atomic bits.</brief>
+    </paragraph>
+    <paragraph name='attributes.h'>
+        <brief>Provides common useful compiler attributes.</brief>
+        <paragraph name='Defines'>
+            <paragraph name='__mram_ptr'>
+                <brief>An attribute declaring that a pointer is an address in MRAM.</brief>
+                <detailed>
+                A typical usage is: ``unsigned int __mram_ptr * array32 = (unsigned int __mram_ptr *) 0xf000;``
+                
+                Performing a cast between a pointer in MRAM and a pointer in WRAM is not allowed by the compiler.
+                
+                
+                </detailed>
+                <code>
+                #define __mram_ptr
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='barrier.h'>
+        <brief>Synchronization with barriers.</brief>
+        <detailed>
+        This synchronization mechanism allows to suspend a fixed number of tasklets until the expected number of subscribers is
+        present. When the required number of tasklets reached the barrier, the counter of the barrier will be reinitialised to the
+        original value.
+        
+        </detailed>
+        <paragraph name='Defines'>
+            <paragraph name='BARRIER_INIT'>
+                <brief>Declare and initialize a barrier associated to the given name.</brief>
+                <code>
+                #define BARRIER_INIT(_name, _counter)
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Types'>
+            <paragraph name='barrier_t'>
+                <brief>A barrier object, as declared by BARRIER_INIT.</brief>
+                <code>
+                typedef struct barrier_t {
+                uint8_t wait_queue;
+                uint8_t count;
+                uint8_t initial_count;
+                uint8_t lock;
+                } barrier_t;
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Functions'>
+            <paragraph name='barrier_wait'>
+                <brief>Decrements the counter associated to the barrier and suspends the invoking tasklet.</brief>
+                <detailed>
+                The counter of the barrier is decremented and the invoking tasklet is suspended until
+                the counter associated to the barrier is reduced to 0.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    barrier : the barrier the tasklet will be associated to.
+                    </detailed>
+                </paragraph>
+                <code>
+                void barrier_wait(barrier_t *barrier);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='buddy_alloc.h'>
+        <brief>Dynamic memory allocation and freeing.</brief>
+        <detailed>
+        This library allows to create unique memory space in the heap to allocate and free
+        blocks of data.
+        
+        The memory space is initialized with <code>buddy_init</code>, which must be invoked only once during
+        the program's lifecycle.
+        
+        Functions can then dynamically get and free buffers, using <code>buddy_alloc</code> and <code>buddy_free</code>
+        respectively.
+        
+        In this implementation, the allocatable buffer size is chosen during the first call to <code>buddy_init</code>.
+        Tested sizes : 2048, 4096, 8192, 16384 and 32768 bytes
+        The allocated buffers are properly aligned on DMA transfer constraints, so that they can be
+        used as is in MRAM/WRAM transfer operations.
+        
+        </detailed>
+        <paragraph name='Functions'>
+            <paragraph name='buddy_init'>
+                <brief>Allocates size_of_heap bytes for a heap that <code>buddy_alloc</code> can access to.</brief>
+                <detailed>
+                Reserves memory space in the heap used to perform dynamic allocation and release of buffers.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    size_of_heap : the size of heap in bytes that <code>buddy_alloc</code> can access to
+                    </detailed>
+                </paragraph>
+                <code>
+                void buddy_init(size_t size_of_heap);
+                </code>
+            </paragraph>
+            <paragraph name='buddy_reset'>
+                <brief>Resets the heap.</brief>
+                <detailed>
+                Quickly frees all pointers allocated by <code>buddy_alloc</code> or <code>buddy_realloc</code>.
+                Warning : currently buddy_reset() doesn't reset the size of the allocated heap.
+                
+                </detailed>
+                <code>
+                void buddy_reset(void);
+                </code>
+            </paragraph>
+            <paragraph name='buddy_alloc'>
+                <brief>Allocates a buffer of the given size in the heap, in a thread-safe way.</brief>
+                <detailed>
+                The allocated buffer is aligned on 64 bits, in order to ensure compatibility
+                with the maximum buffer alignment constraint. As a consequence, a buffer
+                allocated with this function is also compatible with data transfers to/from MRAM.
+                
+                Due to the idea of the buddy algorithm (to decrease external fragmentation),
+                the allocated blocks will be of size equal to a power of 2. In other words,
+                if the user allocates 33 bytes, 64 bytes will be allocated and when 2049 bytes
+                are requested, 4096 will be allocated. The user might want to take this into
+                account if she/he wishes to minimise the memory consumption.
+                
+                The minimal size of the allocated block is 16 bytes, but can easily be changed in
+                future implementations, so <code>buddy_alloc</code> is mostly adapted to allocating medium and
+                big structures, such as arrays containing more than 8 bytes (in order to make sure
+                that not too much memory space is wasted), binary trees or linked lists.
+                
+                If the <code>size</code> passed in parameter is less or equal to 0 or greater than the size of heap,
+                errno will be set to EINVAL and <code>buddy_alloc</code> will do nothing.
+                If <code>buddy_alloc</code> fails to find enough free memory space to allocate, errno will be
+                set to ENOMEM.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    size : the allocated buffer's size, in bytes
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                A pointer to the allocated buffer if one was available, NULL otherwise.
+                </detailed>
+                </paragraph>
+                <code>
+                void * buddy_alloc(size_t size);
+                </code>
+            </paragraph>
+            <paragraph name='buddy_free'>
+                <brief>Frees a specified pointer, in a thread-safe way.</brief>
+                <detailed>
+                  Warning :
+                   Due to the particularities of the implementation (lack of headers), <code>buddy_free</code>
+                   will always try to find a pointer to free and will see a pointer to the beginning of the
+                   block in the same way as the pointer to anywhere inside the block. For example, if we have
+                   allocated an int array[10], <code>buddy_free</code> will treat &amp;array[0] the same way as &amp;array[1]
+                   or as the address of any other element inside this array and will free the whole block.
+                
+                If the pointer given in the parameter is not currently allocated by <code>buddy_alloc</code> or
+                <code>buddy_realloc</code>, <code>buddy_free</code> will do nothing.
+                
+                This function frees the memory space pointed to by pointer, which
+                must have been returned by a previous call to <code>buddy_alloc</code> or <code>buddy_realloc</code>
+                If it wasn't or if <code>buddy_free</code> has already been called for this pointer before,
+                then <code>buddy_free</code> will do nothing. If pointer is NULL, no operation is performed.
+                If the pointer passed as a parameter is not aligned to 64 bits or if it is outside
+                of the allocated heap errno will be set to EINVAL.
+                If <code>buddy_free</code> detects the attempt to free a non-allocated pointer, it will equally
+                set errno to EINVAL.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    pointer : the pointer to the block to free
+                    </detailed>
+                </paragraph>
+                <code>
+                void buddy_free(void *pointer);
+                </code>
+            </paragraph>
+            <paragraph name='buddy_realloc'>
+                <brief>Changes the size of the memory block pointed to by <code>ptr</code> to <code>size</code> bytes in a thread-safe way.</brief>
+                <detailed>
+                The contents will be unchanged in the range from the start of the region up to the minimum of the old and new sizes.
+                If the new <code>size</code> is larger than the old size, the added memory will not be initialized.
+                If <code>ptr</code> is NULL, then the call is equivalent to <code>buddy_alloc(size)</code> for all values of <code>size</code>.
+                If <code>size</code> is equal to zero, and <code>ptr</code> is not NULL, then the call is equivalent to
+                <code>buddy_free(ptr)</code> and the return value will be equal to the pointer passed as the parameter. Unless <code>ptr</code>
+                is NULL, it should have been returned by an earlier call to <code>buddy_alloc()</code> or <code>buddy_realloc()</code>. If it
+                wasn't, then <code>buddy_realloc()</code> will try to find this pointer among the allocated ones, but undefined behavior might
+                occur.
+                
+                If new <code>size</code> is smaller than the old size, then the remaining memory will potentially be released (depends
+                on the size of block).
+                
+                <code>buddy_realloc()</code> internally calls <code>buddy_alloc</code> and <code>buddy_free</code> and thereby will set errno
+                to ENOMEM or EINVAL on failure.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    ptr : original pointer
+                    </detailed>
+                    <detailed>
+                    size : the new allocated buffer's size, in bytes
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                A new (or the same) pointer to the allocated buffer if one was available, NULL otherwise.
+                </detailed>
+                </paragraph>
+                <code>
+                void * buddy_realloc(void *ptr, size_t size);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='defs.h'>
+        <brief>Miscellaneous system functions.</brief>
+        <detailed>
+        General purpose definitions.
+        
+        </detailed>
+        <paragraph name='Functions'>
+            <paragraph name='me'>
+                <paragraph name='Returns'>
+                <detailed>
+                The current tasklet's sysname.
+                </detailed>
+                </paragraph>
+                <code>
+                sysname_t me();
+                </code>
+            </paragraph>
+            <paragraph name='halt'>
+                <brief>Halts the DPU.</brief>
+                <paragraph name='Throws'>
+                    <detailed>
+                    FAULT_HALT : always
+                    </detailed>
+                </paragraph>
+                <code>
+                __ATTRIBUTE_NO_RETURN__ static inline void halt() { __builtin_trap();
+                </code>
+            </paragraph>
+            <paragraph name='check_stack'>
+                <paragraph name='Returns'>
+                <detailed>
+                the number of unused 32-bits words in the current thread's stack.
+                         If the number is negative, it indicates by how much 32-bits words the stack overflowed.
+                </detailed>
+                </paragraph>
+                <code>
+                int check_stack();
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='devprivate.h'>
+        <brief>Reserved for internal use ... please do not use those functions unless you know exactly what you do.</brief>
+        <paragraph name='Defines'>
+            <paragraph name='tell'>
+                <brief>On a simulator, injects a tell instruction to print out developer debug info.</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    reg : a register
+                    </detailed>
+                    <detailed>
+                    val : a constant value
+                    </detailed>
+                </paragraph>
+                <paragraph name='Be careful'>
+                <detailed>
+                This function will not work on a target different from simulator.
+                </detailed>
+                </paragraph>
+                <code>
+                #define tell(reg, val)
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='float.h'>
+        <detailed>
+        
+        </detailed>
+    </paragraph>
+    <paragraph name='fsb_allocator.h'>
+        <brief>Provides a fixed-size block memory allocator.</brief>
+        <paragraph name='Functions'>
+            <paragraph name='fsb_allocator_t'>
+                <brief>A fixed-size block allocator.</brief>
+                <code>
+                typedef void **fsb_allocator_t;
+                </code>
+            </paragraph>
+            <paragraph name='fsb_alloc'>
+                <brief>Allocate and initialize a fixed-size block allocator.</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    block_size : the size of the blocks allocated (will be realigned on 8 bytes, with a minimum of 8 bytes)
+                    </detailed>
+                    <detailed>
+                    nb_of_blocks : the number of blocks allocated
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                The newly allocated and ready-to-use fixed-size block allocator.
+                </detailed>
+                </paragraph>
+                <paragraph name='Throws'>
+                    <detailed>
+                    a : fault if there is no memory left
+                    </detailed>
+                </paragraph>
+                <code>
+                fsb_allocator_t fsb_alloc(unsigned int block_size, unsigned int nb_of_blocks);
+                </code>
+            </paragraph>
+            <paragraph name='fsb_get'>
+                <brief>Own a block of the specified fixed-size block allocator, in a thread-safe way.</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    allocator : the allocator from which we take the block
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                A pointer to the owned block if one was available, NULL otherwise.
+                </detailed>
+                </paragraph>
+                <code>
+                void * fsb_get(fsb_allocator_t allocator);
+                </code>
+            </paragraph>
+            <paragraph name='fsb_free'>
+                <brief>Free a block of the specified fixed-size block allocator, in a thread-safe way.</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    allocator : the allocator in which we put the block back in
+                    </detailed>
+                    <detailed>
+                    ptr : the pointer to the block to free
+                    </detailed>
+                </paragraph>
+                <code>
+                void fsb_free(fsb_allocator_t allocator, void *ptr);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='handshake.h'>
+        <brief>Synchronization with handshakes.</brief>
+        <detailed>
+        This synchronization mechanism allows to synchronize 2 tasklets. One tasklet will serve as a notifier
+        and will call handshake_notify() and the other as a customer and will call handshake_wait_for(notifier).
+        
+        </detailed>
+        <paragraph name='Functions'>
+            <paragraph name='handshake_notify'>
+                <brief>Notifies a tasklet waiting for the notifier.</brief>
+                <detailed>
+                The invoking tasklet is suspended until another tasklet calls handshake_wait_for(notifier).
+                When this condition is reached, the function resumes the waiting tasklet.
+                
+                </detailed>
+                <code>
+                void handshake_notify(void);
+                </code>
+            </paragraph>
+            <paragraph name='handshake_wait_for'>
+                <brief>Waits for the notifier tasklet</brief>
+                <detailed>
+                The invoking tasklet is suspended until the notifier tasklet (indicated in the parameter) sends a
+                notification to tell the invoking tasklet that it can go ahead.
+                
+                Beware that if the notifier tasklet and the invoking tasklet are the same, the tasklet will be suspended with no
+                easy way to wake it up. The user should check this case itself if it is something that their program allows.
+                
+                If the number of the notifier is not a defined tasklet, the function behavior is undefined. If some other tasklet has
+                already called handshake_wait_for() with the same notifier in the parameter and that the notifier has not yet called
+                handshake_notify(), the function will do nothing and simply return EALREADY.
+                
+                In both cases the errno will be set to the corresponding error number.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    notifier : a number to wait the notification from. It must be a defined tasklet.
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                0 if no error was detected, EALREADY if a corresponding error was detected.
+                </detailed>
+                </paragraph>
+                <code>
+                int handshake_wait_for(sysname_t notifier);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='macro_utils.h'>
+        <brief>Provide utility macros.</brief>
+    </paragraph>
+    <paragraph name='mram.h'>
+        <brief>MRAM Transfer Management.</brief>
+        <paragraph name='Functions'>
+            <paragraph name='mram_read'>
+                <brief>Stores the specified number of bytes from MRAM to WRAM. The number of bytes must be:   - at least 8   - at most 2048   - a multiple of 8</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    from : source address in MRAM
+                    </detailed>
+                    <detailed>
+                    to : destination address in WRAM
+                    </detailed>
+                    <detailed>
+                    nb_of_bytes : number of bytes to transfer
+                    </detailed>
+                </paragraph>
+                <code>
+                void mram_read(const __mram_ptr void *from, void *to, unsigned int nb_of_bytes);
+                </code>
+            </paragraph>
+            <paragraph name='mram_write'>
+                <brief>Stores the specified number of bytes from WRAM to MRAM. The number of bytes must be:   - at least 8   - at most 2048   - a multiple of 8</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    from : source address in WRAM
+                    </detailed>
+                    <detailed>
+                    to : destination address in MRAM
+                    </detailed>
+                    <detailed>
+                    nb_of_bytes : number of bytes to transfer
+                    </detailed>
+                </paragraph>
+                <code>
+                void mram_write(const void *from, __mram_ptr void *to, unsigned int nb_of_bytes);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='mutex.h'>
+        <brief>Mutual exclusions.</brief>
+        <detailed>
+        A mutex ensures mutual exclusion between threads: only one thread can have the mutex at a time, blocking all the
+        other threads trying to take the mutex.
+        
+        </detailed>
+        <paragraph name='Defines'>
+            <paragraph name='MUTEX_GET'>
+                <brief>Return the symbol to use when using the mutex associated to the given name.</brief>
+                <code>
+                #define MUTEX_GET(_name)
+                </code>
+            </paragraph>
+            <paragraph name='MUTEX_INIT'>
+                <brief>Declare and initialize a mutex associated to the given name.</brief>
+                <code>
+                #define MUTEX_INIT(_name)
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Types'>
+            <paragraph name='mutex_id_t'>
+                <brief>A mutex object reference, as declared by MUTEX_INIT.</brief>
+                <code>
+                typedef uint8_t *mutex_id_t;
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Functions'>
+            <paragraph name='mutex_lock'>
+                <brief>Takes the lock on the given mutex.</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    mutex : the mutex we want to lock
+                    </detailed>
+                </paragraph>
+                <code>
+                void mutex_lock(mutex_id_t mutex);
+                </code>
+            </paragraph>
+            <paragraph name='mutex_trylock'>
+                <brief>Tries to take the lock on the given mutex. If the lock is already taken, returns immediately.</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    mutex : the mutex we want to lock
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                Whether the mutex has been successfully locked.
+                </detailed>
+                </paragraph>
+                <code>
+                bool mutex_trylock(mutex_id_t mutex);
+                </code>
+            </paragraph>
+            <paragraph name='mutex_unlock'>
+                <brief>Releases the lock on the given mutex.</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    mutex : the mutex we want to unlock
+                    </detailed>
+                </paragraph>
+                <code>
+                void mutex_unlock(mutex_id_t mutex);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='perfcounter.h'>
+        <brief>Utilities concerning the performance counter register.</brief>
+        <detailed>
+        
+        </detailed>
+        <paragraph name='Defines'>
+            <paragraph name='CLOCKS_PER_SEC'>
+                <brief>A number used to convert the value returned by the `perfcounter_get`_ and `perfcounter_config`_ functions into seconds,         when counting clock cycles.</brief>
+                <code>
+                extern const volatile uint32_t CLOCKS_PER_SEC;
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Types'>
+            <paragraph name='perfcounter_t'>
+                <brief>A value which can be stored by the performance counter.</brief>
+                <code>
+                typedef uint64_t perfcounter_t;
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Data types'>
+            <paragraph name='enum perfcounter_config_t'>
+                <brief>A configuration for the performance counter, defining what should be counted.</brief>
+                <detailed>
+                COUNT_SAME : keep the previous configuration
+                </detailed>
+                <detailed>
+                COUNT_CYCLES : switch to counting clock cycles
+                </detailed>
+                <detailed>
+                COUNT_INSTRUCTIONS : switch to counting executed instructions
+                </detailed>
+                <detailed>
+                COUNT_NOTHING : does not count anything
+                </detailed>
+                <code>
+                typedef enum _perfcounter_config_t {
+                COUNT_SAME = 0,
+                COUNT_CYCLES = 1,
+                COUNT_INSTRUCTIONS = 2,
+                COUNT_NOTHING = 3,
+                } perfcounter_config_t;
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Functions'>
+            <paragraph name='perfcounter_get'>
+                <brief>Fetch the value of the performance counter register.</brief>
+                <paragraph name='Returns'>
+                <detailed>
+                The current value of the performance counter register, or undefined if `perfcounter_config`_ has not been called before.
+                </detailed>
+                </paragraph>
+                <code>
+                perfcounter_t perfcounter_get(void);
+                </code>
+            </paragraph>
+            <paragraph name='perfcounter_config'>
+                <brief>Configure the performance counter behavior.</brief>
+                <detailed>
+                This function cannot be used when profiling an application.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    config : The new behavior for the performance counter register
+                    </detailed>
+                    <detailed>
+                    reset_value : Whether the performance counter register should be set to 0
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                The current value of the performance counter register, or undefined if `perfcounter_config`_ has not been called before.
+                </detailed>
+                </paragraph>
+                <code>
+                perfcounter_t perfcounter_config(perfcounter_config_t config, bool reset_value);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='profiling.h'>
+        <brief>Code section profiling management.</brief>
+        <paragraph name='Defines'>
+            <paragraph name='PROFILING_INIT'>
+                <brief>Declare and initialize a profiling context associated to the given name.</brief>
+                <code>
+                #define PROFILING_INIT(_name)
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Functions'>
+            <paragraph name='profiling_start'>
+                <brief>Start profiling a code section.</brief>
+                <detailed>
+                This function saves the perfcounter current value in the profiling context.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    context : the profiling context to use.
+                    </detailed>
+                </paragraph>
+                <code>
+                void profiling_start(dpu_profiling_t *context);
+                </code>
+            </paragraph>
+            <paragraph name='profiling_stop'>
+                <brief>Stop profiling a code section.</brief>
+                <detailed>
+                This function gets the perfcounter current value and computes the number of cyles spent in the code section.
+                The `profiling_start`_ function must be called beforehand.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    context : the profiling context to use.
+                    </detailed>
+                </paragraph>
+                <code>
+                void profiling_stop(dpu_profiling_t *context);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='profiling_internals.h'>
+        <brief>Code section profiling internals.</brief>
+        <paragraph name='Types'>
+            <paragraph name='dpu_profiling_t'>
+                <brief>A profiling context.</brief>
+                <code>
+                typedef struct {
+                uint32_t start[NR_THREADS];
+                uint32_t count[NR_THREADS];
+                } dpu_profiling_t;
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='sem.h'>
+        <brief>Synchronization with semaphores.</brief>
+        <detailed>
+        A semaphore is characterized by a counter and a wait queue. It provides two functions:
+        
+           - Take: the counter is decremented by 1. If the counter is negative, the thread is blocked (stop) and placed in the
+             semaphore's wait queue, waiting to be resume by another thread.
+           - Give: the counter is incremented by 1. If the counter was negative before the increment, the thread resumes the execution
+             of the first thread waiting in the waiting queue. In all the cases, the thread continues its own execution.
+        
+        
+        </detailed>
+        <paragraph name='Defines'>
+            <paragraph name='SEMAPHORE_INIT'>
+                <brief>Declare and initialize a semaphore associated to the given name.</brief>
+                <code>
+                #define SEMAPHORE_INIT(_name, _counter)
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Types'>
+            <paragraph name='sem_t'>
+                <brief>A semaphore object, as declared by SEMAPHORE_INIT.</brief>
+                <code>
+                typedef struct sem_t {
+                uint8_t wait_queue;
+                uint8_t count;
+                uint8_t initial_count;
+                uint8_t lock;
+                } sem_t;
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Functions'>
+            <paragraph name='sem_take'>
+                <brief>Takes one unit in the given semaphore (cf Take definition).</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    sem : the semaphore we want to take
+                    </detailed>
+                </paragraph>
+                <code>
+                void sem_take(sem_t *sem);
+                </code>
+            </paragraph>
+            <paragraph name='sem_give'>
+                <brief>Gives on unit in the given semaphore (cf Give definition).</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    sem : the semaphore we want to give
+                    </detailed>
+                </paragraph>
+                <code>
+                void sem_give(sem_t *sem);
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='seqread.h'>
+        <brief>Sequential reading of items in MRAM.</brief>
+        <detailed>
+        A sequential reader allows to parse a contiguous area in MRAM in sequence.
+        For example, if the MRAM contains an array of N structures, a sequential
+        reader on this array will automatically fetch the data into WRAM, thus
+        simplify the iterative loop on the elements.
+        
+        The size of cached area is defined by default but can be overriden by
+        defining this value in SEQREAD_CACHE_SIZE.
+        
+        The use of a sequential reader implies:
+        
+          - first, to allocate some storage in WRAM to cache the items, using seqread_alloc.
+          - then to initialize a reader on the MRAM area, via `seqread_init`_
+          - finally to iterate on the elements, invoking `seqread_get`_ whenever a new item is accessed.
+        
+        
+        </detailed>
+        <paragraph name='Defines'>
+            <paragraph name='SEQREAD_CACHE_SIZE'>
+                <brief>Size of caches used by seqread.</brief>
+                <code>
+                #define SEQREAD_CACHE_SIZE
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Types'>
+            <paragraph name='seqreader_buffer_t'>
+                <brief>An buffer to use to initial a sequential reader.</brief>
+                <code>
+                typedef uintptr_t seqreader_buffer_t;
+                </code>
+            </paragraph>
+            <paragraph name='seqreader_t'>
+                <brief>An object used to perform sequential reading of MRAM.</brief>
+                <code>
+                typedef struct {
+                seqreader_buffer_t wram_cache;
+                uintptr_t mram_addr;
+                } seqreader_t;
+                seqreader_buffer_t
+                __SEQREAD_ALLOC();
+                </code>
+            </paragraph>
+        </paragraph>
+        <paragraph name='Functions'>
+            <paragraph name='seqread_alloc'>
+                <brief>Initializes an area in WRAM to cache the read buffers.</brief>
+                <detailed>
+                Notice that this buffer can be re-used for different sequential reads,
+                as long as it is initialized each time to a new buffer in MRAM.
+                
+                </detailed>
+                <paragraph name='Returns'>
+                <detailed>
+                A pointer to the allocated cache base address.
+                </detailed>
+                </paragraph>
+                <code>
+                #define seqread_alloc __SEQREAD_ALLOC void * __SEQREAD_INIT(seqreader_buffer_t cache, __mram_ptr void *mram_addr, seqreader_t *reader);
+                </code>
+            </paragraph>
+            <paragraph name='seqread_init'>
+                <brief>Creates a sequential reader.</brief>
+                <detailed>
+                The reader is associated to an existing cache in WRAM, created with
+                `seqread_alloc`_ and a contiguous area of data in MRAM. The function
+                loads the first pages of data into the cache and provides a pointer
+                to the first byte in cache actually mapping the expected data.
+                
+                Notice that the provided MRAM address does not need to be aligned on
+                any constraint: the routine does the alignment automatically.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    cache : the reader's cache in WRAM
+                    </detailed>
+                    <detailed>
+                    mram_addr : the buffer address in MRAM
+                    </detailed>
+                    <detailed>
+                    reader : the sequential reader to init to the supplied MRAM address
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                A ptr to the first byte in cache corresponding to the MRAM address
+                </detailed>
+                </paragraph>
+                <code>
+                #define seqread_init __SEQREAD_INIT void * __SEQREAD_GET(void *ptr, uint32_t inc, seqreader_t *reader);
+                </code>
+            </paragraph>
+            <paragraph name='seqread_get'>
+                <brief>Fetches the next item in a sequence.</brief>
+                <detailed>
+                This operation basically consists in incrementing the pointer that goes
+                through the mapped area of memory. The function automatically reloads
+                data from cache if necessary.
+                
+                As a result, the provided pointer to the cache area is set to its new value.
+                
+                The provided increment must be less than SEQREAD_CACHE_SIZE. The reader's
+                behavior is undefined if the increment exceeds this value.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    ptr : the incremented pointer
+                    </detailed>
+                    <detailed>
+                    inc : the number of bytes added to this pointer
+                    </detailed>
+                    <detailed>
+                    reader : a pointer to the sequential reader
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                The updated pointer value.
+                </detailed>
+                </paragraph>
+                <code>
+                #define seqread_get __SEQREAD_GET void * __SEQREAD_SEEK(__mram_ptr void *mram_addr, seqreader_t *reader);
+                </code>
+            </paragraph>
+            <paragraph name='seqread_seek'>
+                <brief>Set the position of the cache to the supplied MRAM address</brief>
+                <detailed>
+                Update automatically the cache if necessary.
+                
+                </detailed>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    mram_addr : the new buffer address in MRAM
+                    </detailed>
+                    <detailed>
+                    reader : a pointer to the sequential reader
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                A ptr to the first byte in cache corresponding to the MRAM address
+                </detailed>
+                </paragraph>
+                <code>
+                #define seqread_seek __SEQREAD_SEEK __mram_ptr void * __SEQREAD_TELL(void *ptr, seqreader_t *reader);
+                </code>
+            </paragraph>
+            <paragraph name='seqread_tell'>
+                <brief>Get the MRAM address corresponding to the supplied ptr in the cache</brief>
+                <paragraph name='Parameters'>
+                    <detailed>
+                    ptr : a pointer in the cache
+                    </detailed>
+                    <detailed>
+                    reader : a pointer to the sequential reader
+                    </detailed>
+                </paragraph>
+                <paragraph name='Returns'>
+                <detailed>
+                A ptr to the MRAM address corresponding to the supplied pointer in the cache
+                </detailed>
+                </paragraph>
+                <code>
+                #define seqread_tell __SEQREAD_TELL
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+    <paragraph name='soft_cache.h'>
+        <brief>Software cache</brief>
+        <detailed>
+        The software cache mechanism emulates a hardware cache to transparently load and store data from and to the
+        MRAM.
+        
+        This mechanism is quite slow, thus would only be used during the development process, to simplify the code.
+        
+        This module defines:
+        
+          - A procedure to start the software cache, by creating a "virtual TLB" in the system, along with an area in WRAM to contain
+            the cached MRAM pages
+          - A procedure to flush the cache at the end of an execution, ensuring that the data in MRAM are consistent with the cached
+            data
+          - The special C directive "__mram", used to declare a pointer directly representing a buffer in MRAM.
+        
+        An MRAM pointer is mapped by the caching system. As a consequence, any access to data within this buffer is trapped
+        by a cache load or store procedure, transparently performing the required memory transactions to fetch and write back
+        the data.
+        
+        
+        </detailed>
+    </paragraph>
+    <paragraph name='sysdef.h'>
+        <brief>Provides useful system abstractions.</brief>
+        <paragraph name='Types'>
+            <paragraph name='thread_id_t'>
+                <brief>A unique thread number.</brief>
+                <code>
+                typedef unsigned int thread_id_t;
+                </code>
+            </paragraph>
+            <paragraph name='sysname_t'>
+                <brief>A system name.</brief>
+                <detailed>
+                Used to name system structures, like mutexes, semaphores, meetpoints, etc... In practice, system names
+                are integers, representing a unique identifier for the given type of structure.
+                
+                </detailed>
+                <code>
+                typedef unsigned int sysname_t;
+                </code>
+            </paragraph>
+        </paragraph>
+    </paragraph>
+</doxc>

@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2021 - UPMEM
+ *
+ * E19 VPD base content.
+ */
+
+VPD_ADD_SHORT(fck, 800)
+VPD_ADD_SHORT(fck_min, 10)
+VPD_ADD_SHORT(fck_max, 945)
+VPD_ADD_BYTE(div_min, 3)
+VPD_ADD_BYTE(div_max, 4)
+VPD_ADD_SHORT(vdd_limit, 11700)
+VPD_ADD_STRING(chip_version, "v1.2")

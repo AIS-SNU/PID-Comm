@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+
+# Copyright 2020 UPMEM. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+"""DPU Program Executor
+
+This script allows the user to easily execute a program on a DPU.
+If the program is a single source file (C or asm), it will be compiled before execution.
+
+This script is based on the dpu module, and so depends on having an available dpu dynamic library,
+with the same version.
+"""
+
+import dpu
+from dpu import compiler
+import sys
+import argparse
+import tempfile
+import os
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Execute a DPU program.')
+    parser.add_argument(
+        'input', help="the DPU executable to be run. If the file name provided ends with '.c', '.s' or '.S', the file will be compiled first.")
+    parser.add_argument('--keep', dest='keep', action='store_true',
+                        help='disable the deletion of temporary files')
+
+    args = parser.parse_args()
+
+    executable = args.input
+
+    resources = []
+    keep_resources = args.keep
+
+    try:
+        if executable.lower().endswith(('.c', '.s')):
+            source = executable
+            executable = tempfile.mktemp(prefix=source[:-1])
+            cc = compiler.DEFAULT_DPU_COMPILER
+            cc.compile(sources=source, output=executable,
+                       opt_lvl=compiler.O2, verbose=True)
+            resources.append(executable)
+
+        with dpu.DpuSet(1, binary=executable) as device:
+            device.exec()
+    finally:
+        if not keep_resources:
+            for resource in resources:
+                os.remove(resource)
+
+
+if __name__ == "__main__":
+    main()

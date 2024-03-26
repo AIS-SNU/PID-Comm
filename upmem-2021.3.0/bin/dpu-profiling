@@ -1,0 +1,528 @@
+#!/usr/bin/env python3
+
+import sys
+import argparse
+import os
+import subprocess
+import distutils.sysconfig
+import errno
+import time
+from dpu_profiling import post_process_json_file, extract_api_symbols_from_file, print_dpu_statistics
+
+DEFAULT_MEM_BUFFER_SIZE = "8M"
+PERF_DATA_FILENAME = "perf.data"
+LOG_FILENAME = "dpu-profiling.log"
+FUNCTIONS_MODE = "functions"
+MEMORY_TRANSFER_MODE = "memory-transfer"
+DPU_STATISTIC_MODE = "dpu-statistics"
+DPU_SECTION_MODE = "dpu-sections"
+
+temp_files = []
+add_probe_if_error = False
+
+class perf:
+    def __init__(
+            self,
+            log_file,
+            perf_filename,
+            add_entry_suffix,
+            exclude_list=[]):
+        self.probe_list = []
+        self.log = log_file
+        self.perf_filename = perf_filename
+        self.exclude_list = exclude_list
+        self.add_entry_suffix = add_entry_suffix
+        self.child_record = None
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, exc_traceback):
+        # Before removing probes, make sure the child launched with perf record
+        # is not running, otherwise removing probes might fail because this
+        # child is "using" them (perf probe returns -EBUSY in that case).
+        # Note that if the communicate is interrupted by another signal, no
+        # probes will be removed.
+        if self.child_record != None:
+            self.child_record.kill()
+            self.child_record.communicate()
+        self.remove_probes(self.probe_list)
+
+    def remove_probe(self, probe):
+        command = ["perf", "probe", "-d", probe, "-d", probe + "_[0-9]*"]
+        if subprocess.run(command,
+                          stdout=self.log, stderr=self.log).returncode != 0:
+            print("Could not remove probe {}...".format(probe))
+            return False
+        return True
+
+    def remove_probes(self, probes):
+        if len(probes) == 0:
+            return True
+
+        command = ["perf", "probe"]
+        for probe in probes:
+            command.extend(["-d", probe, "-d", probe + "_[0-9]*"])
+
+        if subprocess.run(command,
+                          stdout=self.log, stderr=self.log).returncode != 0:
+            print("Could not remove probes...")
+            return False
+        return True
+
+    def add_probe(self, elf_path, probe, probe_name, arguments=[]):
+        global add_probe_if_error
+
+        if elf_path.endswith(".ko"):
+            # Assume .ko extension is reserved for kernel modules
+            command = ["perf", "probe", "--module", elf_path,
+                       "--add", " ".join([probe] + arguments)]
+        else:
+            command = ["perf", "probe", "--exec", elf_path,
+                       "--add", " ".join([probe] + arguments)]
+        ret = subprocess.run(command,
+                          stdout=self.log, stderr=self.log).returncode
+
+        u8_ret = ret - 256
+        if ret and u8_ret != -errno.EEXIST:
+            command[5] = probe  # remove argument if it failed the first time
+            ret = subprocess.run(
+                    command,
+                    stdout=self.log, stderr=self.log).returncode
+            u8_ret = ret - 256
+
+        if ret and u8_ret != -errno.EEXIST:
+            print("Could not add probe on %s:%s:%d" % (elf_path, probe, ret))
+            if add_probe_if_error == False:
+                print("Please make sure to follow instructions given in \"Application profiling\" section of the documentation.")
+                user_choice = input("Do you want to continue anyway? (Y/n/a) ")
+                if user_choice == "n":
+                    print("Exiting...")
+                    sys.exit(-1)
+                elif user_choice == "a":
+                    add_probe_if_error = True
+
+            return False
+
+        self.probe_list.append(probe_name)
+        return True
+
+    def add_probes_for_perf_event(self, perf_event):
+        for event in perf_event:
+            self.probe_list.append(event)
+
+    def add_probes_for_fct(self, elf_path, func_name, arguments=[]):
+        elf_basename = os.path.basename(elf_path).split(".", 1)[0]
+        probe_name = elf_basename + "_" + func_name
+        entry_suffix = ""
+        exit_suffix = "_exit"
+        if self.add_entry_suffix:
+            entry_suffix = "__entry"
+            exit_suffix = "__exit"
+        entry_probe = "probe_" + elf_basename + ":" + probe_name + entry_suffix
+        exit_probe = "probe_" + elf_basename + ":" + probe_name + exit_suffix
+        if self.add_probe(
+                elf_path,
+                entry_probe + "=" + func_name,
+                entry_probe, arguments) == False:
+            return
+
+        if self.add_probe(
+                elf_path,
+                exit_probe + "=" + func_name + "%return",
+                exit_probe + "__return") == False:
+            self.remove_probe(entry_probe)
+            self.probe_list.remove(entry_probe)
+
+    def add_probes(self, probes):
+        for probe in probes:
+            if probe[1] in self.exclude_list:
+                continue
+            self.add_probes_for_fct(probe[0], probe[1])
+
+    def add_probes_for_library(self, library, only_include=None):
+        library_symbols = extract_api_symbols_from_file(library, True, None)
+        for func_name, func_info in library_symbols.items():
+            if func_name in self.exclude_list:
+                continue
+            if only_include is not None and func_name not in only_include:
+                continue
+            self.add_probes_for_fct(
+                library, func_name,
+                [f.decode("utf-8") for f in func_info.parameters])
+
+    def launch_perf_record(self, memory_size, args):
+        command = ["perf", "record"]
+        command_suffix = ["-m", memory_size, "-o", self.perf_filename, "-aqgR"]
+        for probe in self.probe_list:
+            command.extend(["-e", probe])
+        command += command_suffix
+        command += args
+
+        temp_files.append(self.perf_filename)
+        try:
+            self.child_record = subprocess.Popen(command)
+            self.child_record.communicate()
+            if self.child_record.returncode != 0:
+                print("Fail executing: " + str(command))
+                return False
+            return True
+        except:
+            return False
+
+    def perf_script(self, script_commands):
+        command = ["perf", "script", "-i", self.perf_filename, "-s"]
+        command += script_commands
+        if subprocess.run(command).returncode != 0:
+            print("Fail executing: " + str(command))
+
+    def generate_ctf(self, output, call_depth, group_rank_events):
+        temp_filename = "out_tmp.json"
+        with open(temp_filename, "w") as temp_file:
+            temp_files.append(temp_filename)
+            command = ["perf", "data", "convert", "--to-chrometf",
+                       temp_filename, "--all", "--input", self.perf_filename]
+            if subprocess.run(
+                    command,
+                    stdout=self.log, stderr=self.log).returncode != 0:
+                print("Failed executing: " + str(command))
+                return
+        post_process_json_file(
+            temp_filename, output, call_depth, group_rank_events)
+
+
+def do_functions_mode(args, libdpu_path, log_file):
+    probe_list = []
+    if args.exec_path is not None:
+        app_binary = args.exec_path
+    else:
+        app_binary = args.COMMAND[0]
+    if os.access(app_binary, os.X_OK):
+        for func in args.function:
+            probe_list.append((app_binary, func))
+    else:
+        print("%s is not an executable, cannot add probe on it" %
+              (app_binary))
+    for external_function in args.external_function:
+        elf_path, func = external_function.split(":")
+        if os.path.exists(elf_path):
+            probe_list.append((elf_path, func))
+        else:
+            print("Cannot find library ('%s'), cannot add probe on it" %
+                  (elf_path))
+    for module_function in args.module_function:
+        elf_path, func = module_function.split(":")
+        if os.path.exists(elf_path):
+            probe_list.append((elf_path, func))
+        else:
+            print("Cannot find module ('%s'), cannot add probe on it" %
+                  (elf_path))
+
+    with perf(log_file, PERF_DATA_FILENAME, args.output is not None, args.exclude) as p:
+        p.add_probes(probe_list)
+        p.add_probes_for_perf_event(args.perf_event)
+
+        libdpu_functions = []
+        if args.probe_dpu_host_api:
+            libdpu_functions += ["dpu_launch",
+                                 "dpu_sync",
+                                 "dpu_broadcast_to",
+                                 "dpu_broadcast_to_symbol",
+                                 "dpu_copy_to",
+                                 "dpu_copy_to_symbol",
+                                 "dpu_copy_from",
+                                 "dpu_copy_from_symbol",
+                                 "dpu_push_xfer",
+                                 "dpu_push_xfer_symbol",
+                                 "dpu_callback",
+                                 "dpu_alloc",
+                                 "dpu_free",
+                                 "dpu_load",
+                                 "dpu_load_from_incbin",
+                                 "dpu_load_from_memory"]
+        if args.probe_dpu_async_api:
+            libdpu_functions += ["dpu_boot_rank",
+                                 "dpu_boot_dpu",
+                                 "dpu_sync_rank",
+                                 "dpu_sync_dpu",
+                                 "dpu_copy_to_mrams",
+                                 "dpu_copy_from_mrams",
+                                 "dpu_copy_to_wram_for_rank",
+                                 "dpu_copy_from_wram_for_rank",
+                                 "dpu_copy_to_wram_for_matrix",
+                                 "dpu_copy_from_wram_for_matrix",
+                                 "dpu_copy_to_iram_for_rank",
+                                 "dpu_copy_from_iram_for_rank",
+                                 "dpu_copy_to_iram_for_matrix",
+                                 "dpu_copy_from_iram_for_matrix"]
+        libdpu_functions += args.dpu_host_api_function
+        if len(libdpu_functions) > 0:
+            p.add_probes_for_library(libdpu_path, libdpu_functions)
+
+        if args.probe_library is not None:
+            for library in args.probe_library:
+                p.add_probes_for_library(library)
+
+        if p.launch_perf_record(args.mem_buffer_size, args.COMMAND):
+            if args.output is None:
+                p.perf_script(
+                    [os.path.join(
+                        profiling_scripts_path,
+                        "dpu_profiling_functions_traces_processing.py"),
+                     "--",
+                     "--result-parser",
+                     args.parser])
+            else:
+                p.generate_ctf(args.output, args.limit_libdpu_call_depth, args.group_rank_events)
+
+
+def do_memory_transfer_mode(args, libdpu_path, toolchain_lib_path, log_file):
+    with perf(log_file, PERF_DATA_FILENAME, False) as p:
+        p.add_probes_for_fct(
+            libdpu_path,
+            "dpu_copy_to_wram_for_dpu",
+            ["dpu->rank", "wram_word_offset", "nb_of_words"])
+        p.add_probes_for_fct(
+            libdpu_path,
+            "dpu_copy_to_wram_for_rank",
+            ["rank", "rank->nr_dpus_enabled", "wram_word_offset", "nb_of_words"])
+        p.add_probes_for_fct(
+            libdpu_path,
+            "dpu_copy_from_wram_for_dpu",
+            ["dpu->rank", "wram_word_offset", "nb_of_words"])
+        # TODO: need to add thoses new functions
+        p.add_probes_for_fct(libdpu_path, "dpu_copy_to_wram_for_matrix", ["rank", "transfer_matrix", "transfer_matrix->size"])
+        p.add_probes_for_fct(libdpu_path, "dpu_copy_from_wram_for_matrix", ["rank", "transfer_matrix", "transfer_matrix->size"])
+        p.add_probes_for_fct(
+            libdpu_path,
+            "dpu_copy_to_iram_for_dpu",
+            ["dpu->rank", "iram_instruction_index", "nb_of_instructions"])
+        p.add_probes_for_fct(
+            libdpu_path,
+            "dpu_copy_to_iram_for_rank",
+            ["rank", "rank->nr_dpus_enabled", "iram_instruction_index", "nb_of_instructions"])
+        p.add_probes_for_fct(
+            libdpu_path,
+            "dpu_copy_from_iram_for_dpu",
+            ["dpu->rank", "iram_instruction_index", "nb_of_instructions"])
+        p.add_probes_for_fct(
+            libdpu_path,
+            "dpu_copy_to_mrams",
+            ["rank", "transfer_matrix", "transfer_matrix->size"])
+        p.add_probes_for_fct(
+            libdpu_path,
+            "dpu_copy_from_mrams",
+            ["rank", "transfer_matrix", "transfer_matrix->size"])
+        p.add_probes_for_fct(libdpu_path, "dpu_switch_mux_for_dpu_line")
+        p.add_probes_for_fct(libdpu_path, "dpu_switch_mux_for_rank")
+        p.add_probe(
+            libdpu_path,
+            "libdpu_dpu_transfer_matrix_set_all=dpu_transfer_matrix_set_all",
+            "probe_libdpu:libdpu_dpu_transfer_matrix_set_all",
+            ["transfer_matrix"])
+        p.add_probe(
+            libdpu_path,
+            "libdpu_dpu_transfer_matrix_add_dpu=dpu_transfer_matrix_add_dpu",
+            "probe_libdpu:libdpu_dpu_transfer_matrix_add_dpu",
+            ["dpu", "transfer_matrix", "buffer"])
+        p.add_probe(
+            libdpu_path,
+            "libdpu_dpu_transfer_matrix_clear_dpu=dpu_transfer_matrix_clear_dpu",
+            "probe_libdpu:libdpu_dpu_transfer_matrix_clear_dpu",
+            ["dpu", "transfer_matrix"])
+        p.add_probe(
+            libdpu_path,
+            "libdpu_dpu_transfer_matrix_clear_all=dpu_transfer_matrix_clear_all",
+            "probe_libdpu:libdpu_dpu_transfer_matrix_clear_all",
+            ["transfer_matrix"])
+        p.add_probe(
+            libdpu_path,
+            "libdpu_dpu_transfer_matrix_copy=dpu_transfer_matrix_copy",
+            "probe_libdpu:libdpu_dpu_transfer_matrix_copy",
+            ["dst", "src"])
+        p.add_probe(
+            os.path.join(toolchain_lib_path, "libdpuhw.so"),
+            "libdpuhw_log_rank_path=log_rank_path",
+            "probe_libdpuhw:libdpuhw_log_rank_path",
+            ["rank", "path:string"])
+        if p.launch_perf_record(args.mem_buffer_size, args.COMMAND):
+            p.perf_script(
+                [os.path.join(
+                    profiling_scripts_path,
+                    "dpu_profiling_memory_transfer_traces_processing.py"),
+                 "--",
+                 "--result-parser",
+                 args.parser])
+
+
+def do_dpu_statistic_mode(command):
+    env = os.environ.copy()
+    upmem_profile = env.get("UPMEM_PROFILE")
+    upmem_verbose = env.get("UPMEM_VERBOSE")
+    dpu_profiling_dpu_statistic_filename = "dpu-profiling-dpu-statistics.log"
+    temp_files.append(dpu_profiling_dpu_statistic_filename)
+    env["UPMEM_PROFILE"] = ",".join(
+        ([upmem_profile] if upmem_profile else []) +
+        ["enableProfiling=statistics"])
+    env["UPMEM_VERBOSE"] = ",".join(
+        ([upmem_verbose] if upmem_verbose else []) +
+        ["api:2,logname:%s" % (dpu_profiling_dpu_statistic_filename)])
+    if subprocess.run(command, env=env).returncode == 0:
+        print_dpu_statistics(
+            None, dpu_profiling_dpu_statistic_filename, False, False)
+    else:
+        print("Failed executing: " + str(command))
+
+
+def print_dpu_sections(filename):
+    print("****************")
+    print("*** Sections ***")
+    print("****************")
+
+    last_section = ""
+    with open(filename, "r") as f:
+        for line in f:
+            if "profiling_section" not in line:
+                continue
+            section = line.split(': ')[3].rstrip()
+            th_id = line.split(': ')[4].rstrip()
+            ratio = float(line.split(': ')[5].rstrip()) * 100  # print percentage
+
+            if section != last_section:
+                last_section = section
+                print("%45s: " % (section))
+            print("%55s = \t%f%%" % (th_id, ratio))
+
+
+def do_dpu_section_mode(command):
+    env = os.environ.copy()
+    upmem_profile = env.get("UPMEM_PROFILE")
+    upmem_verbose = env.get("UPMEM_VERBOSE")
+    dpu_profiling_dpu_section_filename = "dpu-profiling-dpu-sections.log"
+    temp_files.append(dpu_profiling_dpu_section_filename)
+    env["UPMEM_PROFILE"] = ",".join(
+        ([upmem_profile] if upmem_profile else []) +
+        ["enableProfiling=sections"])
+    env["UPMEM_VERBOSE"] = ",".join(
+        ([upmem_verbose] if upmem_verbose else []) +
+        ["api:2,logname:%s" % (dpu_profiling_dpu_section_filename)])
+    if subprocess.run(command, env=env).returncode == 0:
+        print_dpu_sections(dpu_profiling_dpu_section_filename)
+    else:
+        print("Failed executing: " + str(command))
+
+
+command = ["dpu-pkg-config", "--variable=libdir", "dpu"]
+toolchain_lib_path = subprocess.run(command, stdout=subprocess.PIPE) \
+    .stdout.decode("utf-8").strip()
+
+profiling_scripts_path = os.path.join(
+    toolchain_lib_path, "..",
+    distutils.sysconfig.get_python_lib(True, False, ''), "dpu_profiling")
+
+parser = argparse.ArgumentParser(description="UPMEM profiling tool")
+parser.add_argument(
+    "--mem-buffer-size",
+    metavar="<number_of_bytes>",
+    help="Set the tracing buffer size (must be suffixed by B, K, M or G), default is %s)" %
+    (DEFAULT_MEM_BUFFER_SIZE),
+    default=DEFAULT_MEM_BUFFER_SIZE)
+parser.add_argument(
+    "--save-temps",
+    action="store_true",
+    help="Keep temporary files on file system")
+
+subparsers = parser.add_subparsers(title="mode", dest="mode")
+# Required can be set directly in the subparsers constructor, but only with python3.7
+# Since we still have some python3.6 dependency, let's set it that way
+subparsers.required=True
+
+parser_functions = subparsers.add_parser(FUNCTIONS_MODE)
+parser_functions.add_argument("COMMAND", nargs="+")
+parser_functions.add_argument(
+    "--function", "-f", metavar="<function_name>", action="append",
+    help="Function of the application binary to probe", default=[])
+parser_functions.add_argument(
+    "--dpu-host-api-function", "-d", metavar="<dpu_function_name>", action="append",
+    help="Function of the DPU host API to probe", default=[])
+parser_functions.add_argument(
+    "--module-function", "-m", metavar="<module_path>:<function_name>", action="append",
+    help="Function of the specified module to probe", default=[])
+parser_functions.add_argument(
+    "--external-function", "-e", metavar="<elf_path>:<function_name>",
+    action="append", help="Function of the specified library to probe",
+    default=[])
+parser_functions.add_argument(
+    "--perf-event", "-n", metavar="<perf_event_name>",
+    action="append", help="Perf tool event (see `perf list` for a list of events and `perf report` to analyse the events)",
+    default=[])
+parser_functions.add_argument(
+    "--probe-dpu-host-api", "-A", action="store_true",
+    help="add probe for every functions of the DPU host API")
+parser_functions.add_argument(
+    "--probe-dpu-async-api", "-a", action="store_true",
+    help="add probe on low-level functions used by the async feature of the host API")
+parser_functions.add_argument(
+    "--probe-library", "-L", action="append", metavar="<library_path>",
+    help="Probe all visible functions of the library")
+parser_functions.add_argument(
+    "--output", "-o", metavar="<output_filename>", default=None,
+    help="file name where to store Chrome Trace Format JSON file")
+parser_functions.add_argument(
+    "--exec-path", default=None, metavar="<application_binary_path>",
+    help="The application binary path to use to probe functions")
+parser_functions.add_argument(
+    "--exclude", "-E", metavar="<function_name>", action="append",
+    help="Function to exclude from probed functions", default=[])
+parser_functions.add_argument(
+    "--parser", "-p", default="dpu_profiling_functions_print",
+    help="Select a custom parser to apply")
+parser_functions.add_argument("--limit-libdpu-call-depth", type=int, default=1)
+parser_functions.add_argument(
+    "--group-rank-events", action="store_true",
+    help="Group rank related event by rank")
+
+parser_memory_transfer = subparsers.add_parser(MEMORY_TRANSFER_MODE)
+parser_memory_transfer.add_argument("COMMAND", nargs="+")
+parser_memory_transfer.add_argument(
+    "--parser", "-p", default="dpu_profiling_memory_transfer_print",
+    help="Select a custom parser to apply")
+
+parser_dpu_statistic = subparsers.add_parser(DPU_STATISTIC_MODE)
+parser_dpu_statistic.add_argument("COMMAND", nargs="+")
+
+parser_dpu_section = subparsers.add_parser(DPU_SECTION_MODE)
+parser_dpu_section.add_argument("COMMAND", nargs="+")
+
+args = parser.parse_args()
+
+libdpu_path = os.path.join(toolchain_lib_path, "libdpu.so")
+if not os.path.exists(libdpu_path):
+    print(
+        "Cannot find DPU library at the expected location ('%s')" %
+        (libdpu_path))
+    sys.exit(-1)
+
+with open(LOG_FILENAME, "w") as log_file:
+    temp_files.append(LOG_FILENAME)
+
+    log_file.write("Using toolchain at: '%s'\n\n" % (toolchain_lib_path))
+    log_file.flush()
+
+    if args.mode == FUNCTIONS_MODE:
+        do_functions_mode(args, libdpu_path, log_file)
+    elif args.mode == MEMORY_TRANSFER_MODE:
+        do_memory_transfer_mode(
+            args,
+            libdpu_path,
+            toolchain_lib_path,
+            log_file)
+    elif args.mode == DPU_STATISTIC_MODE:
+        do_dpu_statistic_mode(args.COMMAND)
+    elif args.mode == DPU_SECTION_MODE:
+        do_dpu_section_mode(args.COMMAND)
+
+if not args.save_temps:
+    for f in temp_files:
+        if os.access(f, os.W_OK):
+            os.remove(f)

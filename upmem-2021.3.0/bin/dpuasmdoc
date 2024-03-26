@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+
+import argparse
+from dpu.disasm import disassemble
+from dpu.isa import InstructionInfo, INSTRUCTIONS
+import re
+from typing import List
+
+
+NORMALIZATION_REGEX = re.compile(r"[^a-z0-9_.]")
+
+
+def print_doc(instruction: InstructionInfo, show_encoding: bool, show_signature: bool) -> None:
+    syntax = [instruction.keyword] + list(map(lambda x: str(x), instruction.syntax))
+    print(' '.join(syntax))
+    print(instruction.brief)
+    if show_encoding:
+        print('\tBinary encoding: (' + ', '.join(instruction.encoding) + ')')
+    if show_signature:
+        sugar = '*' if instruction.is_syntactic_sugar else ''
+        print('\tsignature=[' + instruction.signature + ']' + sugar)
+
+
+def find_doc_of(request: str) -> List[InstructionInfo]:
+    return list(filter(lambda insn: insn.is_documented and request == insn.keyword, INSTRUCTIONS.values()))
+
+
+def find_doc_like(request: str) -> List[InstructionInfo]:
+    return list(filter(lambda insn: insn.is_documented and request in insn.keyword, INSTRUCTIONS.values()))
+
+
+def find_doc(instruction: str, exact_match: bool, show_encoding: bool, show_signature: bool) -> None:
+    normalized = NORMALIZATION_REGEX.sub('', instruction.lower()).strip()
+
+    value = None
+    try:
+        if normalized[:2] == '0b':
+            value = int(normalized[2:], 2)
+        elif normalized[:2] == '0x':
+            value = int(normalized[2:], 16)
+        else:
+            value = int(normalized, 10)
+    except ValueError:
+        pass
+
+    matches = []
+
+    if value is None:
+        find_fn = find_doc_of if exact_match else find_doc_like
+
+        matches = find_fn(normalized)
+    else:
+        decoded = disassemble(value)
+
+        if decoded is not None:
+            instruction = INSTRUCTIONS[decoded.signature]
+
+            if instruction.is_documented:
+                print('Disassembled instruction: ' + str(decoded))
+                matches = [instruction]
+
+    for match in matches:
+        print_doc(match, show_encoding, show_signature)
+
+
+def find_docs(instructions: List[str], exact_match: bool, show_encoding: bool, show_signature: bool) -> None:
+    if 'all' in instructions:
+        for instruction in INSTRUCTIONS.values():
+            print_doc(instruction, show_encoding, show_signature)
+    else:
+        for instruction in instructions:
+            find_doc(instruction, exact_match, show_encoding, show_signature)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser('dpuasmdoc')
+    parser.add_argument('-match', action='store_true', help='search for every instruction with exactly the specified name')
+    parser.add_argument('-encoding', action='store_true', help='prints the binary encoding of the instructions')
+    parser.add_argument('-signature', action='store_true', help='prints instruction signatures')
+    parser.add_argument('instruction', nargs='+', help='list of requested instructions (\'all\' to display every instruction)')
+
+    args = parser.parse_args()
+
+    find_docs(args.instruction, args.match, args.encoding, args.signature)

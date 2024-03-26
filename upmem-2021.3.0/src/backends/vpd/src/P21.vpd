@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2021 - UPMEM
+ *
+ * P21 VPD base content.
+ */
+
+VPD_ADD_SHORT(fck, 700)
+VPD_ADD_SHORT(fck_min, 700)
+VPD_ADD_SHORT(fck_max, 700)
+VPD_ADD_BYTE(div_min, 2)
+VPD_ADD_BYTE(div_max, 3)
+VPD_ADD_SHORT(ltc7106_rfb1, 909)
+VPD_ADD_SHORT(ltc7106_rfb2, 10000)
+VPD_ADD_SHORT(ltc7106_vref, 1100)
+VPD_ADD_SHORT(ltc7106_vdddpu, 1200)
+VPD_ADD_SHORT(vdd_limit, 19000)
+VPD_ADD_STRING(chip_version, "v1.3")

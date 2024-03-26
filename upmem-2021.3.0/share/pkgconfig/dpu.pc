@@ -1,0 +1,12 @@
+prefix=/usr
+libdir=${prefix}/lib
+includedir=${prefix}/include/dpu
+java=${prefix}/share/java/dpu.jar
+
+Name: dpu
+Description: DPU management library
+Version: 2021.3.0
+URL: sdk.upmem.com
+
+Cflags: -I${includedir}
+Libs: -L${libdir} -ldpu
