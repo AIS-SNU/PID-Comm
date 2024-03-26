@@ -32,7 +32,7 @@ source ./upmem-2021.3.0/upmem_env.sh
 Collective communication is a communication pattern that incurs interaction between nodes within a communicator.
 PID-Comm supports eight communication primitives below:
 
-<img src="https://github.com/AIS-SNU/PID-Comm/assets/47795554/26875099-26d7-47a7-b3c9-003baad78776" width=100% height=100%>
+<img src="https://github.com/AIS-SNU/PID-Comm/assets/47795554/217239e2-66fc-4b64-bfed-bed93401cbc3" width=100% height=100%>
 
 
 ## Tutorial: PIDComm_AllReduce()
