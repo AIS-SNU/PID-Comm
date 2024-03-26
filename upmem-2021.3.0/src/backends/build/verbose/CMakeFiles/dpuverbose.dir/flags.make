@@ -6,5 +6,5 @@ C_FLAGS =  -Wall -Werror -Wextra -std=gnu11  -O3  -g -fPIC -fvisibility=hidden
 
 C_DEFINES = -Ddpuverbose_EXPORTS
 
-C_INCLUDES = -I/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src -I/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/../commons/include -I/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/../api/include/api -I/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/../api/include/lowlevel 
+C_INCLUDES = -I/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src -I/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/../commons/include -I/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/../api/include/api -I/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/../api/include/lowlevel 
 

@@ -65,10 +65,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends
+CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build
+CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -154,14 +154,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/CMakeFiles /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/gen/CMakeFiles/progress.marks
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/CMakeFiles 0
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/CMakeFiles /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/gen/CMakeFiles/progress.marks
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/clean
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/clean
 .PHONY : clean
 
 # The main clean target
@@ -171,22 +171,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/preinstall
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/preinstall
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 gen/CMakeFiles/gen_profile_header.dir/rule:
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/CMakeFiles/gen_profile_header.dir/rule
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/CMakeFiles/gen_profile_header.dir/rule
 .PHONY : gen/CMakeFiles/gen_profile_header.dir/rule
 
 # Convenience name for target.
@@ -196,12 +196,12 @@ gen_profile_header: gen/CMakeFiles/gen_profile_header.dir/rule
 
 # fast build rule for target.
 gen_profile_header/fast:
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(MAKE) -f gen/CMakeFiles/gen_profile_header.dir/build.make gen/CMakeFiles/gen_profile_header.dir/build
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(MAKE) -f gen/CMakeFiles/gen_profile_header.dir/build.make gen/CMakeFiles/gen_profile_header.dir/build
 .PHONY : gen_profile_header/fast
 
 # Convenience name for target.
 gen/CMakeFiles/gen_files.dir/rule:
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/CMakeFiles/gen_files.dir/rule
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 gen/CMakeFiles/gen_files.dir/rule
 .PHONY : gen/CMakeFiles/gen_files.dir/rule
 
 # Convenience name for target.
@@ -211,7 +211,7 @@ gen_files: gen/CMakeFiles/gen_files.dir/rule
 
 # fast build rule for target.
 gen_files/fast:
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(MAKE) -f gen/CMakeFiles/gen_files.dir/build.make gen/CMakeFiles/gen_files.dir/build
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(MAKE) -f gen/CMakeFiles/gen_files.dir/build.make gen/CMakeFiles/gen_files.dir/build
 .PHONY : gen_files/fast
 
 # Help Target
@@ -240,6 +240,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -35,7 +35,7 @@ ufi/CMakeFiles/dpu-ufi.dir/src/ufi.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/ufi/src/ufi.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/ufi/src/ufi.c
 ufi/CMakeFiles/dpu-ufi.dir/src/ufi_bit_config.c.o
  ../api/include/api/dpu_error.h
  ../api/include/api/dpu_macro_utils.h
@@ -66,7 +66,7 @@ ufi/CMakeFiles/dpu-ufi.dir/src/ufi_bit_config.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/ufi/src/ufi_bit_config.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/ufi/src/ufi_bit_config.c
 ufi/CMakeFiles/dpu-ufi.dir/src/ufi_ci.c.o
  ../api/include/api/dpu_error.h
  ../api/include/api/dpu_macro_utils.h
@@ -99,7 +99,7 @@ ufi/CMakeFiles/dpu-ufi.dir/src/ufi_ci.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/ufi/src/ufi_ci.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/ufi/src/ufi_ci.c
 ufi/CMakeFiles/dpu-ufi.dir/src/ufi_config.c.o
  ../api/include/api/dpu_error.h
  ../api/include/api/dpu_macro_utils.h
@@ -138,7 +138,7 @@ ufi/CMakeFiles/dpu-ufi.dir/src/ufi_config.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/ufi/src/ufi_config.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/ufi/src/ufi_config.c
 ufi/CMakeFiles/dpu-ufi.dir/src/ufi_debug.c.o
  ../api/include/api/dpu.h
  ../api/include/api/dpu_checkpoint.h
@@ -181,7 +181,7 @@ ufi/CMakeFiles/dpu-ufi.dir/src/ufi_debug.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/ufi/src/ufi_debug.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/ufi/src/ufi_debug.c
 ufi/CMakeFiles/dpu-ufi.dir/src/ufi_dma_wavegen_config.c.o
  ../api/include/api/dpu_error.h
  ../api/include/api/dpu_macro_utils.h
@@ -214,7 +214,7 @@ ufi/CMakeFiles/dpu-ufi.dir/src/ufi_dma_wavegen_config.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/ufi/src/ufi_dma_wavegen_config.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/ufi/src/ufi_dma_wavegen_config.c
 ufi/CMakeFiles/dpu-ufi.dir/src/ufi_memory.c.o
  ../api/include/api/dpu_error.h
  ../api/include/api/dpu_macro_utils.h
@@ -249,7 +249,7 @@ ufi/CMakeFiles/dpu-ufi.dir/src/ufi_memory.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/ufi/src/ufi_memory.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/ufi/src/ufi_memory.c
 ufi/CMakeFiles/dpu-ufi.dir/src/ufi_runner.c.o
  ../api/include/api/dpu_error.h
  ../api/include/api/dpu_macro_utils.h
@@ -282,4 +282,4 @@ ufi/CMakeFiles/dpu-ufi.dir/src/ufi_runner.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/ufi/src/ufi_runner.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/ufi/src/ufi_runner.c

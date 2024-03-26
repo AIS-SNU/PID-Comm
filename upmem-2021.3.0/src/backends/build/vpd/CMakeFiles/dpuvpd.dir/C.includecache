@@ -76,11 +76,11 @@ stdint.h
 dpu_vpd_structures.h
 -
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/E19.vpd
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/E19.vpd
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/P21.vpd
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/P21.vpd
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd.c
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd.c
 stdbool.h
 -
 stdio.h
@@ -116,11 +116,11 @@ static_verbose.h
 dpu_log_utils.h
 -
 E19.vpd
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/E19.vpd
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/E19.vpd
 P21.vpd
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/P21.vpd
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/P21.vpd
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_container.c
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_container.c
 stdint.h
 -
 stdlib.h
@@ -128,49 +128,49 @@ stdlib.h
 string.h
 -
 dpu_vpd_container.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_container.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_container.h
 dpu_vpd_decode.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.h
 dpu_vpd_encode.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_encode.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_encode.h
 dpu_vpd_structures.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_container.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_container.h
 stdint.h
 -
 dpu_vpd_structures.h
 -
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.c
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.c
 stdint.h
 -
 dpu_vpd_decode.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.h
 dpu_vpd_structures.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.h
 stdint.h
 -
 dpu_vpd_structures.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_encode.c
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_encode.c
 stdint.h
 -
 string.h
 -
 dpu_vpd_decode.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_decode.h
 dpu_vpd_encode.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_encode.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_encode.h
 dpu_vpd_structures.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_encode.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_encode.h
 stdint.h
 -
 dpu_vpd_structures.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd/src/dpu_vpd_structures.h
 

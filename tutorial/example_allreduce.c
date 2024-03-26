@@ -34,14 +34,13 @@
 #include <pidcomm.h>
 
 int main(){
-    struct dpu_set_t dpu, set, set_array[16];
+    struct dpu_set_t dpu, dpu_set, set_array[16];
     uint32_t each_dpu, alloc_type;
 
     //Hypercube Configuration
     uint32_t nr_dpus = 32; //the number of DPUs
     uint32_t dimension=3;
     uint32_t axis_len[3]; //The number of DPUs for each axis of the hypercube
-    uint32_t comm_axis[3]; //Communicator(Communication Group) Configuration
 
     //Set the hypercube configuration
     printf("nr_dpus: "); scanf("%d", &nr_dpus);
@@ -50,7 +49,6 @@ int main(){
     printf("axis_len[2]: "); scanf("%d", axis_len+2);
 
     //Set the variables for the PID-Comm.
-    comm_axis[0]=1; comm_axis[1]=0; comm_axis[2]=0;
     uint32_t start_offset=0; //Offset of source.
     uint32_t target_offset=0; //Offset of destination.
     uint32_t buffer_offset=1024*1024*32; //To ensure effective communication, PID-Comm required buffer. Please ensure that the offset of the buffer is larger than the data size.
@@ -61,8 +59,12 @@ int main(){
     uint32_t data_num_per_dpu = data_size_per_dpu/sizeof(uint32_t);
     
     //You must allocate and load a DPU bianry file.
-    DPU_ASSERT(dpu_alloc_comm(nr_dpus, NULL, &set, 1));
-    DPU_ASSERT(dpu_load(set, DPU_BINARY_USER, NULL));
+    DPU_ASSERT(dpu_alloc_comm(nr_dpus, NULL, &dpu_set, 1));
+    DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_USER, NULL));
+
+    //Set the hypercube configuration
+    hypercube_manager* hypercube_manager;
+    hypercube_manager = init_hypercube_manager(dpu_set, dimension, axis_len);
 
     //Randomly set the data
     uint32_t *original_data = (uint32_t*)calloc(data_num_per_dpu*nr_dpus, sizeof(uint32_t));
@@ -89,19 +91,20 @@ int main(){
     }
 
     //Perform Scatter
-    DPU_FOREACH_ROTATE_GROUP(set, dpu, each_dpu, nr_dpus){
+    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
     }
-    DPU_ASSERT(dpu_push_xfer(set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
 
     //Perform AllReduce by utilizing PID-Comm
-    all_reduce_CPU(set, data_size_per_dpu, start_offset, target_offset, buffer_offset, dimension, axis_len, comm_axis, sizeof(T), 0);
+    all_reduce_CPU(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
+    //all_reduce_CPU(set, data_size_per_dpu, start_offset, target_offset, buffer_offset, dimension, axis_len, comm_axis, sizeof(T), 0);
 
     //Perform Gather
-    DPU_FOREACH_ROTATE_GROUP(set, dpu, each_dpu, nr_dpus){
+    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
     }
-    DPU_ASSERT(dpu_push_xfer(set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
 
     //Functionality check
     uint32_t flag=1;
@@ -115,7 +118,7 @@ int main(){
         }
     }
     if(flag==1) printf("Functionality check success~!\n");
-    pidcomm_broadcast(set, 8, 0, original_data+1);
+    pidcomm_broadcast(dpu_set, 8, 0, original_data+1);
 
     //Print reduced result
     // for(int element=0; element<4; element++){
@@ -128,6 +131,7 @@ int main(){
 
     free(original_data);
     free(conv_data);
-    DPU_ASSERT(dpu_free(set));
+    free(hypercube_manager);
+    DPU_ASSERT(dpu_free(dpu_set));
     return 0;
 }

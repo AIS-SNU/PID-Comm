@@ -1,4 +1,4 @@
-# Install script for directory: /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/vpd
+# Install script for directory: /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/vpd
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,12 +44,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so.0.0"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/vpd/libdpuvpd.so.0.0")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/vpd/libdpuvpd.so.0.0")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so.0.0" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so.0.0")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so.0.0"
-         OLD_RPATH "/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/verbose:"
+         OLD_RPATH "/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/verbose:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so.0.0")
@@ -64,12 +64,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/vpd/libdpuvpd.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/vpd/libdpuvpd.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so"
-         OLD_RPATH "/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/verbose:"
+         OLD_RPATH "/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/verbose:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdpuvpd.so")

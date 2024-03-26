@@ -28,7 +28,7 @@ stdint.h
 dpu_types.h
 -
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/static_verbose.c
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/static_verbose.c
 stdlib.h
 -
 string.h
@@ -38,17 +38,17 @@ pthread.h
 dpu_attributes.h
 -
 static_verbose.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/static_verbose.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/static_verbose.h
 verbose_config.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_config.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_config.h
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/static_verbose.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/static_verbose.h
 verbose_control.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_control.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_control.h
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_config.c
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_config.c
 verbose_config.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_config.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_config.h
 stdlib.h
 -
 stdbool.h
@@ -58,17 +58,17 @@ string.h
 unistd.h
 -
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_config.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_config.h
 stdio.h
 -
 stdbool.h
 -
 verbose_profile.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_profile.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_profile.h
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_control.c
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_control.c
 verbose_control.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_control.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_control.h
 stdlib.h
 -
 stdio.h
@@ -82,15 +82,15 @@ time.h
 unistd.h
 -
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_control.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_control.h
 stdbool.h
 -
 dpu_helpers.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/dpu_helpers.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/dpu_helpers.h
 verbose_config.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_config.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_config.h
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_profile.c
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_profile.c
 stdlib.h
 -
 stdio.h
@@ -102,9 +102,9 @@ string.h
 stdint.h
 -
 verbose_profile.h
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_profile.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_profile.h
 
-/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/verbose/src/verbose_profile.h
+/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/verbose/src/verbose_profile.h
 stdbool.h
 -
 

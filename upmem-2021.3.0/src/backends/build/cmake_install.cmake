@@ -1,4 +1,4 @@
-# Install script for directory: /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends
+# Install script for directory: /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,12 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/gen/cmake_install.cmake")
-  include("/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/api/cmake_install.cmake")
-  include("/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/ufi/cmake_install.cmake")
-  include("/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/hw/cmake_install.cmake")
-  include("/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/verbose/cmake_install.cmake")
-  include("/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/vpd/cmake_install.cmake")
+  include("/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/gen/cmake_install.cmake")
+  include("/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/api/cmake_install.cmake")
+  include("/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/ufi/cmake_install.cmake")
+  include("/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/hw/cmake_install.cmake")
+  include("/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/verbose/cmake_install.cmake")
+  include("/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/vpd/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +56,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

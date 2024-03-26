@@ -55,8 +55,7 @@ Here is the tutorial code.
 ```
 ...
 //For supported communication primitives.
-#include <commlib.h>
-#include <common.h>
+#include <pidcomm.h>
 
 int main(){
 

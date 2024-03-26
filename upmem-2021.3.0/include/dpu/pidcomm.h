@@ -763,8 +763,39 @@ void reduce_y_CPU(struct dpu_set_t dpu_set, struct dpu_set_t dpu, dpu_arguments_
 }
 
 
-void all_to_all_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t start_offset,
-                        uint32_t target_offset, uint32_t buffer_offset, uint32_t dimension, uint32_t* axis_len, uint32_t* comm_axis){
+
+//Hypercube manager
+typedef struct {
+    struct dpu_set_t dpu_set;
+    uint32_t dimension;
+    uint32_t* axis_len;
+} hypercube_manager;
+
+
+hypercube_manager* init_hypercube_manager(struct dpu_set_t dpu_set, uint32_t dimension, uint32_t* axis_len){
+    hypercube_manager* manager = malloc(sizeof(hypercube_manager));
+
+    manager->dpu_set = dpu_set;
+    manager->dimension = dimension;
+    manager->axis_len = axis_len;
+
+    return manager;
+}
+
+
+void all_to_all_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset,
+                        uint32_t target_offset, uint32_t buffer_offset){
+
+    struct dpu_set_t dpu_set = manager->dpu_set;
+    uint32_t dimension = manager->dimension;
+    uint32_t* axis_len = manager->axis_len;
+
+    uint32_t* comm_axis = malloc(sizeof(uint32_t) * dimension);
+
+    for(uint32_t dim=0; dim<dimension; dim++){
+        comm_axis[dim] = (int)(*(comm+dim))-48;
+    }
+
 
     struct dpu_set_t dpu;
     uint32_t nr_dpus;
@@ -797,7 +828,6 @@ void all_to_all_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t
         }
         if(num_comm_rg >= 8) num_comm_rg = 8;
     }
-    printf("nr_dpu : %d, num_comm_dpu : %d, num_comm_rg : %d\n", nr_dpus, num_comm_dpu, num_comm_rg);
 
     //relocate before kernel
     if(!comm_type){
@@ -836,8 +866,6 @@ void all_to_all_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, start_offset + buffer_offset, total_data_size, DPU_XFER_DEFAULT));
-
-    //for(int j=0; j<nr_dpus; j++) { printf ("%d       ", j);for(int num=0; num<total_data_size/(sizeof(T)/* *num_comm_dpu */); num++) printf("%d   ", result[j][num]); printf("\n"); }
 
 
     //relocate after kernel
@@ -913,8 +941,18 @@ void all_to_all_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t
     }
 }
 
-void reduce_scatter_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t start_offset,
-                        uint32_t target_offset, uint32_t buffer_offset, uint32_t dimension, uint32_t* axis_len, uint32_t* comm_axis, uint32_t size){
+void reduce_scatter_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset,
+                        uint32_t target_offset, uint32_t buffer_offset, uint32_t size){
+
+    struct dpu_set_t dpu_set = manager->dpu_set;
+    uint32_t dimension = manager->dimension;
+    uint32_t* axis_len = manager->axis_len;
+
+    uint32_t* comm_axis = malloc(sizeof(uint32_t) * dimension);
+
+    for(uint32_t dim=0; dim<dimension; dim++){
+        comm_axis[dim] = (int)(*(comm+dim))-48;
+    }
 
     struct dpu_set_t dpu;
     uint32_t nr_dpus;
@@ -1051,8 +1089,6 @@ void reduce_scatter_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, start_offset + buffer_offset, total_data_size, DPU_XFER_DEFAULT));
 
-    //for(int j=0; j<nr_dpus; j++) { printf ("%d       ", j);for(int num=0; num<total_data_size/(sizeof(T)/* *num_comm_dpu */); num++) printf("%d   ", result[j][num]); printf("\n"); }
-
     reduce_scatter(&dpu_set, start_offset, target_offset, total_data_size/num_comm_dpu, comm_type, buffer_offset, dimension, axis_len, comm_axis, size);
     
 
@@ -1064,8 +1100,18 @@ void reduce_scatter_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint
 
 }
 
-void all_reduce_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t start_offset, uint32_t target_offset, \
-                    uint32_t buffer_offset, uint32_t dimension, uint32_t* axis_len, uint32_t* comm_axis, uint32_t size, uint32_t reduce_type){
+void all_reduce_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, uint32_t target_offset, \
+                    uint32_t buffer_offset, uint32_t size, uint32_t reduce_type){
+
+    struct dpu_set_t dpu_set = manager->dpu_set;
+    uint32_t dimension = manager->dimension;
+    uint32_t* axis_len = manager->axis_len;
+
+    uint32_t* comm_axis = malloc(sizeof(uint32_t) * dimension);
+
+    for(uint32_t dim=0; dim<dimension; dim++){
+        comm_axis[dim] = (int)(*(comm+dim))-48;
+    }
 
     struct dpu_set_t dpu;
     uint32_t nr_dpus;
@@ -1291,8 +1337,19 @@ void all_reduce_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t
     }
 }
 
-void all_gather_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t start_offset,
-                        uint32_t target_offset, uint32_t buffer_offset, uint32_t dimension, uint32_t* axis_len, uint32_t* comm_axis){
+void all_gather_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset,
+                        uint32_t target_offset, uint32_t buffer_offset){
+
+    struct dpu_set_t dpu_set = manager->dpu_set;
+    uint32_t dimension = manager->dimension;
+    uint32_t* axis_len = manager->axis_len;
+
+    uint32_t* comm_axis = malloc(sizeof(uint32_t) * dimension);
+
+    for(uint32_t dim=0; dim<dimension; dim++){
+        comm_axis[dim] = (int)(*(comm+dim))-48;
+    }
+
 
     struct dpu_set_t dpu;
     uint32_t nr_dpus;
@@ -1409,5 +1466,172 @@ void all_gather_CPU(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t
         DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
     }
 }
+
+
+/* void gather_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, 
+                                                        uint32_t buffer_offset, void** host_buffer){
+
+    struct dpu_set_t dpu_set = manager->dpu_set;
+    uint32_t dimension = manager->dimension;
+    uint32_t* axis_len = manager->axis_len;
+
+    uint32_t* comm_axis = malloc(sizeof(uint32_t) * dimension);
+
+    for(uint32_t dim=0; dim<dimension; dim++){
+        comm_axis[dim] = (int)(*(comm+dim))-48;
+    }
+
+    T** result = (T**) calloc(nr_dpu, sizeof(T*));
+    for(int i=0; i<nr_dpus; i++)
+        result[i] = (T*) calloc(8/sizeof(T), sizeof(T));
+    int i;
+
+    gather_x(&dpu_set, start_offset, start_offset, total_data_size, a, b, c, 0, buffer_offset, host_buffer);
+
+    i=0;
+    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
+    }
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));   
+
+} */
+
+/*void reduce_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, uint32_t target_offset, \
+                    uint32_t buffer_offset, uint32_t size, void** host_buffer){
+
+    struct dpu_set_t dpu_set = manager->dpu_set;
+    uint32_t dimension = manager->dimension;
+    uint32_t* axis_len = manager->axis_len;
+
+    uint32_t* comm_axis = malloc(sizeof(uint32_t) * dimension);
+
+    for(uint32_t dim=0; dim<dimension; dim++){
+        comm_axis[dim] = (int)(*(comm+dim))-48;
+    }
+
+    struct dpu_set_t dpu;
+    uint32_t nr_dpus;
+    DPU_ASSERT(dpu_get_nr_dpus(dpu_set, &nr_dpus));
+    dpu_arguments_comm_t* dpu_argument = (dpu_arguments_comm_t*) malloc(sizeof(dpu_arguments_comm_t) * nr_dpus);
+    uint32_t num_comm_dpu = 1;
+    uint32_t comm_type;
+
+    if(comm_axis[0] == 1){
+        comm_type = 0;
+    }
+    else comm_type = 1;
+
+    for(uint32_t dim=0; dim<dimension; dim++){
+        if(comm_axis[dim]==1){
+            num_comm_dpu *= axis_len[dim];
+        }
+    }
+
+    T** result = (T**) calloc(nr_dpus, sizeof(T*));
+    for(int i=0; i<nr_dpus; i++)
+        result[i] = (T*) calloc(total_data_size/sizeof(T), sizeof(T));
+    int i;
+
+    uint32_t num_comm_rg = 1;
+    for(uint32_t dim=0, len = 1; dim<dimension, len<8; len*=axis_len[dim], dim++){
+        if(comm_axis[dim] == 1){
+            if (axis_len[dim] <= (8/len)) num_comm_rg *= axis_len[dim];
+            else num_comm_rg *= (8/len);
+        }
+        if(num_comm_rg >= 8) num_comm_rg = 8;
+    }
+
+    //relocate before kernel
+    if(axis_len[0]==2 && axis_len[1]==2 && ( ((comm_axis[0]==0) && (comm_axis[1]==1) && (comm_axis[2]==0)) || ((comm_axis[0]==1) && (comm_axis[1]==0) && (comm_axis[2]==1)))){
+        DPU_ASSERT(dpu_load(dpu_set, DPU_RS_22, NULL));
+
+        for(int i=0; i<nr_dpus; i++){
+            dpu_argument[i].each_dpu = i;
+            dpu_argument[i].start_offset = start_offset;
+            dpu_argument[i].target_offset = start_offset;
+            dpu_argument[i].total_data_size = total_data_size;
+            dpu_argument[i].num_comm_dpu = num_comm_dpu;
+            dpu_argument[i].no_rotate = 0;
+            dpu_argument[i].comm_type = comm_type;
+            dpu_argument[i].a_length = 2;
+            dpu_argument[i].num_comm_rg = 2;
+        }
+
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
+
+        // Run kernel on DPUs
+        DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
+    }
+
+    else if(axis_len[0] < 8 && ((num_comm_rg < 8) && (num_comm_rg > 1) )){
+        DPU_ASSERT(dpu_load(dpu_set, DPU_RS_24, NULL));
+
+        for(int i=0; i<nr_dpus; i++){
+            dpu_argument[i].each_dpu = i;
+            dpu_argument[i].start_offset = start_offset;
+            dpu_argument[i].target_offset = start_offset;
+            dpu_argument[i].total_data_size = total_data_size;
+            dpu_argument[i].num_comm_dpu = num_comm_dpu;
+            dpu_argument[i].no_rotate = 0;
+            dpu_argument[i].comm_type = comm_type;
+            dpu_argument[i].a_length = axis_len[0];
+            dpu_argument[i].num_comm_rg = num_comm_rg;
+        }
+            
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
+
+        // Run kernel on DPUs
+        DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
+
+    }
+    else if(!comm_type){
+
+        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2, NULL));
+
+        for(int i=0; i<nr_dpus; i++){
+            dpu_argument[i].each_dpu = i;
+            dpu_argument[i].start_offset = start_offset;
+            dpu_argument[i].target_offset = start_offset;
+            dpu_argument[i].total_data_size = total_data_size;
+            dpu_argument[i].num_comm_dpu = num_comm_dpu;
+            dpu_argument[i].no_rotate = 0;
+            //dpu_argument[i].comm_type = comm_type;
+            dpu_argument[i].a_length = axis_len[0];
+            //dpu_argument[i].num_comm_rg = num_comm_rg;
+        }
+            
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
+
+        // Run kernel on DPUs
+        DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
+    }
+
+    // i=0;
+    // DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    //     DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
+    // }
+    // DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT)); 
+
+
+    //kernel function of All-Reduce
+    reduce(&dpu_set, start_offset, start_offset, total_data_size, comm_type, buffer_offset, dimension, axis_len, comm_axis, size, host_buffer);
+    
+
+    i=0;
+    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
+    }
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
+
+}*/
 
 #endif

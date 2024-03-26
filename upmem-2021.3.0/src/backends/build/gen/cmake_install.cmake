@@ -1,4 +1,4 @@
-# Install script for directory: /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/gen
+# Install script for directory: /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/gen
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

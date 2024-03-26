@@ -7,7 +7,7 @@ hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.o
  ../api/include/lowlevel/dpu_description.h
  ../api/include/lowlevel/dpu_hw_description.h
  ../api/include/lowlevel/dpu_target.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/commons/src/dpu_chip_description.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/commons/src/dpu_chip_description.c
 hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o
  ../api/include/api/dpu_macro_utils.h
  ../api/include/api/dpu_types.h
@@ -18,13 +18,13 @@ hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/commons/src/properties/dpu_properties.c
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/commons/src/properties/dpu_properties.h
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/commons/src/properties/dpu_properties.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/commons/src/properties/dpu_properties.h
 hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.o
  ../api/include/api/dpu_types.h
  ../api/include/lowlevel/dpu_target.h
  ../hw/src/commons/dpu_region_address_translation.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o
  ../api/include/api/dpu.h
  ../api/include/api/dpu_checkpoint.h
@@ -38,7 +38,7 @@ hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/mappings/xeon_sp/pid_comm.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/mappings/xeon_sp/pid_comm.c
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o
  ../api/include/api/dpu.h
  ../api/include/api/dpu_checkpoint.h
@@ -52,7 +52,7 @@ hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c
 hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o
  ../api/include/api/dpu_types.h
  ../api/include/lowlevel/dpu_chip_id.h
@@ -60,9 +60,9 @@ hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o
  ../api/include/lowlevel/dpu_hw_description.h
  ../api/include/lowlevel/dpu_target.h
  ../hw/src/commons/dpu_rank_ioctl.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/rank/dpu_fpga_ila.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/rank/fpga_ila.c
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_sysfs.h
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/rank/dpu_fpga_ila.h
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/rank/fpga_ila.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_sysfs.h
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o
  ../api/include/api/dpu_error.h
  ../api/include/api/dpu_macro_utils.h
@@ -101,9 +101,9 @@ hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/rank/dpu_fpga_ila.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_rank.c
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_sysfs.h
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/rank/dpu_fpga_ila.h
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_rank.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_sysfs.h
  gen/include/dpu_profile_properties.h
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o
  ../api/include/api/dpu_macro_utils.h
@@ -121,5 +121,5 @@ hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_sysfs.c
- /home/joungwook/pid_comm_tutorial_yonsei/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_sysfs.h
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_sysfs.c
+ /home/joungwook/PID-Comm/upmem-2021.3.0/src/backends/hw/src/rank/hw_dpu_sysfs.h
