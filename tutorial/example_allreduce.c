@@ -118,7 +118,6 @@ int main(){
         }
     }
     if(flag==1) printf("Functionality check success~!\n");
-    pidcomm_broadcast(dpu_set, 8, 0, original_data+1);
 
     //Print reduced result
     // for(int element=0; element<4; element++){

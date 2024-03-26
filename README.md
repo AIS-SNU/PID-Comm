@@ -61,14 +61,14 @@ int main(){
 
     ...
 
-    //Set hypercube Configuration
+    //Hypercube Configuration
     uint32_t nr_dpus = 32; //the number of DPUs
     uint32_t dimension=3; //hypercuve dimension
     uint32_t axis_len[3]; //The number of DPUs for each axis of the hypercube
-    uint32_t comm_axis[3]; //Communicator(Communication Group) Configuration
+
+    ...
 
     //Set the variables for the PID-Comm.
-    comm_axis[0]=1; comm_axis[1]=0; comm_axis[2]=0; //Set the communicator along the x-axis.
     uint32_t start_offset=0; //Offset of source.
     uint32_t target_offset=0; //Offset of destination.
     uint32_t buffer_offset=1024*1024*32; //To ensure effective communication, PID-Comm required buffer. Please ensure that the offset of the buffer is larger than the data size.
@@ -76,20 +76,28 @@ int main(){
 
     ...
 
+    //Initialize the hypercube manager
+    hypercube_manager* hypercube_manager;
+    hypercube_manager = init_hypercube_manager(dpu_set, dimension, axis_len);
+
+    ...
+
+
     //Perform Scatter
-    DPU_FOREACH_ROTATE_GROUP(set, dpu, each_dpu, nr_dpus){
+    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
     }
-    DPU_ASSERT(dpu_push_xfer(set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
 
-    //Perform AllReduce by using PID-Comm
-    all_reduce_CPU(set, data_size_per_dpu, start_offset, target_offset, buffer_offset, dimension, axis_len, comm_axis, sizeof(T), 0);
+    //Perform AllReduce by utilizing PID-Comm
+    all_reduce_CPU(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
+    //all_reduce_CPU(set, data_size_per_dpu, start_offset, target_offset, buffer_offset, dimension, axis_len, comm_axis, sizeof(T), 0);
 
     //Perform Gather
-    DPU_FOREACH_ROTATE_GROUP(set, dpu, each_dpu, nr_dpus){
+    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
     }
-    DPU_ASSERT(dpu_push_xfer(set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
 
     ...
 
