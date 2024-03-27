@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+613bec38bf6aabcf60933fa0b942a955 CMakeFiles/format
+cd01f3d3e34e10b061a36d30b48bb141 gen/CMakeFiles/gen_profile_header
+233f41ef23524c9490d99314c57c6ad7 gen/include/dpu_profile_properties.h
+e7c07b4d6ff443d824066ed9a57e50d6 ufi/CMakeFiles/ufi-format
