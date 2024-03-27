@@ -35,11 +35,11 @@ PID-Comm supports eight communication primitives below:
 <img src="https://github.com/AIS-SNU/PID-Comm/assets/47795554/217239e2-66fc-4b64-bfed-bed93401cbc3" width=100% height=100%>
 
 
-## Tutorial: PIDComm_AllReduce()
+## Tutorial: PIDComm_All_Reduce()
 Many parallel applications, such as dnn, require the reduced results from all nodes.
 The function of PIDComm_AllReduce appears as follows:
 ```
-void pidcomm_allreduce(
+void pidcomm_all_reduce(
     hypercube_manager* manager,
     char* comm_dimensions,
     int total_data_size,
