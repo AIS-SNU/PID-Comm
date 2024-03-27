@@ -98,7 +98,6 @@ int main(){
 
     //Perform AllReduce by utilizing PID-Comm
     all_reduce_CPU(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
-    //all_reduce_CPU(set, data_size_per_dpu, start_offset, target_offset, buffer_offset, dimension, axis_len, comm_axis, sizeof(T), 0);
 
     //Perform Gather
     DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
@@ -118,6 +117,8 @@ int main(){
         }
     }
     if(flag==1) printf("Functionality check success~!\n");
+
+    pidcomm_broadcast(hypercube_manager, 1024, 0, original_data);
 
     // int32_t** host_buffer = calloc(1024, sizeof(int32_t*));
     // for(int i=0; i<1024; i++){

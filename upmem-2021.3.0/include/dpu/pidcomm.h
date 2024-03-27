@@ -130,10 +130,6 @@ static void printTimer(Timer *timer, int i) {
         printf("Time (ms): \t%f\n", timer->time[i] / (1000)); 
 }
 
-//Supported Communication Primitives
-void pidcomm_broadcast(struct dpu_set_t dpu_set, uint32_t total_data_size, uint32_t start_offset, void* data){
-    DPU_ASSERT(dpu_broadcast_to(dpu_set, DPU_MRAM_HEAP_POINTER_NAME, start_offset, data, total_data_size, DPU_XFER_DEFAULT));
-}
 
 void reduce_scatter_x_CPU(struct dpu_set_t dpu_set, struct dpu_set_t dpu, dpu_arguments_comm_t* dpu_argument, uint32_t total_data_size, uint32_t start_offset,
                         uint32_t target_offset, uint32_t buffer_offset, uint32_t nr_dpus, uint32_t num_comm_dpu, int a, int b, int c, int size){
@@ -782,6 +778,11 @@ hypercube_manager* init_hypercube_manager(struct dpu_set_t dpu_set, uint32_t dim
     return manager;
 }
 
+//Supported Communication Primitives
+void pidcomm_broadcast(hypercube_manager* manager, uint32_t total_data_size, uint32_t target_offset, void* data){
+    struct dpu_set_t dpu_set = manager -> dpu_set;
+    DPU_ASSERT(dpu_broadcast_to(dpu_set, DPU_MRAM_HEAP_POINTER_NAME, target_offset, data, total_data_size, DPU_XFER_DEFAULT));
+}
 
 void all_to_all_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset,
                         uint32_t target_offset, uint32_t buffer_offset){
