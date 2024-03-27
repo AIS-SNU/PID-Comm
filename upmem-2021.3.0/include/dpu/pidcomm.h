@@ -1468,7 +1468,7 @@ void all_gather_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_
 }
 
 
-/* void gather_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, 
+void gather_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, 
                                                         uint32_t buffer_offset, void** host_buffer){
 
     struct dpu_set_t dpu_set = manager->dpu_set;
@@ -1481,12 +1481,16 @@ void all_gather_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_
         comm_axis[dim] = (int)(*(comm+dim))-48;
     }
 
-    T** result = (T**) calloc(nr_dpu, sizeof(T*));
+    struct dpu_set_t dpu;
+    uint32_t nr_dpus;
+    DPU_ASSERT(dpu_get_nr_dpus(dpu_set, &nr_dpus));
+
+    T** result = (T**) calloc(nr_dpus, sizeof(T*));
     for(int i=0; i<nr_dpus; i++)
         result[i] = (T*) calloc(8/sizeof(T), sizeof(T));
     int i;
 
-    gather_x(&dpu_set, start_offset, start_offset, total_data_size, a, b, c, 0, buffer_offset, host_buffer);
+    gather_x(&dpu_set, start_offset, start_offset, total_data_size, axis_len[0], axis_len[1], axis_len[2], 0, buffer_offset, host_buffer);
 
     i=0;
     DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
@@ -1494,7 +1498,7 @@ void all_gather_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));   
 
-} */
+}
 
 /*void reduce_CPU(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, uint32_t target_offset, \
                     uint32_t buffer_offset, uint32_t size, void** host_buffer){

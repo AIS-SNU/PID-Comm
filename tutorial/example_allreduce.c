@@ -119,14 +119,24 @@ int main(){
     }
     if(flag==1) printf("Functionality check success~!\n");
 
-    //Print reduced result
-    // for(int element=0; element<4; element++){
-    //     for(int i=0; i<nr_dpus; i++){
-    //         printf("dpu%d: %2d", i, original_data[i*data_num_per_dpu + element]);
-    //         if(i!=nr_dpus-1) printf(", ");
-    //     }
-    //     printf("\n");
+    // int32_t** host_buffer = calloc(1024, sizeof(int32_t*));
+    // for(int i=0; i<1024; i++){
+    //     host_buffer[i] = calloc(1024*1024, sizeof(int32_t));
     // }
+    // gather_CPU(hypercube_manager, "100", data_size_per_dpu, 0, 1024*1024*16, host_buffer);
+    // printf("original_data: %d, %d, %d, %d\n", original_data[0], original_data[1], original_data[data_num_per_dpu], original_data[data_num_per_dpu+1]);
+    // printf("host_buffer: %d, %d, %d, %d\n", host_buffer[0][0], host_buffer[0][1], host_buffer[1][0], host_buffer[1][1]);
+    // for(int i=0; i<1024; i++) free((host_buffer[i]));
+    // free(host_buffer);
+
+    //Print reduced result
+    /*for(int element=0; element<4; element++){
+        for(int i=0; i<nr_dpus; i++){
+            printf("dpu%d: %2d", i, original_data[i*data_num_per_dpu + element]);
+            if(i!=nr_dpus-1) printf(", ");
+        }
+        printf("\n");
+    }*/
 
     free(original_data);
     free(conv_data);

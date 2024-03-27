@@ -116,7 +116,7 @@ int main(){
 }
 ```
 
-Script is available to test the tutorial code.
+A script is available to test the tutorial code.
 ```
 cd tutorial;
 ./AllReduce_demo.sh;
