@@ -118,8 +118,6 @@ int main(){
     }
     if(flag==1) printf("Functionality check success~!\n");
 
-    pidcomm_broadcast(hypercube_manager, 1024, 0, original_data);
-
     // int32_t** host_buffer = calloc(1024, sizeof(int32_t*));
     // for(int i=0; i<1024; i++){
     //     host_buffer[i] = calloc(1024*1024, sizeof(int32_t));
