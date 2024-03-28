@@ -69,7 +69,7 @@ uint32_t target_offset=0; //Offset of destination.
 uint32_t data_size_per_dpu = 64*axis_len[0]; //data size for each nodes
 uint32_t buffer_offset=1024*1024*32; //For effective communication, PID-Comm required buffer. The buffer's offset must be greater than the sum of the start_offset and the data_size_per_dpu.
 ```
-Allocate the DPUs and initialize the hypercube manager.
+Allocate the DPUs and then initialize the hypercube manager.
 ```
 DPU_ASSERT(dpu_alloc(nr_dpus, NULL, &dpu_set));
 hypercube_manager* hypercube_manager = init_hypercube_manager(dpu_set, dimension, axis_len);
