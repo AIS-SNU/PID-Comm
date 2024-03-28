@@ -37,16 +37,13 @@ int main(){
     struct dpu_set_t dpu, dpu_set, set_array[16];
     uint32_t each_dpu, alloc_type;
 
-    //Hypercube Configuration
-    uint32_t nr_dpus = 32; //the number of DPUs
+    //Set the hypercube Configuration
+    uint32_t nr_dpus = 1024; //the number of DPUs
     uint32_t dimension=3;
-    uint32_t axis_len[3]; //The number of DPUs for each axis of the hypercube
-
-    //Set the hypercube configuration
-    printf("nr_dpus: "); scanf("%d", &nr_dpus);
-    printf("axis_len[0]: "); scanf("%d", axis_len+0);
-    printf("axis_len[1]: "); scanf("%d", axis_len+1);
-    printf("axis_len[2]: "); scanf("%d", axis_len+2);
+    uint32_t axis_len[dimension]; //The number of DPUs for each axis of the hypercube
+    axis_len[0]=32; //x-axis
+    axis_len[1]=32; //y-axis
+    axis_len[2]=1;  //z-axis
 
     //Set the variables for the PID-Comm.
     uint32_t start_offset=0; //Offset of source.
@@ -91,7 +88,7 @@ int main(){
     }
 
     //Perform Scatter
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
@@ -100,7 +97,7 @@ int main(){
     pidcomm_all_reduce(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
 
     //Perform Gather
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));

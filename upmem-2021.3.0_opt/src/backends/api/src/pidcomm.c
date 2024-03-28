@@ -216,7 +216,7 @@ void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_dat
             dpu_argument[i].a_length = axis_len[0];
         }
 
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));     
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -225,7 +225,7 @@ void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_dat
         DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
     }
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
@@ -233,7 +233,7 @@ void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_dat
     all_to_all(&dpu_set, start_offset, start_offset, total_data_size/num_comm_dpu, comm_type, buffer_offset, dimension, axis_len, comm_axis);
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, start_offset + buffer_offset, total_data_size, DPU_XFER_DEFAULT));
@@ -254,7 +254,7 @@ void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_dat
             dpu_argument[i].a_length = axis_len[0];
             dpu_argument[i].num_comm_rg = 2;
         }
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
                 
         }
@@ -277,7 +277,7 @@ void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_dat
             dpu_argument[i].a_length = axis_len[0];
             dpu_argument[i].num_comm_rg = num_comm_rg;
         }
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
                 
         }
@@ -302,7 +302,7 @@ void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_dat
 
         
 
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
                 
         }
@@ -374,7 +374,7 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
             dpu_argument[i].num_comm_rg = 2;
         }
 
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -398,7 +398,7 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
             dpu_argument[i].num_comm_rg = num_comm_rg;
         }
             
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -423,7 +423,7 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
             dpu_argument[i].num_comm_rg = num_comm_rg;
         }
             
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -444,7 +444,7 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
             dpu_argument[i].a_length = axis_len[0];
         }
 
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             dpu_argument[i].each_dpu = i;
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
@@ -455,7 +455,7 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
     }
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, start_offset + buffer_offset, total_data_size, DPU_XFER_DEFAULT));
@@ -464,7 +464,7 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
     
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
@@ -534,7 +534,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
             dpu_argument[i].num_comm_rg = 2;
         }
 
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -558,7 +558,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
             dpu_argument[i].num_comm_rg = num_comm_rg;
         }
             
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -583,7 +583,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
             dpu_argument[i].num_comm_rg = num_comm_rg;
         }
             
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -593,7 +593,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
     }
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
@@ -604,7 +604,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
     
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
@@ -625,7 +625,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
             dpu_argument[i].a_length = axis_len[0];
             dpu_argument[i].num_comm_rg = 2;
         }
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
                 
         }
@@ -650,7 +650,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
             dpu_argument[i].num_comm_rg = num_comm_rg;
         }
             
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -675,7 +675,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
             dpu_argument[i].num_comm_rg = num_comm_rg;
         }
             
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -698,7 +698,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
             dpu_argument[i].num_comm_rg = num_comm_rg;
         }
 
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -764,7 +764,7 @@ void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_da
     all_gather(&dpu_set, start_offset, start_offset, total_data_size/num_comm_dpu, comm_type, buffer_offset, dimension, axis_len, comm_axis);
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
@@ -784,7 +784,7 @@ void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_da
             dpu_argument[i].a_length = axis_len[0];
             dpu_argument[i].num_comm_rg = 2;
         }
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
                 
         }
@@ -807,7 +807,7 @@ void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_da
             dpu_argument[i].a_length = axis_len[0];
             dpu_argument[i].num_comm_rg = num_comm_rg;
         }
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -829,7 +829,7 @@ void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_da
             dpu_argument[i].a_length = axis_len[0];
         }
 
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -864,7 +864,7 @@ void pidcomm_gather(hypercube_manager* manager, char* comm, uint32_t total_data_
     gather_x(&dpu_set, start_offset, start_offset, total_data_size, axis_len[0], axis_len[1], axis_len[2], 0, buffer_offset, host_buffer);
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));   
@@ -931,7 +931,7 @@ void pidcomm_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_
             dpu_argument[i].a_length = axis_len[0];
         }
             
-        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
             DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
         }
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
@@ -941,7 +941,7 @@ void pidcomm_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_
     }
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, total_data_size, DPU_XFER_DEFAULT));
@@ -952,7 +952,7 @@ void pidcomm_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_
     
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
@@ -1010,7 +1010,7 @@ void pidcomm_scatter(hypercube_manager* manager, char* comm, uint32_t total_data
     
 
     i=0;
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, nr_dpus){
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));

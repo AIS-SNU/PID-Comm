@@ -2,11 +2,9 @@
 This repository contains the tutorial code for PID-Comm, a fast and flexible collective communication framework for Commodity Processing-in-DIMMs.
 Please cite the paper for more information.
 
-## System Configuration
-- 4 DDR4 channels, each with two UPMEM DIMMs
-- 1 DDR4 channel with two 64GB DDR4-2400 DIMMs
-- Intel Xeon Gold 5215 CPU
-- Ubuntu 18.04 (x64)
+## Required Hardware
+- Multicore x86_64 CPU with support for AVX512 instructions.
+- DDR4 channels equipped with UPMEM DIMMs
 
 ## Prerequisites
 - g++
