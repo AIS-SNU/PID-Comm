@@ -5,6 +5,7 @@ api/include/api/dpu_error.h
 api/include/api/dpu_macro_utils.h
 api/include/api/dpu_types.h
 api/include/api/pidcomm.h
+api/include/api/support.h
 api/include/lowlevel/dpu_chip_id.h
 api/include/lowlevel/dpu_config.h
 api/include/lowlevel/dpu_custom.h
@@ -60,6 +61,7 @@ api/src/include/profiling_internals.h
 api/src/include/runtime_info.h
 api/src/pidcomm.c
 api/src/runtime_info.c
+api/src/support.c
 commons/include/dpu_attributes.h
 commons/include/dpu_helpers.h
 commons/include/dpu_log_utils.h
