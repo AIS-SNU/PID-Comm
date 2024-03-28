@@ -778,12 +778,22 @@ dpu_RNS_symbol(
 }
 
 //gather
-__API_SYMBOL__ dpu_error_t
+/*__API_SYMBOL__ dpu_error_t
 gather(struct dpu_set_t *comm_dpu_set, uint32_t src_start_offset, uint32_t dst_start_offset, uint32_t byte_length, uint32_t comm_type, uint32_t communication_buffer_offset, uint32_t dimension, uint32_t* axis_len, uint32_t* comm_axis, void ** host_buffer)
 {
     dpu_error_t status = DPU_OK;
     struct dpu_rank_t *rank_set = comm_dpu_set->list.ranks[0];
     status = rank_set->handler_context->handler->gather_rns(comm_dpu_set, src_start_offset, dst_start_offset, byte_length, comm_type, communication_buffer_offset, dimension, axis_len, comm_axis, host_buffer);
+    return status;
+}*/
+
+__API_SYMBOL__ dpu_error_t
+gather(struct dpu_set_t *comm_dpu_set, uint32_t src_start_offset, uint32_t dst_start_offset, uint32_t byte_length, uint32_t alltoall_comm_type, uint32_t communication_buffer_offset, uint32_t dimension, uint32_t* axis_len, uint32_t* comm_axis, void ** host_buffer)
+{
+    dpu_error_t status = DPU_OK;
+    dimension+=0; alltoall_comm_type+=0; comm_axis[0]+=0;
+    struct dpu_rank_t *rank_set = comm_dpu_set->list.ranks[0];
+    status = rank_set->handler_context->handler->gather_x_rns(comm_dpu_set, src_start_offset, dst_start_offset, byte_length, axis_len[0], axis_len[1], axis_len[2], 0, communication_buffer_offset, host_buffer);
     return status;
 }
 

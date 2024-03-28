@@ -861,7 +861,7 @@ void pidcomm_gather(hypercube_manager* manager, char* comm, uint32_t total_data_
         result[i] = (T*) calloc(8/sizeof(T), sizeof(T));
     int i;
 
-    gather_x(&dpu_set, start_offset, start_offset, total_data_size, axis_len[0], axis_len[1], axis_len[2], 0, buffer_offset, host_buffer);
+    gather(&dpu_set, start_offset, start_offset, total_data_size, 0, buffer_offset, dimension, axis_len, comm_axis, host_buffer);
 
     i=0;
     DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){

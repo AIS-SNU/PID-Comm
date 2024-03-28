@@ -57,6 +57,7 @@ int main(){
     
     //You must allocate and load a DPU bianry file.
     DPU_ASSERT(dpu_alloc_comm(nr_dpus, NULL, &dpu_set, 1));
+    //DPU_ASSERT(dpu_alloc(nr_dpus, NULL, &dpu_set));
     DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_USER, NULL));
 
     //Set the hypercube configuration
