@@ -60,6 +60,70 @@
 #define DPU_AR_24 "./bin/ar_24"
 #endif
 
+#ifndef DPU_BINARY_AR_2_INT8
+#define DPU_BINARY_AR_2_INT8 "./bin/dpu_ar_2_int8"
+#endif
+
+#ifndef DPU_BINARY_RELOCATE_2_INT8
+#define DPU_BINARY_RELOCATE_2_INT8 "./bin/dpu_relocate_inplace_int8"
+#endif
+
+#ifndef DPU_BINARY_AR_2_Y_INT8
+#define DPU_BINARY_AR_2_Y_INT8 "./bin/dpu_ar_2_y_int8"
+#endif
+
+#ifndef DPU_ALLTOALL_X_2_INT8
+#define DPU_ALLTOALL_X_2_INT8 "./bin/alltoall_x_2_int8"
+#endif
+
+#ifndef DPU_ALLTOALL_22_INT8
+#define DPU_ALLTOALL_22_INT8 "./bin/alltoall_22_int8"
+#endif
+
+#ifndef DPU_RS_24_INT8
+#define DPU_RS_24_INT8 "./bin/rs_24_int8"
+#endif
+
+#ifndef DPU_RS_22_INT8
+#define DPU_RS_22_INT8 "./bin/rs_22_int8"
+#endif
+
+#ifndef DPU_AR_24_INT8
+#define DPU_AR_24_INT8 "./bin/ar_24_int8"
+#endif
+
+#ifndef DPU_BINARY_AR_2_INT32
+#define DPU_BINARY_AR_2_INT32 "./bin/dpu_ar_2_int32"
+#endif
+
+#ifndef DPU_BINARY_RELOCATE_2_INT32
+#define DPU_BINARY_RELOCATE_2_INT32 "./bin/dpu_relocate_inplace_int32"
+#endif
+
+#ifndef DPU_BINARY_AR_2_Y_INT32
+#define DPU_BINARY_AR_2_Y_INT32 "./bin/dpu_ar_2_y_int32"
+#endif
+
+#ifndef DPU_ALLTOALL_X_2_INT32
+#define DPU_ALLTOALL_X_2_INT32 "./bin/alltoall_x_2_int32"
+#endif
+
+#ifndef DPU_ALLTOALL_22_INT32
+#define DPU_ALLTOALL_22_INT32 "./bin/alltoall_22_int32"
+#endif
+
+#ifndef DPU_RS_24_INT32
+#define DPU_RS_24_INT32 "./bin/rs_24_int32"
+#endif
+
+#ifndef DPU_RS_22_INT32
+#define DPU_RS_22_INT32 "./bin/rs_22_int32"
+#endif
+
+#ifndef DPU_AR_24_INT32
+#define DPU_AR_24_INT32 "./bin/ar_24_int32"
+#endif
+
 //Hypercube manager
 typedef struct {
     struct dpu_set_t dpu_set;
@@ -290,7 +354,8 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
     printf("nr_dpu : %d, num_comm_dpu : %d, num_comm_rg : %d\n", nr_dpus, num_comm_dpu, num_comm_rg);
 
     if(axis_len[0]==2 && axis_len[1]==2 && ( ((comm_axis[0]==0) && (comm_axis[1]==1) && (comm_axis[2]==0)) || ((comm_axis[0]==1) && (comm_axis[1]==0) && (comm_axis[2]==1)))){
-        DPU_ASSERT(dpu_load(dpu_set, DPU_RS_22, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_RS_22_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_RS_22_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -314,7 +379,8 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
     }
 
     else if(axis_len[0] < 8 && ((num_comm_rg < 8) && (num_comm_rg > 1) )){
-        DPU_ASSERT(dpu_load(dpu_set, DPU_RS_24, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_RS_24_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_RS_24_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -339,7 +405,8 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
     //relocate before kernel
     else if(!comm_type){
 
-        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -362,7 +429,8 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
         DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
     }
     else{
-        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].start_offset = start_offset;
@@ -450,7 +518,8 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
 
     //relocate before kernel
     if(axis_len[0]==2 && axis_len[1]==2 && ( ((comm_axis[0]==0) && (comm_axis[1]==1) && (comm_axis[2]==0)) || ((comm_axis[0]==1) && (comm_axis[1]==0) && (comm_axis[2]==1)))){
-        DPU_ASSERT(dpu_load(dpu_set, DPU_RS_22, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_RS_22_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_RS_22_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -474,7 +543,8 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
     }
 
     else if(axis_len[0] < 8 && ((num_comm_rg < 8) && (num_comm_rg > 1) )){
-        DPU_ASSERT(dpu_load(dpu_set, DPU_RS_24, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_RS_24_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_RS_24_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -499,7 +569,8 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
     }
     else if(!comm_type){
 
-        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -542,7 +613,8 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
 
     //relocate before kernel
     if(axis_len[0]==2 && axis_len[1]==2 && ((comm_axis[0]==1 && comm_axis[1]==0 && comm_axis[2]==1) || (comm_axis[0]==0 && comm_axis[1]==1 && comm_axis[2]==0))){
-        DPU_ASSERT(dpu_load(dpu_set, DPU_ALLTOALL_22, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_ALLTOALL_22_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_ALLTOALL_22_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -566,7 +638,8 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
     }
 
     else if(axis_len[0] < 8 && ((num_comm_rg < 8) && (num_comm_rg > 1) )){
-        DPU_ASSERT(dpu_load(dpu_set, DPU_AR_24, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_AR_24_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_AR_24_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -591,7 +664,8 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
     }
     else if(!comm_type){
 
-        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_AR_2, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_AR_2_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_AR_2_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -614,7 +688,8 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
         DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
     }
     else{
-        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_AR_2_Y, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_AR_2_Y_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_AR_2_Y_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -849,7 +924,8 @@ void pidcomm_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_
     //relocate before kernel
     if(!comm_type){
 
-        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2, NULL));
+        if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2_INT8, NULL));
+        else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_2_INT32, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -891,7 +967,7 @@ void pidcomm_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_
 
 //total data size is size of data each dpu will receive
 void pidcomm_scatter(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, uint32_t target_offset, \
-                    uint32_t buffer_offset, uint32_t size, void** host_buffer){
+                    uint32_t buffer_offset, void** host_buffer){
 
     struct dpu_set_t dpu_set = manager->dpu_set;
     uint32_t dimension = manager->dimension;
@@ -936,7 +1012,7 @@ void pidcomm_scatter(hypercube_manager* manager, char* comm, uint32_t total_data
     }
 
     //kernel function of All-Reduce
-    scatter(&dpu_set, start_offset, start_offset, total_data_size, comm_type, buffer_offset, dimension, axis_len, comm_axis, size, host_buffer);
+    scatter(&dpu_set, start_offset, start_offset, total_data_size, comm_type, buffer_offset, dimension, axis_len, comm_axis, host_buffer);
 
     i=0;
     DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
