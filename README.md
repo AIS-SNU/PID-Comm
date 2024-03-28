@@ -16,14 +16,14 @@ Please cite the paper for more information.
 - UPMEM SDK driver (version 2021.3.0, available from the [UPMEM website] (https://sdk.upmem.com/).)
 
 ## Directories
-- pidcomm_lib/ #Implementations of supported communication primitives
 - tutorial/ #Turorial code for PID-Comm
-- upmem-2021.3.0/ #Modified UPMEM driver for PID-Comm
+- upmem-2021.3.0_opt/ #Modified UPMEM driver for PID-Comm
+- upmem-2021.3.0_opt/include/dpu/pidcomm_lib/ #Implementations of supported communication primitives
 
 ## Environment Setup
 ```
 cd {your PID-Comm dir};
-source ./upmem-2021.3.0/upmem_env.sh
+source ./upmem-2021.3.0_opt/upmem_env.sh
 ```
 
 ## What is Collective Communication?
