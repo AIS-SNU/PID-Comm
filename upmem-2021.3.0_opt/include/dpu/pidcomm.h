@@ -1007,7 +1007,6 @@ void pidcomm_scatter(hypercube_manager* manager, char* comm, uint32_t total_data
 
     //kernel function of All-Reduce
     scatter(&dpu_set, start_offset, start_offset, total_data_size, comm_type, buffer_offset, dimension, axis_len, comm_axis, size, host_buffer);
-    
 
     i=0;
     DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){

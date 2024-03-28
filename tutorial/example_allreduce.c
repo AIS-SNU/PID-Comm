@@ -49,8 +49,6 @@ int main(){
     uint32_t start_offset=0; //Offset of source.
     uint32_t target_offset=0; //Offset of destination.
     uint32_t buffer_offset=1024*1024*32; //To ensure effective communication, PID-Comm required buffer. Please ensure that the offset of the buffer is larger than the data size.
-    dpu_arguments_comm_t dpu_argument[nr_dpus];
-
 
     uint32_t data_size_per_dpu = 64*axis_len[0]; //data size for each nodes
     uint32_t data_num_per_dpu = data_size_per_dpu/sizeof(uint32_t);
@@ -61,8 +59,7 @@ int main(){
     DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_USER, NULL));
 
     //Set the hypercube configuration
-    hypercube_manager* hypercube_manager;
-    hypercube_manager = init_hypercube_manager(dpu_set, dimension, axis_len);
+    hypercube_manager* hypercube_manager = init_hypercube_manager(dpu_set, dimension, axis_len);;
 
     //Randomly set the data
     uint32_t *original_data = (uint32_t*)calloc(data_num_per_dpu*nr_dpus, sizeof(uint32_t));
@@ -88,7 +85,7 @@ int main(){
         }
     }
 
-    //Perform Scatter
+    //Send the data for each DPUs
     DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
     }
@@ -97,7 +94,7 @@ int main(){
     //Perform AllReduce by utilizing PID-Comm
     pidcomm_all_reduce(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
 
-    //Perform Gather
+    //Receive the data for each DPUs
     DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
     }
@@ -109,22 +106,12 @@ int main(){
         for(uint32_t j=0; j<data_num_per_dpu; j++){
             uint32_t check_index = i * data_num_per_dpu + j;
             if(original_data[check_index] != conv_data[check_index] && flag>0){
-                flag-=1;
+                flag--;
                 printf("error exist! i=%d, j=%d, orig_value=%d, conv_value=%d\n", i, j, original_data[check_index], conv_data[check_index]);
             }
         }
     }
     if(flag==1) printf("Functionality check success~!\n");
-
-    // int32_t** host_buffer = calloc(1024, sizeof(int32_t*));
-    // for(int i=0; i<1024; i++){
-    //     host_buffer[i] = calloc(1024*1024, sizeof(int32_t));
-    // }
-    // gather_CPU(hypercube_manager, "100", data_size_per_dpu, 0, 1024*1024*16, host_buffer);
-    // printf("original_data: %d, %d, %d, %d\n", original_data[0], original_data[1], original_data[data_num_per_dpu], original_data[data_num_per_dpu+1]);
-    // printf("host_buffer: %d, %d, %d, %d\n", host_buffer[0][0], host_buffer[0][1], host_buffer[1][0], host_buffer[1][1]);
-    // for(int i=0; i<1024; i++) free((host_buffer[i]));
-    // free(host_buffer);
 
     //Print reduced result
     /*for(int element=0; element<4; element++){

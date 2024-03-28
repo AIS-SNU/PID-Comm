@@ -49,71 +49,37 @@ void pidcomm_all_reduce(
 
 Assume that all eight nodes have a list [0, 1, 2, 3].
 When we use pidcomm_allreduce(), each of the eight nodes will have a list [0, 8, 16, 24].
-Here is the tutorial code below:
+Now, let's learn how to use PID-Comm.
+First, include the PID-Comm header files with ```#include <pidcomm.h>```.
+After the previous step, you need to configure the hypercube settings.
+Here is an example:
 ```
-...
-//For supported communication primitives.
-#include <pidcomm.h>
-
-int main(){
-
-    ...
-
-    //Hypercube Configuration
-    uint32_t nr_dpus = 32; //the number of DPUs
-    uint32_t dimension=3; //hypercuve dimension
-    uint32_t axis_len[3]; //The number of DPUs for each axis of the hypercube
-
-    ...
-
-    //Set the variables for the PID-Comm.
-    uint32_t start_offset=0; //Offset of source.
-    uint32_t target_offset=0; //Offset of destination.
-    uint32_t buffer_offset=1024*1024*32; //To ensure effective communication, PID-Comm required buffer. Please ensure that the offset of the buffer is larger than the data size.
-    dpu_arguments_comm_t dpu_argument[nr_dpus];
-
-    ...
-
-    //Initialize the hypercube manager
-    hypercube_manager* hypercube_manager;
-    hypercube_manager = init_hypercube_manager(dpu_set, dimension, axis_len);
-
-    ...
-
-
-    //Perform Scatter
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
-        DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
-    }
-    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
-
-    //Perform AllReduce by utilizing PID-Comm
-    pidcomm_all_reduce(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
-
-    //Perform Gather
-    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
-        DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
-    }
-    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
-
-    ...
-
-    //Print reduced result
-    for(int element=0; element<4; element++){
-        for(int i=0; i<nr_dpus; i++){
-            printf("dpu%d: %2d", i, original_data[i*data_num_per_dpu + element]);
-            if(i!=nr_dpus-1) printf(", ");
-        }
-        printf("\n");
-    }
-
-    ...
-
-    return 0;
-}
+uint32_t nr_dpus = 1024; //The number of DPUs
+uint32_t dimension=3; //Dimension of the hypercube
+uint32_t axis_len[dimension]; //The number of DPUs for each axis of the hypercube
+axis_len[0]=32; //x-axis
+axis_len[1]=32; //y-axis
+axis_len[2]=1;  //z-axis
+```
+Then, please set the remaining variables required for the PID-Comm.
+```
+uint32_t start_offset=0; //Offset of source.
+uint32_t target_offset=0; //Offset of destination.
+uint32_t data_size_per_dpu = 64*axis_len[0]; //data size for each nodes
+uint32_t buffer_offset=1024*1024*32; //For effective communication, PID-Comm required buffer. The buffer's offset must be greater than the sum of the start_offset and the data_size_per_dpu.
+```
+Allocate the DPUs and initialize the hypercube manager.
+```
+DPU_ASSERT(dpu_alloc(nr_dpus, NULL, &dpu_set));
+hypercube_manager* hypercube_manager = init_hypercube_manager(dpu_set, dimension, axis_len);
+```
+Now PID-Comm's settings have been completed.
+You are free to use it in your applications~!
+```
+pidcomm_all_reduce(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
 ```
 
-A script is available to test the tutorial code.
+A script is also available to test the tutorial code.
 ```
 cd tutorial;
 ./AllReduce_demo.sh;
