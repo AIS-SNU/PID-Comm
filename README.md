@@ -49,6 +49,8 @@ void pidcomm_all_reduce(
 
 Assume that all eight nodes have a list [0, 1, 2, 3].
 When we use pidcomm_allreduce(), each of the eight nodes will have a list [0, 8, 16, 24].
+
+
 Now, let's learn how to use PID-Comm.
 First, include the PID-Comm header files with ```#include <pidcomm.h>```.
 After the previous step, you need to configure the hypercube settings.
