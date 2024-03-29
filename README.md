@@ -18,7 +18,8 @@ Please cite the paper for more information.
 ## Directories
 - tutorial/ #Turorial code for PID-Comm
 - upmem-2021.3.0_opt/ #Modified UPMEM driver for PID-Comm
-- upmem-2021.3.0_opt/include/dpu/pidcomm_lib/ #Implementations of supported communication primitives
+- upmem-2021.3.0_opt/include/dpu/pidcomm_lib.h #Declarations of supported communication primitives
+- pidcomm_lib/ #Implementations of supported communication primitives and DPU binary codes.
 
 ## Environment Setup
 ```
