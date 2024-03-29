@@ -107,7 +107,7 @@ int main(){
             uint32_t check_index = i * data_num_per_dpu + j;
             if(original_data[check_index] != conv_data[check_index] && flag>0){
                 flag--;
-                printf("error exist! i=%d, j=%d, orig_value=%d, conv_value=%d\n", i, j, original_data[check_index], conv_data[check_index]);
+                printf("error exists. i=%d, j=%d, orig_value=%d, conv_value=%d\n", i, j, original_data[check_index], conv_data[check_index]);
             }
         }
     }
