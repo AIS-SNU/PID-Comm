@@ -68,7 +68,7 @@ int main(){
         original_data[i] = rand() % 16;
     }
 
-    //Perform conventional AllReduce in the host CPU.
+    //For sanity check, perform conventional AllReduce in the host CPU.
     uint32_t *conv_data = (uint32_t*)calloc(data_num_per_dpu*nr_dpus, sizeof(uint32_t));
     #pragma omp parallel for collapse(2)
     for(uint32_t jk=0; jk<axis_len[1]*axis_len[2]; jk++){

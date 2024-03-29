@@ -51,7 +51,7 @@ else()
 endif()
 
 # Common compile flags for our libraries
-set( STRICT_COMPILE_FLAGS "-Wall -Werror -Wextra -std=gnu11" )
+set( STRICT_COMPILE_FLAGS "-Wall -Wextra -std=gnu11" )
 set( CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} ${STRICT_COMPILE_FLAGS} ${COVERAGE_FLAGS} -O3  -g" )
 set( CMAKE_C_VISIBILITY_PRESET hidden )
 

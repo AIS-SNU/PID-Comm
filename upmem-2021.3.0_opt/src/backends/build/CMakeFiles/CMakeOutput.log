@@ -28,13 +28,13 @@ The CXX compiler identification is GNU, found in "/home/joungwook/PID-Comm/upmem
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_f354f/fast && /usr/bin/make -f CMakeFiles/cmTC_f354f.dir/build.make CMakeFiles/cmTC_f354f.dir/build
+Run Build Command(s):/usr/bin/make cmTC_ee38e/fast && /usr/bin/make -f CMakeFiles/cmTC_ee38e.dir/build.make CMakeFiles/cmTC_ee38e.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f354f.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_f354f.dir/testCCompiler.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_f354f
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f354f.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_f354f.dir/testCCompiler.c.o  -o cmTC_f354f 
+Building C object CMakeFiles/cmTC_ee38e.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ee38e.dir/testCCompiler.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_ee38e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee38e.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_ee38e.dir/testCCompiler.c.o  -o cmTC_ee38e 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -42,10 +42,10 @@ make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/back
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_6c02a/fast && /usr/bin/make -f CMakeFiles/cmTC_6c02a.dir/build.make CMakeFiles/cmTC_6c02a.dir/build
+Run Build Command(s):/usr/bin/make cmTC_e46a1/fast && /usr/bin/make -f CMakeFiles/cmTC_e46a1.dir/build.make CMakeFiles/cmTC_e46a1.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc   -v -o CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Building C object CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.17/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 OFFLOAD_TARGET_NAMES=nvptx-none:hsa
@@ -54,8 +54,8 @@ Target: x86_64-linux-gnu
 Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-nrQql7/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
 gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~18.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccOsk90d.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccQHtekg.s
 GNU C17 (Ubuntu 9.4.0-1ubuntu1~18.04) version 9.4.0 (x86_64-linux-gnu)
 	compiled by GNU C version 9.4.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
 
@@ -75,15 +75,15 @@ GNU C17 (Ubuntu 9.4.0-1ubuntu1~18.04) version 9.4.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 2d9575fa907299cba529616286f8f3bc
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o /tmp/ccOsk90d.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o /tmp/ccQHtekg.s
 GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-Linking C executable cmTC_6c02a
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c02a.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o  -o cmTC_6c02a 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_e46a1
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e46a1.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o  -o cmTC_e46a1 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
@@ -95,9 +95,9 @@ Thread model: posix
 gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6c02a' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMcPisk.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_6c02a /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6c02a' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e46a1' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmAhACl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e46a1 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e46a1' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -121,10 +121,10 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_6c02a/fast && /usr/bin/make -f CMakeFiles/cmTC_6c02a.dir/build.make CMakeFiles/cmTC_6c02a.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_e46a1/fast && /usr/bin/make -f CMakeFiles/cmTC_e46a1.dir/build.make CMakeFiles/cmTC_e46a1.dir/build]
   ignore line: [make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
+  ignore line: [Building C object CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
@@ -133,8 +133,8 @@ Parsed C implicit link information from above output:
   ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-nrQql7/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~18.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccOsk90d.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccQHtekg.s]
   ignore line: [GNU C17 (Ubuntu 9.4.0-1ubuntu1~18.04) version 9.4.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
   ignore line: []
@@ -154,15 +154,15 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 2d9575fa907299cba529616286f8f3bc]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o /tmp/ccOsk90d.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o /tmp/ccQHtekg.s]
   ignore line: [GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking C executable cmTC_6c02a]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c02a.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o  -o cmTC_6c02a ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_e46a1]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e46a1.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o  -o cmTC_e46a1 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
@@ -174,13 +174,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6c02a' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMcPisk.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_6c02a /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e46a1' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmAhACl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e46a1 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccMcPisk.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccmAhACl.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -198,7 +198,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_6c02a] ==> ignore
+    arg [cmTC_e46a1] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
@@ -210,7 +210,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
-    arg [CMakeFiles/cmTC_6c02a.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_e46a1.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -240,13 +240,13 @@ Parsed C implicit link information from above output:
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_e27d2/fast && /usr/bin/make -f CMakeFiles/cmTC_e27d2.dir/build.make CMakeFiles/cmTC_e27d2.dir/build
+Run Build Command(s):/usr/bin/make cmTC_93bf9/fast && /usr/bin/make -f CMakeFiles/cmTC_93bf9.dir/build.make CMakeFiles/cmTC_93bf9.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e27d2.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_e27d2.dir/testCXXCompiler.cxx.o -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_e27d2
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e27d2.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_e27d2.dir/testCXXCompiler.cxx.o  -o cmTC_e27d2 
+Building CXX object CMakeFiles/cmTC_93bf9.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_93bf9.dir/testCXXCompiler.cxx.o -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_93bf9
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93bf9.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_93bf9.dir/testCXXCompiler.cxx.o  -o cmTC_93bf9 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -254,10 +254,10 @@ make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/back
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_dcd68/fast && /usr/bin/make -f CMakeFiles/cmTC_dcd68.dir/build.make CMakeFiles/cmTC_dcd68.dir/build
+Run Build Command(s):/usr/bin/make cmTC_e73a8/fast && /usr/bin/make -f CMakeFiles/cmTC_e73a8.dir/build.make CMakeFiles/cmTC_e73a8.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++    -v -o CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
+Building CXX object CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++    -v -o CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 OFFLOAD_TARGET_NAMES=nvptx-none:hsa
@@ -266,8 +266,8 @@ Target: x86_64-linux-gnu
 Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-nrQql7/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
 gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~18.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/local/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccl5fVYB.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/local/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccZka5jD.s
 GNU C++14 (Ubuntu 9.4.0-1ubuntu1~18.04) version 9.4.0 (x86_64-linux-gnu)
 	compiled by GNU C version 9.4.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
 
@@ -291,15 +291,15 @@ GNU C++14 (Ubuntu 9.4.0-1ubuntu1~18.04) version 9.4.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 306847ad22fd9e2a7a49ad7f5781968e
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccl5fVYB.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccZka5jD.s
 GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_dcd68
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dcd68.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_dcd68 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_e73a8
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e73a8.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_e73a8 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
@@ -311,9 +311,9 @@ Thread model: posix
 gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dcd68' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cctuX2JC.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_dcd68 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dcd68' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e73a8' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRhfGND.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e73a8 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e73a8' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -343,10 +343,10 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_dcd68/fast && /usr/bin/make -f CMakeFiles/cmTC_dcd68.dir/build.make CMakeFiles/cmTC_dcd68.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_e73a8/fast && /usr/bin/make -f CMakeFiles/cmTC_e73a8.dir/build.make CMakeFiles/cmTC_e73a8.dir/build]
   ignore line: [make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Building CXX object CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
@@ -355,8 +355,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-nrQql7/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~18.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/local/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccl5fVYB.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/local/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccZka5jD.s]
   ignore line: [GNU C++14 (Ubuntu 9.4.0-1ubuntu1~18.04) version 9.4.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
   ignore line: []
@@ -380,15 +380,15 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 306847ad22fd9e2a7a49ad7f5781968e]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccl5fVYB.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccZka5jD.s]
   ignore line: [GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_dcd68]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dcd68.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_dcd68 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_e73a8]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e73a8.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_e73a8 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
@@ -400,13 +400,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dcd68' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cctuX2JC.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_dcd68 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e73a8' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRhfGND.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e73a8 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cctuX2JC.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccRhfGND.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -424,7 +424,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_dcd68] ==> ignore
+    arg [cmTC_e73a8] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
@@ -436,7 +436,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
-    arg [CMakeFiles/cmTC_dcd68.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_e73a8.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -462,13 +462,13 @@ Parsed CXX implicit link information from above output:
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_1f799/fast && /usr/bin/make -f CMakeFiles/cmTC_1f799.dir/build.make CMakeFiles/cmTC_1f799.dir/build
+Run Build Command(s):/usr/bin/make cmTC_a3d5e/fast && /usr/bin/make -f CMakeFiles/cmTC_a3d5e.dir/build.make CMakeFiles/cmTC_a3d5e.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1f799.dir/CheckIncludeFile.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g    -o CMakeFiles/cmTC_1f799.dir/CheckIncludeFile.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_1f799
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f799.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g   -Wl,--enable-new-dtags  CMakeFiles/cmTC_1f799.dir/CheckIncludeFile.c.o  -o cmTC_1f799 
+Building C object CMakeFiles/cmTC_a3d5e.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g    -o CMakeFiles/cmTC_a3d5e.dir/CheckIncludeFile.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_a3d5e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3d5e.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g   -Wl,--enable-new-dtags  CMakeFiles/cmTC_a3d5e.dir/CheckIncludeFile.c.o  -o cmTC_a3d5e 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -476,27 +476,247 @@ make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/back
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7280c/fast && /usr/bin/make -f CMakeFiles/cmTC_7280c.dir/build.make CMakeFiles/cmTC_7280c.dir/build
+Run Build Command(s):/usr/bin/make cmTC_c663a/fast && /usr/bin/make -f CMakeFiles/cmTC_c663a.dir/build.make CMakeFiles/cmTC_c663a.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7280c.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_7280c.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.17/Modules/CheckFunctionExists.c
-Linking C executable cmTC_7280c
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7280c.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--enable-new-dtags  CMakeFiles/cmTC_7280c.dir/CheckFunctionExists.c.o  -o cmTC_7280c  -lpthread 
+Building C object CMakeFiles/cmTC_c663a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c663a.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c663a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c663a.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--enable-new-dtags  CMakeFiles/cmTC_c663a.dir/CheckFunctionExists.c.o  -o cmTC_c663a  -lpthread 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
 
+Performing C SOURCE FILE Test C_HAS_SSE1_1 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_537fb/fast && /usr/bin/make -f CMakeFiles/cmTC_537fb.dir/build.make CMakeFiles/cmTC_537fb.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_537fb.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE1_1   -o CMakeFiles/cmTC_537fb.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+    5 |     __m128 a;
+      |            ^
+Linking C executable cmTC_537fb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_537fb.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE1_1  -Wl,--enable-new-dtags  CMakeFiles/cmTC_537fb.dir/src.c.o  -o cmTC_537fb 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <xmmintrin.h>
+  int main()
+  {
+    __m128 a;
+    float vals[4] = {0,0,0,0};
+    a = _mm_loadu_ps(vals);
+    return 0;
+  }
+Performing C SOURCE FILE Test C_HAS_SSE2_1 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_783a2/fast && /usr/bin/make -f CMakeFiles/cmTC_783a2.dir/build.make CMakeFiles/cmTC_783a2.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_783a2.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE2_1   -o CMakeFiles/cmTC_783a2.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+    5 |     __m128d a;
+      |             ^
+Linking C executable cmTC_783a2
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_783a2.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE2_1  -Wl,--enable-new-dtags  CMakeFiles/cmTC_783a2.dir/src.c.o  -o cmTC_783a2 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <emmintrin.h>
+  int main()
+  {
+    __m128d a;
+    double vals[2] = {0,0};
+    a = _mm_loadu_pd(vals);
+    return 0;
+  }
+Performing C SOURCE FILE Test C_HAS_SSE3_2 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f11b1/fast && /usr/bin/make -f CMakeFiles/cmTC_f11b1.dir/build.make CMakeFiles/cmTC_f11b1.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f11b1.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE3_2 -msse3   -o CMakeFiles/cmTC_f11b1.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+    6 |     __m128i a;
+      |             ^
+Linking C executable cmTC_f11b1
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f11b1.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE3_2 -msse3  -Wl,--enable-new-dtags  CMakeFiles/cmTC_f11b1.dir/src.c.o  -o cmTC_f11b1 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test C_HAS_SSE4_1_2 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2b0c7/fast && /usr/bin/make -f CMakeFiles/cmTC_2b0c7.dir/build.make CMakeFiles/cmTC_2b0c7.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2b0c7.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_1_2 -msse4.1   -o CMakeFiles/cmTC_2b0c7.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
+      |                      ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
+      |                        ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
+      |                                     ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
+      |                                       ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
+    6 |     __m128i res = _mm_max_epi8(a, b);
+      |             ^~~
+Linking C executable cmTC_2b0c7
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b0c7.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_1_2 -msse4.1  -Wl,--enable-new-dtags  CMakeFiles/cmTC_2b0c7.dir/src.c.o  -o cmTC_2b0c7 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = {0,0,0,0}, b = {0,0,0,0};
+    __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_SSE4_2_2 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d461e/fast && /usr/bin/make -f CMakeFiles/cmTC_d461e.dir/build.make CMakeFiles/cmTC_d461e.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d461e.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_2_2 -msse4.2   -o CMakeFiles/cmTC_d461e.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                      ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                        ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                     ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                       ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                                    ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                                      ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                           ^
+Linking C executable cmTC_d461e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d461e.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_2_2 -msse4.2  -Wl,--enable-new-dtags  CMakeFiles/cmTC_d461e.dir/src.c.o  -o cmTC_d461e 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX_2 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1fa02/fast && /usr/bin/make -f CMakeFiles/cmTC_1fa02.dir/build.make CMakeFiles/cmTC_1fa02.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1fa02.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX_2 -mavx   -o CMakeFiles/cmTC_1fa02.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+    5 |     __m256 a;
+      |            ^
+Linking C executable cmTC_1fa02
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fa02.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX_2 -mavx  -Wl,--enable-new-dtags  CMakeFiles/cmTC_1fa02.dir/src.c.o  -o cmTC_1fa02 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
 Performing C SOURCE FILE Test C_HAS_AVX2_2 succeeded with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_1fdea/fast && /usr/bin/make -f CMakeFiles/cmTC_1fdea.dir/build.make CMakeFiles/cmTC_1fdea.dir/build
+Run Build Command(s):/usr/bin/make cmTC_f6c2f/fast && /usr/bin/make -f CMakeFiles/cmTC_f6c2f.dir/build.make CMakeFiles/cmTC_f6c2f.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1fdea.dir/src.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX2_2 -mavx2 -mfma   -o CMakeFiles/cmTC_1fdea.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_1fdea
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fdea.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX2_2 -mavx2 -mfma  -Wl,--enable-new-dtags  CMakeFiles/cmTC_1fdea.dir/src.c.o  -o cmTC_1fdea 
+Building C object CMakeFiles/cmTC_f6c2f.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX2_2 -mavx2 -mfma   -o CMakeFiles/cmTC_f6c2f.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f6c2f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f6c2f.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX2_2 -mavx2 -mfma  -Wl,--enable-new-dtags  CMakeFiles/cmTC_f6c2f.dir/src.c.o  -o cmTC_f6c2f 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -516,13 +736,13 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_AVX512F_2 succeeded with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_4fb02/fast && /usr/bin/make -f CMakeFiles/cmTC_4fb02.dir/build.make CMakeFiles/cmTC_4fb02.dir/build
+Run Build Command(s):/usr/bin/make cmTC_20313/fast && /usr/bin/make -f CMakeFiles/cmTC_20313.dir/build.make CMakeFiles/cmTC_20313.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4fb02.dir/src.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512F_2 -mavx512f   -o CMakeFiles/cmTC_4fb02.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_4fb02
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4fb02.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512F_2 -mavx512f  -Wl,--enable-new-dtags  CMakeFiles/cmTC_4fb02.dir/src.c.o  -o cmTC_4fb02 
+Building C object CMakeFiles/cmTC_20313.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512F_2 -mavx512f   -o CMakeFiles/cmTC_20313.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_20313
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20313.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512F_2 -mavx512f  -Wl,--enable-new-dtags  CMakeFiles/cmTC_20313.dir/src.c.o  -o cmTC_20313 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -542,13 +762,13 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_AVX512BW_2 succeeded with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_dcb21/fast && /usr/bin/make -f CMakeFiles/cmTC_dcb21.dir/build.make CMakeFiles/cmTC_dcb21.dir/build
+Run Build Command(s):/usr/bin/make cmTC_63d11/fast && /usr/bin/make -f CMakeFiles/cmTC_63d11.dir/build.make CMakeFiles/cmTC_63d11.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_dcb21.dir/src.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512BW_2 -mavx512bw   -o CMakeFiles/cmTC_dcb21.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_dcb21
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dcb21.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512BW_2 -mavx512bw  -Wl,--enable-new-dtags  CMakeFiles/cmTC_dcb21.dir/src.c.o  -o cmTC_dcb21 
+Building C object CMakeFiles/cmTC_63d11.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512BW_2 -mavx512bw   -o CMakeFiles/cmTC_63d11.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_63d11
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63d11.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512BW_2 -mavx512bw  -Wl,--enable-new-dtags  CMakeFiles/cmTC_63d11.dir/src.c.o  -o cmTC_63d11 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -569,13 +789,13 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_CLFLUSHOPT_2 succeeded with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_fb569/fast && /usr/bin/make -f CMakeFiles/cmTC_fb569.dir/build.make CMakeFiles/cmTC_fb569.dir/build
+Run Build Command(s):/usr/bin/make cmTC_ddc9b/fast && /usr/bin/make -f CMakeFiles/cmTC_ddc9b.dir/build.make CMakeFiles/cmTC_ddc9b.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_fb569.dir/src.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g -DC_HAS_CLFLUSHOPT_2 -mclflushopt   -o CMakeFiles/cmTC_fb569.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_fb569
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb569.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g -DC_HAS_CLFLUSHOPT_2 -mclflushopt  -Wl,--enable-new-dtags  CMakeFiles/cmTC_fb569.dir/src.c.o  -o cmTC_fb569 
+Building C object CMakeFiles/cmTC_ddc9b.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_CLFLUSHOPT_2 -mclflushopt   -o CMakeFiles/cmTC_ddc9b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ddc9b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddc9b.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_CLFLUSHOPT_2 -mclflushopt  -Wl,--enable-new-dtags  CMakeFiles/cmTC_ddc9b.dir/src.c.o  -o cmTC_ddc9b 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -592,16 +812,236 @@ Source file was:
     return 0;
   }
 
+Performing C SOURCE FILE Test CXX_HAS_SSE1_1 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_706ac/fast && /usr/bin/make -f CMakeFiles/cmTC_706ac.dir/build.make CMakeFiles/cmTC_706ac.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_706ac.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE1_1   -o CMakeFiles/cmTC_706ac.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+    5 |     __m128 a;
+      |            ^
+Linking C executable cmTC_706ac
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_706ac.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE1_1  -Wl,--enable-new-dtags  CMakeFiles/cmTC_706ac.dir/src.c.o  -o cmTC_706ac 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <xmmintrin.h>
+  int main()
+  {
+    __m128 a;
+    float vals[4] = {0,0,0,0};
+    a = _mm_loadu_ps(vals);
+    return 0;
+  }
+Performing C SOURCE FILE Test CXX_HAS_SSE2_1 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_78da0/fast && /usr/bin/make -f CMakeFiles/cmTC_78da0.dir/build.make CMakeFiles/cmTC_78da0.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78da0.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE2_1   -o CMakeFiles/cmTC_78da0.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+    5 |     __m128d a;
+      |             ^
+Linking C executable cmTC_78da0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78da0.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE2_1  -Wl,--enable-new-dtags  CMakeFiles/cmTC_78da0.dir/src.c.o  -o cmTC_78da0 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <emmintrin.h>
+  int main()
+  {
+    __m128d a;
+    double vals[2] = {0,0};
+    a = _mm_loadu_pd(vals);
+    return 0;
+  }
+Performing C SOURCE FILE Test CXX_HAS_SSE3_2 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_59d43/fast && /usr/bin/make -f CMakeFiles/cmTC_59d43.dir/build.make CMakeFiles/cmTC_59d43.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_59d43.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE3_2 -msse3   -o CMakeFiles/cmTC_59d43.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+    6 |     __m128i a;
+      |             ^
+Linking C executable cmTC_59d43
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59d43.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE3_2 -msse3  -Wl,--enable-new-dtags  CMakeFiles/cmTC_59d43.dir/src.c.o  -o cmTC_59d43 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <pmmintrin.h>
+  int main( )
+  {
+    const int vals[4] = {0,0,0,0};
+    __m128i a;
+    a = _mm_lddqu_si128( (const __m128i*)vals );
+    return 0;
+  }
+Performing C SOURCE FILE Test CXX_HAS_SSE4_1_2 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_61a9a/fast && /usr/bin/make -f CMakeFiles/cmTC_61a9a.dir/build.make CMakeFiles/cmTC_61a9a.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_61a9a.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_1_2 -msse4.1   -o CMakeFiles/cmTC_61a9a.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
+      |                      ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
+      |                        ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
+      |                                     ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
+      |                                       ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
+    6 |     __m128i res = _mm_max_epi8(a, b);
+      |             ^~~
+Linking C executable cmTC_61a9a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61a9a.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_1_2 -msse4.1  -Wl,--enable-new-dtags  CMakeFiles/cmTC_61a9a.dir/src.c.o  -o cmTC_61a9a 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <smmintrin.h>
+  int main ()
+  {
+    __m128i a = {0,0,0,0}, b = {0,0,0,0};
+    __m128i res = _mm_max_epi8(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_SSE4_2_2 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fccf7/fast && /usr/bin/make -f CMakeFiles/cmTC_fccf7.dir/build.make CMakeFiles/cmTC_fccf7.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fccf7.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_2_2 -msse4.2   -o CMakeFiles/cmTC_fccf7.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                      ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                        ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                     ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                       ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                                    ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                                      ^
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+    5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+      |                                           ^
+Linking C executable cmTC_fccf7
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fccf7.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_2_2 -msse4.2  -Wl,--enable-new-dtags  CMakeFiles/cmTC_fccf7.dir/src.c.o  -o cmTC_fccf7 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <nmmintrin.h>
+  int main()
+  {
+    __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
+    c = _mm_cmpgt_epi64(a, b);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX_2 succeeded with the following compile output:
+Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b176b/fast && /usr/bin/make -f CMakeFiles/cmTC_b176b.dir/build.make CMakeFiles/cmTC_b176b.dir/build
+make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b176b.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX_2 -mavx   -o CMakeFiles/cmTC_b176b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+    5 |     __m256 a;
+      |            ^
+Linking C executable cmTC_b176b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b176b.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX_2 -mavx  -Wl,--enable-new-dtags  CMakeFiles/cmTC_b176b.dir/src.c.o  -o cmTC_b176b 
+make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+  #include <immintrin.h>
+  int main()
+  {
+    __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
 Performing C SOURCE FILE Test CXX_HAS_AVX2_2 succeeded with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_c84c7/fast && /usr/bin/make -f CMakeFiles/cmTC_c84c7.dir/build.make CMakeFiles/cmTC_c84c7.dir/build
+Run Build Command(s):/usr/bin/make cmTC_de7c5/fast && /usr/bin/make -f CMakeFiles/cmTC_de7c5.dir/build.make CMakeFiles/cmTC_de7c5.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c84c7.dir/src.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX2_2 -mavx2 -mfma   -o CMakeFiles/cmTC_c84c7.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_c84c7
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c84c7.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX2_2 -mavx2 -mfma  -Wl,--enable-new-dtags  CMakeFiles/cmTC_c84c7.dir/src.c.o  -o cmTC_c84c7 
+Building C object CMakeFiles/cmTC_de7c5.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX2_2 -mavx2 -mfma   -o CMakeFiles/cmTC_de7c5.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_de7c5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de7c5.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX2_2 -mavx2 -mfma  -Wl,--enable-new-dtags  CMakeFiles/cmTC_de7c5.dir/src.c.o  -o cmTC_de7c5 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -621,13 +1061,13 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_AVX512F_2 succeeded with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_cddf2/fast && /usr/bin/make -f CMakeFiles/cmTC_cddf2.dir/build.make CMakeFiles/cmTC_cddf2.dir/build
+Run Build Command(s):/usr/bin/make cmTC_f03b3/fast && /usr/bin/make -f CMakeFiles/cmTC_f03b3.dir/build.make CMakeFiles/cmTC_f03b3.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_cddf2.dir/src.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512F_2 -mavx512f   -o CMakeFiles/cmTC_cddf2.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_cddf2
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cddf2.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512F_2 -mavx512f  -Wl,--enable-new-dtags  CMakeFiles/cmTC_cddf2.dir/src.c.o  -o cmTC_cddf2 
+Building C object CMakeFiles/cmTC_f03b3.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512F_2 -mavx512f   -o CMakeFiles/cmTC_f03b3.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f03b3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f03b3.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512F_2 -mavx512f  -Wl,--enable-new-dtags  CMakeFiles/cmTC_f03b3.dir/src.c.o  -o cmTC_f03b3 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -647,13 +1087,13 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_AVX512BW_2 succeeded with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_5d539/fast && /usr/bin/make -f CMakeFiles/cmTC_5d539.dir/build.make CMakeFiles/cmTC_5d539.dir/build
+Run Build Command(s):/usr/bin/make cmTC_51771/fast && /usr/bin/make -f CMakeFiles/cmTC_51771.dir/build.make CMakeFiles/cmTC_51771.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5d539.dir/src.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512BW_2 -mavx512bw   -o CMakeFiles/cmTC_5d539.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_5d539
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d539.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512BW_2 -mavx512bw  -Wl,--enable-new-dtags  CMakeFiles/cmTC_5d539.dir/src.c.o  -o cmTC_5d539 
+Building C object CMakeFiles/cmTC_51771.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512BW_2 -mavx512bw   -o CMakeFiles/cmTC_51771.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_51771
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51771.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512BW_2 -mavx512bw  -Wl,--enable-new-dtags  CMakeFiles/cmTC_51771.dir/src.c.o  -o cmTC_51771 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 
@@ -674,13 +1114,13 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_CLFLUSHOPT_2 succeeded with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_ee1dc/fast && /usr/bin/make -f CMakeFiles/cmTC_ee1dc.dir/build.make CMakeFiles/cmTC_ee1dc.dir/build
+Run Build Command(s):/usr/bin/make cmTC_3e760/fast && /usr/bin/make -f CMakeFiles/cmTC_3e760.dir/build.make CMakeFiles/cmTC_3e760.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ee1dc.dir/src.c.o
-/usr/bin/cc   -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCXX_HAS_CLFLUSHOPT_2 -mclflushopt   -o CMakeFiles/cmTC_ee1dc.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_ee1dc
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee1dc.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Werror -Wextra -std=gnu11  -O3  -g -DCXX_HAS_CLFLUSHOPT_2 -mclflushopt  -Wl,--enable-new-dtags  CMakeFiles/cmTC_ee1dc.dir/src.c.o  -o cmTC_ee1dc 
+Building C object CMakeFiles/cmTC_3e760.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_CLFLUSHOPT_2 -mclflushopt   -o CMakeFiles/cmTC_3e760.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3e760
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e760.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_CLFLUSHOPT_2 -mclflushopt  -Wl,--enable-new-dtags  CMakeFiles/cmTC_3e760.dir/src.c.o  -o cmTC_3e760 
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
 
 

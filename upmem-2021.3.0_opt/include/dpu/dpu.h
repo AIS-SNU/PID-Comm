@@ -231,7 +231,7 @@ dpu_get_nr_dpus(struct dpu_set_t dpu_set, uint32_t *nr_dpus);
 #define DPU_FOREACH_ENTANGLED_GROUP(set, dpu, i, cube_size) \
     for (struct dpu_set_dpu_iterator_t __dpu_it = dpu_set_dpu_iterator_from(&set);                                               \
          i = __dpu_it.count, dpu = __dpu_it.next, __dpu_it.has_next;                                                             \
-         dpu_set_dpu_iterator_next_rotate_group(&__dpu_it, cube_size))
+         dpu_set_dpu_iterator_next_entangled_group(&__dpu_it, cube_size))
 
 /**
  * @brief Intenal macro for DPU_RANK_FOREACH without rank index.

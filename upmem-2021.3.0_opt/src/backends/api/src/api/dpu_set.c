@@ -1340,7 +1340,7 @@ dpu_set_dpu_iterator_from(struct dpu_set_t *set)
 }
 
 __API_SYMBOL__ void
-dpu_set_dpu_iterator_next_rotate_group(struct dpu_set_dpu_iterator_t *iterator, uint32_t cube_size)
+dpu_set_dpu_iterator_next_entangled_group(struct dpu_set_dpu_iterator_t *iterator, uint32_t cube_size)
 {
     iterator->count++;
 

@@ -559,6 +559,10 @@ dpu_attributes.h
 -
 dpu_thread_job.h
 -
+stdint.h
+-
+sys/time.h
+-
 
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/api/src/api/dpu_polling.c
 numa.h

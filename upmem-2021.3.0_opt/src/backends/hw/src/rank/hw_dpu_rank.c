@@ -4530,7 +4530,7 @@ void *thread_reduce_rns(void *thread_parameter){
 static dpu_rank_status_e
 hw_reduce_rns(struct dpu_set_t *comm_dpu_set, uint32_t src_start_offset, uint32_t dst_start_offset, uint32_t dpu_byte_length, uint32_t total_length, uint32_t comm_type, uint32_t communication_buffer_offset, uint32_t dimension, uint32_t* axis_len, uint32_t* comm_axis, uint32_t size, void ** host_buffer){
     
-    uint32_t thread_num=1;
+    uint32_t thread_num=32;
     st_thread_parameter thread_params[thread_num];
     int status;
     pthread_t array_thread[thread_num];

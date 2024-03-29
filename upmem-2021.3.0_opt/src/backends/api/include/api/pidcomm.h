@@ -131,7 +131,7 @@ typedef struct {
     uint32_t* axis_len;
 } hypercube_manager;
 
-
+__API_SYMBOL__
 hypercube_manager* init_hypercube_manager(struct dpu_set_t dpu_set, uint32_t dimension, uint32_t* axis_len){
     hypercube_manager* manager = malloc(sizeof(hypercube_manager));
 
@@ -143,11 +143,13 @@ hypercube_manager* init_hypercube_manager(struct dpu_set_t dpu_set, uint32_t dim
 }
 
 //Supported Communication Primitives
+__API_SYMBOL__
 void pidcomm_broadcast(hypercube_manager* manager, uint32_t total_data_size, uint32_t target_offset, void* data){
     struct dpu_set_t dpu_set = manager -> dpu_set;
     DPU_ASSERT(dpu_broadcast_to(dpu_set, DPU_MRAM_HEAP_POINTER_NAME, target_offset, data, total_data_size, DPU_XFER_DEFAULT));
 }
 
+__API_SYMBOL__
 void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset,
                         uint32_t target_offset, uint32_t buffer_offset){
 
@@ -306,6 +308,7 @@ void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_dat
     }
 }
 
+__API_SYMBOL__
 void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset,
                         uint32_t target_offset, uint32_t buffer_offset, uint32_t size){
 
@@ -469,6 +472,7 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
 
 }
 
+__API_SYMBOL__
 void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, uint32_t target_offset, \
                     uint32_t buffer_offset, uint32_t size, uint32_t reduce_type){
 
@@ -713,6 +717,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
     }
 }
 
+__API_SYMBOL__
 void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset,
                         uint32_t target_offset, uint32_t buffer_offset){
 
@@ -843,7 +848,7 @@ void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_da
     }
 }
 
-
+__API_SYMBOL__
 void pidcomm_gather(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, 
                                                         uint32_t buffer_offset, void** host_buffer){
 
@@ -876,6 +881,7 @@ void pidcomm_gather(hypercube_manager* manager, char* comm, uint32_t total_data_
 
 }
 
+__API_SYMBOL__
 void pidcomm_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, uint32_t target_offset, \
                     uint32_t buffer_offset, uint32_t size, void** host_buffer){
 
@@ -966,6 +972,7 @@ void pidcomm_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_
 }
 
 //total data size is size of data each dpu will receive
+__API_SYMBOL__
 void pidcomm_scatter(hypercube_manager* manager, char* comm, uint32_t total_data_size, uint32_t start_offset, uint32_t target_offset, \
                     uint32_t buffer_offset, void** host_buffer){
 
