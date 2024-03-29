@@ -1,3 +1,8 @@
+/* Copyright 2024 AISys. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file.
+ */
+
 #ifndef _COMMLIB_H_
 #define _COMMLIB_H_
 
@@ -27,102 +32,6 @@
 #include <sys/sysinfo.h>
 #include <sys/time.h>
 #include <support.h>
-
-#ifndef DPU_BINARY_AR_2
-#define DPU_BINARY_AR_2 "./bin/dpu_ar_2"
-#endif
-
-#ifndef DPU_BINARY_RELOCATE_2
-#define DPU_BINARY_RELOCATE_2 "./bin/dpu_relocate_inplace"
-#endif
-
-#ifndef DPU_BINARY_AR_2_Y
-#define DPU_BINARY_AR_2_Y "./bin/dpu_ar_2_y"
-#endif
-
-#ifndef DPU_ALLTOALL_X_2
-#define DPU_ALLTOALL_X_2 "./bin/alltoall_x_2"
-#endif
-
-#ifndef DPU_ALLTOALL_22
-#define DPU_ALLTOALL_22 "./bin/alltoall_22"
-#endif
-
-#ifndef DPU_RS_24
-#define DPU_RS_24 "./bin/rs_24"
-#endif
-
-#ifndef DPU_RS_22
-#define DPU_RS_22 "./bin/rs_22"
-#endif
-
-#ifndef DPU_AR_24
-#define DPU_AR_24 "./bin/ar_24"
-#endif
-
-#ifndef DPU_BINARY_AR_2_INT8
-#define DPU_BINARY_AR_2_INT8 "./bin/dpu_ar_2_int8"
-#endif
-
-#ifndef DPU_BINARY_RELOCATE_2_INT8
-#define DPU_BINARY_RELOCATE_2_INT8 "./bin/dpu_relocate_inplace_int8"
-#endif
-
-#ifndef DPU_BINARY_AR_2_Y_INT8
-#define DPU_BINARY_AR_2_Y_INT8 "./bin/dpu_ar_2_y_int8"
-#endif
-
-#ifndef DPU_ALLTOALL_X_2_INT8
-#define DPU_ALLTOALL_X_2_INT8 "./bin/alltoall_x_2_int8"
-#endif
-
-#ifndef DPU_ALLTOALL_22_INT8
-#define DPU_ALLTOALL_22_INT8 "./bin/alltoall_22_int8"
-#endif
-
-#ifndef DPU_RS_24_INT8
-#define DPU_RS_24_INT8 "./bin/rs_24_int8"
-#endif
-
-#ifndef DPU_RS_22_INT8
-#define DPU_RS_22_INT8 "./bin/rs_22_int8"
-#endif
-
-#ifndef DPU_AR_24_INT8
-#define DPU_AR_24_INT8 "./bin/ar_24_int8"
-#endif
-
-#ifndef DPU_BINARY_AR_2_INT32
-#define DPU_BINARY_AR_2_INT32 "./bin/dpu_ar_2_int32"
-#endif
-
-#ifndef DPU_BINARY_RELOCATE_2_INT32
-#define DPU_BINARY_RELOCATE_2_INT32 "./bin/dpu_relocate_inplace_int32"
-#endif
-
-#ifndef DPU_BINARY_AR_2_Y_INT32
-#define DPU_BINARY_AR_2_Y_INT32 "./bin/dpu_ar_2_y_int32"
-#endif
-
-#ifndef DPU_ALLTOALL_X_2_INT32
-#define DPU_ALLTOALL_X_2_INT32 "./bin/alltoall_x_2_int32"
-#endif
-
-#ifndef DPU_ALLTOALL_22_INT32
-#define DPU_ALLTOALL_22_INT32 "./bin/alltoall_22_int32"
-#endif
-
-#ifndef DPU_RS_24_INT32
-#define DPU_RS_24_INT32 "./bin/rs_24_int32"
-#endif
-
-#ifndef DPU_RS_22_INT32
-#define DPU_RS_22_INT32 "./bin/rs_22_int32"
-#endif
-
-#ifndef DPU_AR_24_INT32
-#define DPU_AR_24_INT32 "./bin/ar_24_int32"
-#endif
 
 //Hypercube manager
 typedef struct {

@@ -1,11 +1,11 @@
-DPU_DIR1 := dpu1
-DPU_DIR2 := dpu2
-DPU_DIR3 := dpu3
-DPU_DIR4 := dpu4
-DPU_DIR5 := dpu5
-DPU_DIR6 := dpu6
-DPU_DIR7 := dpu7
-DPU_DIR8 := dpu8
+DPU_DIR1 := data_relocate_clockwise
+DPU_DIR2 := data_relocate_reverse_clockwise
+DPU_DIR3 := data_relocate_counterclockwise
+DPU_DIR4 := data_relocate_incremental_counterclockwise
+DPU_DIR5 := data_relocate_modified_clockwise
+DPU_DIR6 := data_relocate_clockwise_short
+DPU_DIR7 := data_relocate_modified_reverse_clockwise
+DPU_DIR8 := data_relocate_reverse_clockwise_short
 
 HOST_DIR := host
 BUILDDIR ?= bin

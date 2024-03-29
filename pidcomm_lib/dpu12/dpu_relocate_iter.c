@@ -13,7 +13,8 @@
 
 __host dpu_arguments_comm_t DPU_INPUT_ARGUMENTS_RS1;
 
-BARRIER_INIT(my_barrier, NR_TASKLETS/2);
+//initialize barrier barrier for 8 tasklets. 
+BARRIER_INIT(tasklet_8_barrier, NR_TASKLETS/2);
 
 uint32_t* offset_per_dpu;
 uint32_t max_words_per_dpu;
@@ -37,7 +38,7 @@ int main(){
 
     if(tasklet_id == 0) mem_reset();
 
-    barrier_wait(&my_barrier);
+    barrier_wait(&tasklet_8_barrier);
 
     //set arguments for use
     uint32_t start_offset = DPU_INPUT_ARGUMENTS_RS1.start_offset;
@@ -48,8 +49,6 @@ int main(){
     uint32_t no_rotate = DPU_INPUT_ARGUMENTS_RS1.no_rotate;
     uint32_t num_row = DPU_INPUT_ARGUMENTS_RS1.num_row;
 
-    //number of words tied together for communication
-    uint32_t num_words_per_comm = COMM_UNIT_SIZE/sizeof(T);
 
     uint32_t original_addr; // address for word to move
     uint32_t target_addr; //address for word to write
@@ -66,7 +65,7 @@ int main(){
             offset_per_dpu[i] = ( (total_data_size*num_row)/num_comm_dpu ) * i;
         }
     }
-    barrier_wait(&my_barrier);
+    barrier_wait(&tasklet_8_barrier);
 
     //num of words each tasklet should move
     uint32_t iter;
@@ -95,16 +94,15 @@ int main(){
 
                 else mram_read((__mram_ptr void const *) (original_addr), word_cache, 2048);
 
-                barrier_wait(&my_barrier);
+                barrier_wait(&tasklet_8_barrier);
 
-                // dpu data 8개 단위로 잘라서 관리,
 
                 target_addr = (uint32_t) DPU_MRAM_HEAP_POINTER + (target_offset + offset_per_dpu[target_dpu_num] ) + max_words_per_dpu * row *sizeof(T) + 2048*iteration;
 
                 if(iteration == iter - 1) mram_write(word_cache, (__mram_ptr void*) target_addr, leftover_num * sizeof(T));
                 else mram_write(word_cache, (__mram_ptr void*) target_addr, 2048);
 
-                barrier_wait(&my_barrier);
+                barrier_wait(&tasklet_8_barrier);
             }
         }
     }

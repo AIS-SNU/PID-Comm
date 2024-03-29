@@ -13,7 +13,8 @@
 
 __host dpu_arguments_comm_t DPU_INPUT_ARGUMENTS_RS1;
 
-BARRIER_INIT(my_barrier, NR_TASKLETS/2);
+//initialize barrier barrier for 8 tasklets. 
+BARRIER_INIT(tasklet_8_barrier, NR_TASKLETS/2);
 
 uint32_t* offset_per_dpu;
 
@@ -36,7 +37,7 @@ int main(){
 
     if(tasklet_id == 0) mem_reset();
 
-    barrier_wait(&my_barrier);
+    barrier_wait(&tasklet_8_barrier);
 
     //set arguments for use
     uint32_t start_offset = DPU_INPUT_ARGUMENTS_RS1.start_offset;
@@ -57,14 +58,6 @@ int main(){
     //cache is used to move one word at a time to the right place
     T* word_cache = (T*) mem_alloc(comm_size);
 
-    /* if(tasklet_id==0){
-        offset_per_dpu = (uint32_t*) mem_alloc(num_comm_dpu * sizeof(uint32_t));
-        for(int i=0; i<num_comm_dpu; i++){
-            offset_per_dpu[i] = (total_data_size) * i;
-        }
-    }
-    barrier_wait(&my_barrier); */
-
     uint32_t row_index, col_index, leftover_num;
     uint32_t chunk_num, offset;
 
@@ -73,18 +66,14 @@ int main(){
         for(int iter=0; iter < num_comm_dpu / (NR_TASKLETS/2); iter++){
             //address to read the word from
             original_addr = (uint32_t) DPU_MRAM_HEAP_POINTER + (start_offset + (iter * (NR_TASKLETS/2) + tasklet_id) * (comm_size * num_row)) + row * comm_size;
-            /* original_addr = (uint32_t) DPU_MRAM_HEAP_POINTER + (start_offset + (iter * (NR_TASKLETS/2) + tasklet_id) * total_data_size) + row * comm_size; */
 
             mram_read((__mram_ptr void const *) (original_addr), word_cache, comm_size);
 
-            // dpu data 8개 단위로 잘라서 관리,
-
-            //target_addr = (uint32_t) DPU_MRAM_HEAP_POINTER + (target_offset +  row * num_comm_dpu * comm_size) + (iter * NR_TASKLETS + tasklet_id)*comm_size;
             target_addr = (uint32_t) DPU_MRAM_HEAP_POINTER + (target_offset + (iter * (NR_TASKLETS/2) + tasklet_id) * comm_size) + row * (comm_size * num_comm_dpu);
 
             mram_write(word_cache, (__mram_ptr void*) target_addr, comm_size);
 
-            barrier_wait(&my_barrier);
+            barrier_wait(&tasklet_8_barrier);
         }
     }
 
