@@ -261,7 +261,6 @@ disable_one_dpu_comm(struct dpu_rank_t **ranks, uint32_t rank_count, int comm_ty
     uint32_t max_disabled_dpus_on_line = 0;
     uint32_t max_disabled_dpus_on_ci = 0;
     uint32_t max_enabled_dpus_on_rank = 0;
-    //printf("disable_one_dpu_comm works~!\n");
     // iterating through ranks and lines
     if(comm_type==1){ //8chip 1banks. e.g. disable c7d7 c6d7 ..., c0d7 c7d6 c6d6 c5d6 ...
         for (uint32_t rank = 0; rank < rank_count; ++rank) {
@@ -323,7 +322,7 @@ disable_one_dpu_comm(struct dpu_rank_t **ranks, uint32_t rank_count, int comm_ty
                 }
                 /* we select rank and line if :
                     line has at least one active dpu
-                    line has most enabled dpus of all line/ranks(chip0 bank0,1,2,3,4,5,6,7, chip1 ...) <--different with system_dpu_id~!~!
+                    line has most enabled dpus of all line/ranks(chip0 bank0,1,2,3,4,5,6,7, chip1 ...) <--different with system_dpu_id!
                     rank has most enabled dpus of all line/ranks
                 */
                 if (one_enabled_on_ci
@@ -375,7 +374,6 @@ disable_unused_dpus_comm(uint32_t current_nr_of_dpus, uint32_t nr_dpus, struct d
     assert(current_ranks != NULL);
     assert(rank_count > 0);
     assert(current_nr_of_dpus >= nr_dpus);
-    //printf("disable_unused_dpus_comm works~!~!~!\n");
     uint32_t dpus_to_disable = current_nr_of_dpus - nr_dpus;
 
     for (uint32_t nr_disabled_dpus = 0; nr_disabled_dpus < dpus_to_disable; ++nr_disabled_dpus) {
@@ -506,7 +504,7 @@ error_free_ranks:
 }
 
 __API_SYMBOL__ dpu_error_t
-dpu_alloc_comm(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu_set, int comm_type) //channel hard coding~!
+dpu_alloc_comm(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu_set, int comm_type) //channel hard coding
 {
     LOG_FN(DEBUG, "%d, \"%s\"", nr_dpus, profile);
 
@@ -589,7 +587,7 @@ dpu_alloc_comm(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu_set,
             current_nr_of_dpus += get_nr_of_dpus_in_rank(*next_rank);
 
             //mo2
-            if(get_nr_of_dpus_in_rank(*next_rank)==64){ //channel hard coding~!
+            if(get_nr_of_dpus_in_rank(*next_rank)==64){
                 //printf("Find the reason of dpu allocation error: Complete current_nr_of_ranks=%d\n", current_nr_of_ranks);
                 if(current_nr_of_ranks>=18 && current_nr_of_ranks!=24){
                     complete_rank_array[current_nr_of_ranks-1]=1; //complete_rank
@@ -607,27 +605,13 @@ dpu_alloc_comm(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu_set,
                 incomplete_nr_of_dpus+=get_nr_of_dpus_in_rank(*next_rank);
             }
 
-            // // My Code
-            // printf("\t(current_nr_of_ranks:%d < nr_dpus:%d):%d\n", current_nr_of_ranks, nr_dpus, (current_nr_of_ranks < nr_dpus));
-            // printf("\t(dispatch_on_all_ranks:%d || current_nr_of_dpus:%d < nr_dpus):%d\n", 
-            //     dispatch_on_all_ranks, current_nr_of_dpus, (dispatch_on_all_ranks || current_nr_of_dpus < nr_dpus));
-            // printf("\t(status != DPU_ERR_ALLOCATION): %d\n", (status != DPU_ERR_ALLOCATION));
+            
+            
         }
         // we either reached sufficient dpus or failed to allocate
     } 
     while ((dispatch_on_all_ranks || current_nr_of_dpus < (nr_dpus+incomplete_nr_of_dpus)) && (status != DPU_ERR_ALLOCATION));
-    //mo3
-    //while ((current_nr_of_ranks < nr_dpus) && (dispatch_on_all_ranks || current_nr_of_dpus < nr_dpus) && (status != DPU_ERR_ALLOCATION));
-    // while ((current_nr_of_ranks < nr_dpus) && (dispatch_on_all_ranks) && (status != DPU_ERR_ALLOCATION));
-    //printf("check2\n");
-    //mo4
-    //complete_current_ranks = alloc(sizeof(*complete_current_ranks) * (nr_dpus/64 + 1)); //little diffrent capacity
     uint32_t complete_rank_alloc_index=0;
-    //printf("channel_id:%d\n", (current_ranks[0]->description->_internals.data)->channel_id); //error(include X)
-    /*printf("complete_rank_array(1=c, 2=inc) : \n%d, %d, %d, %d, \n%d, %d, %d, %d, \n%d, %d, %d, %d, \n%d, %d, %d, %d, \n%d, %d, %d, %d, \n%d, %d, %d, %d\n", complete_rank_array[0], complete_rank_array[1], complete_rank_array[2], complete_rank_array[3], complete_rank_array[4], complete_rank_array[5], \
-    complete_rank_array[6], complete_rank_array[7], complete_rank_array[8], complete_rank_array[9], complete_rank_array[10], complete_rank_array[11], complete_rank_array[12], complete_rank_array[13], complete_rank_array[14], complete_rank_array[15], complete_rank_array[16], complete_rank_array[17], \
-    complete_rank_array[18], complete_rank_array[19], complete_rank_array[20], complete_rank_array[21], complete_rank_array[22], complete_rank_array[23]);
-    */
     for(uint32_t i=0; i<40; i++){
         if(complete_rank_array[i]==0){ //not allocated rank
             break;
@@ -646,7 +630,6 @@ dpu_alloc_comm(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu_set,
     }
     current_nr_of_dpus-=incomplete_nr_of_dpus;
     current_nr_of_ranks=complete_rank_alloc_index;
-    //printf("current_nr_of_dpus/ranks: %d, %d, %d\n", current_nr_of_dpus, current_nr_of_ranks, incomplete_nr_of_dpus);
 
 
     if (nr_dpus == DPU_ALLOCATE_ALL) {
@@ -677,7 +660,7 @@ error_free_ranks:
 
 
 __API_SYMBOL__ dpu_error_t
-dpu_alloc_comm_free(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu_set, int comm_type) //channel hard coding~!
+dpu_alloc_comm_free(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu_set, int comm_type) //channel hard coding
 {
     LOG_FN(DEBUG, "%d, \"%s\"", nr_dpus, profile);
 
@@ -725,7 +708,7 @@ dpu_alloc_comm_free(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu
 
             struct dpu_rank_t **current_ranks_tmp;
             if ((current_ranks_tmp = realloc(current_ranks, capacity * sizeof(*current_ranks))) == NULL) {
-                printf("dpu_err_system~!\n");
+                printf("dpu_err_system\n");
                 status = DPU_ERR_SYSTEM;
                 goto error_free_ranks;
             }
@@ -781,8 +764,7 @@ dpu_alloc_comm_free(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu
             current_nr_of_dpus += get_nr_of_dpus_in_rank(*next_rank);
 
             //mo2
-            if(get_nr_of_dpus_in_rank(*next_rank)==64){ //channel hard coding~!
-                //printf("Find the reason of dpu allocation error: Complete current_nr_of_ranks=%d\n", current_nr_of_ranks);
+            if(get_nr_of_dpus_in_rank(*next_rank)==64){ //channel hard coding
                 if(current_nr_of_ranks>=18 && current_nr_of_ranks!=24){
                     complete_rank_array[current_nr_of_ranks-1]=1; //complete_rank
                 }
@@ -794,7 +776,6 @@ dpu_alloc_comm_free(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu
                 //complete_rank_array[current_nr_of_ranks-1]=1; //complete_rank
             }
             else{
-                //printf("Find the reason of dpu allocation error: Incomplete current_nr_of_ranks=%d\n", current_nr_of_ranks);
                 complete_rank_array[current_nr_of_ranks-1]=2; //incomplete_rank.. 2 means not allocated rank
                 incomplete_nr_of_dpus+=get_nr_of_dpus_in_rank(*next_rank);
             }
@@ -805,27 +786,11 @@ dpu_alloc_comm_free(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu
             }
             printf("do-while/free_idx=%d/%d, num_dpus=%d\n", do_while_idx, free_idx, get_nr_of_dpus_in_rank(*next_rank));
             do_while_idx++;
-            // // My Code
-            // printf("\t(current_nr_of_ranks:%d < nr_dpus:%d):%d\n", current_nr_of_ranks, nr_dpus, (current_nr_of_ranks < nr_dpus));
-            // printf("\t(dispatch_on_all_ranks:%d || current_nr_of_dpus:%d < nr_dpus):%d\n", 
-            //     dispatch_on_all_ranks, current_nr_of_dpus, (dispatch_on_all_ranks || current_nr_of_dpus < nr_dpus));
-            // printf("\t(status != DPU_ERR_ALLOCATION): %d\n", (status != DPU_ERR_ALLOCATION));
         }
         // we either reached sufficient dpus or failed to allocate
     } 
     while ((1==1) && (dispatch_on_all_ranks || current_nr_of_dpus < (nr_dpus+incomplete_nr_of_dpus)) && (status != DPU_ERR_ALLOCATION));
-    //mo3
-    //while ((current_nr_of_ranks < nr_dpus) && (dispatch_on_all_ranks || current_nr_of_dpus < nr_dpus) && (status != DPU_ERR_ALLOCATION));
-    // while ((current_nr_of_ranks < nr_dpus) && (dispatch_on_all_ranks) && (status != DPU_ERR_ALLOCATION));
-    //printf("check2\n");
-    //mo4
-    //complete_current_ranks = alloc(sizeof(*complete_current_ranks) * (nr_dpus/64 + 1)); //little diffrent capacity
     uint32_t complete_rank_alloc_index=0;
-    //printf("channel_id:%d\n", (current_ranks[0]->description->_internals.data)->channel_id); //error(include X)
-    /*printf("complete_rank_array(1=c, 2=inc) : \n%d, %d, %d, %d, \n%d, %d, %d, %d, \n%d, %d, %d, %d, \n%d, %d, %d, %d, \n%d, %d, %d, %d, \n%d, %d, %d, %d\n", complete_rank_array[0], complete_rank_array[1], complete_rank_array[2], complete_rank_array[3], complete_rank_array[4], complete_rank_array[5], \
-    complete_rank_array[6], complete_rank_array[7], complete_rank_array[8], complete_rank_array[9], complete_rank_array[10], complete_rank_array[11], complete_rank_array[12], complete_rank_array[13], complete_rank_array[14], complete_rank_array[15], complete_rank_array[16], complete_rank_array[17], \
-    complete_rank_array[18], complete_rank_array[19], complete_rank_array[20], complete_rank_array[21], complete_rank_array[22], complete_rank_array[23]);
-    */
     for(uint32_t i=0; i<40; i++){
         if(complete_rank_array[i]==0){ //not allocated rank
             break;
@@ -844,21 +809,8 @@ dpu_alloc_comm_free(uint32_t nr_dpus, const char *profile, struct dpu_set_t *dpu
     }
     current_nr_of_dpus-=incomplete_nr_of_dpus;
     current_nr_of_ranks=complete_rank_alloc_index;
-    // uint32_t target_i=18;
-    // uint32_t success_i=0;
-    // do{
-    //     if(get_nr_of_dpus_in_rank(*(current_ranks+target_i))==0 && target_i!=24){
-    //         free_ranks[success_i] = *(current_ranks+target_i);
-    //         target_i++;
-    //         success_i++;
-    //     }
-    // } while(success_i<16);
-    // for(uint32_t i=0; i<free_idx; i++){
-    //     dpu_free_rank(*(free_ranks + i));
-    //     //dpu_free_rank((current_ranks + i));
-    // }
+
     printf("free_index!=%d\n", free_idx);
-    //printf("current_nr_of_dpus/ranks: %d, %d, %d\n", current_nr_of_dpus, current_nr_of_ranks, incomplete_nr_of_dpus);
 
 
     if (nr_dpus == DPU_ALLOCATE_ALL) {

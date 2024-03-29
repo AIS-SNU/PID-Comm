@@ -111,7 +111,7 @@ int main(){
             }
         }
     }
-    if(flag==1) printf("Functionality check success~!\n");
+    if(flag==1) printf("Functionality check success\n");
 
     //Print reduced result
     /*for(int element=0; element<4; element++){

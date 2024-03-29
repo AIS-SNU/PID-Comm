@@ -3330,7 +3330,7 @@ void xeon_sp_trans_reduce_scatter_cpu_rg_24(void *base_region_addr_dst, void **b
     uint32_t remain_length;
     remain_length=byte_length/8;
     
-    uint32_t dst_rotate_group_offset_256_64= (dst_rg_id%4) * (256*1024) + (dst_rg_id/4) * 64; //because of bank structure~!
+    uint32_t dst_rotate_group_offset_256_64= (dst_rg_id%4) * (256*1024) + (dst_rg_id/4) * 64; //because of bank structure
 
     
     if(allgather_comm_type==0){
@@ -3451,7 +3451,7 @@ void xeon_sp_trans_reduce_scatter_cpu_rg_22(void *base_region_addr_dst, void **b
     uint32_t remain_length;
     remain_length=byte_length/8;
     
-    uint32_t dst_rotate_group_offset_256_64= (dst_rg_id%4) * (256*1024) + (dst_rg_id/4) * 64; //because of bank structure~!
+    uint32_t dst_rotate_group_offset_256_64= (dst_rg_id%4) * (256*1024) + (dst_rg_id/4) * 64; //because of bank structure
 
     
     if(comm_axis_x && !comm_axis_y && comm_axis_z){
@@ -3768,7 +3768,7 @@ void xeon_sp_trans_all_to_all_rg(void *base_region_addr_src, void *base_region_a
             void *dst_rank_addr = dst_rank_base_addr + mram_dst_offset_1mb_wise;
 
             //flush before RnS
-            void *src_rank_addr_before_rns = src_rank_addr+ (src_rg_id%4) * (256*1024) + (src_rg_id/4) * 64; //얘만 해도 140msec걸린다~!
+            void *src_rank_addr_before_rns = src_rank_addr+ (src_rg_id%4) * (256*1024) + (src_rg_id/4) * 64;
             for(int j=0; j<8; j++){
                 COMM_FLUSH_a2a(iteration, src_rank_addr_before_rns);
                 src_rank_addr_before_rns += (src_off_gran);
@@ -3810,7 +3810,7 @@ void xeon_sp_trans_all_to_all_rg(void *base_region_addr_src, void *base_region_a
             void *dst_rank_addr = dst_rank_base_addr + mram_dst_offset_1mb_wise;
 
             //flush before RnS
-            void *src_rank_addr_before_rns = src_rank_addr+ (src_rg_id%4) * (256*1024) + (src_rg_id/4) * 64; //얘만 해도 140msec걸린다~!
+            void *src_rank_addr_before_rns = src_rank_addr+ (src_rg_id%4) * (256*1024) + (src_rg_id/4) * 64;
             for(int j=0; j<1; j++){
                 COMM_FLUSH_a2a(iteration, src_rank_addr_before_rns);
                 src_rank_addr_before_rns += (src_off_gran);
@@ -3941,7 +3941,6 @@ void xeon_sp_trans_all_to_all_rg_24(void *base_region_addr_src, void *base_regio
                 }
                 _mm_mfence();
                 
-                //일단 살려서 64bytes씩~!
                 src_mram_offset+=64;
                 dst_mram_offset+=64;
             }
@@ -4197,7 +4196,6 @@ void xeon_sp_trans_all_to_all_rg_22(void *base_region_addr_src, void *base_regio
                 }
                 _mm_mfence();
                 
-                //일단 살려서 64bytes씩~!
                 src_mram_offset+=8;
                 dst_mram_offset+=8;
             }
@@ -4245,7 +4243,6 @@ void xeon_sp_trans_all_to_all_rg_22(void *base_region_addr_src, void *base_regio
                 }
                 _mm_mfence();
                 
-                //일단 살려서 64bytes씩~!
                 src_mram_offset+=8;
                 dst_mram_offset+=8;
             }

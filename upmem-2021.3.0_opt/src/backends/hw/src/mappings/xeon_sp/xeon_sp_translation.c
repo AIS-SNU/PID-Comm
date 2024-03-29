@@ -781,7 +781,6 @@ thread_mram(void *arg)
     uint8_t thread_id = ((struct thread_mram_args *)arg)->thread_id;
     bool *stop_thread = &((struct thread_mram_args *)arg)->stop_thread;
     bool numa_affinity_is_set = false;
-    //printf("\t\t\t\t\tthread_mram Called.\n"); //dpu 8개 alloc될때만 4번 동작~!
     while (true) 
     {
         // Wait for a job to perform
@@ -876,7 +875,7 @@ xeon_sp_init_and_do_xfer(struct xeon_sp_private *pool, //결국 이거임.
 }
 
 void
-xeon_sp_write_to_rank(struct dpu_region_address_translation *tr, //write_to/read_from_rank 이 2개가 직접적으로 관여하는게 맞다~!
+xeon_sp_write_to_rank(struct dpu_region_address_translation *tr,
     void *base_region_addr,
     uint8_t channel_id,
     struct dpu_transfer_matrix *xfer_matrix)

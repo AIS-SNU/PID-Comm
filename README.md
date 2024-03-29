@@ -47,8 +47,8 @@ void pidcomm_all_reduce(
     PIDCOMM_OPERATOR reduction_type)
 ```
 
-Assume that all eight nodes have a list [0, 1, 2, 3].
-When we use pidcomm_allreduce(), each of the eight nodes will have a list [0, 8, 16, 24].
+Assuming that there are eight participating nodes with an array [0, 1, 2, 3].
+After executing pidcomm_all_reduce(), all nodes will have the same array [0, 8, 16, 24].
 
 Now, let's learn how to use PID-Comm.
 First, include the PID-Comm header files with ```#include <pidcomm.h>```.
@@ -75,7 +75,7 @@ DPU_ASSERT(dpu_alloc(nr_dpus, NULL, &dpu_set));
 hypercube_manager* hypercube_manager = init_hypercube_manager(dpu_set, dimension, axis_len);
 ```
 Now PID-Comm's settings have been completed.
-You are free to use it in your applications~!
+You are free to use it in your applications!
 ```
 pidcomm_all_reduce(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
 ```
