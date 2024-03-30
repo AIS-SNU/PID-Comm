@@ -1,25 +1,25 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_6b1fc/fast && /usr/bin/make -f CMakeFiles/cmTC_6b1fc.dir/build.make CMakeFiles/cmTC_6b1fc.dir/build
+Run Build Command(s):/usr/bin/make cmTC_ec3cb/fast && /usr/bin/make -f CMakeFiles/cmTC_ec3cb.dir/build.make CMakeFiles/cmTC_ec3cb.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6b1fc.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_6b1fc.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_6b1fc
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b1fc.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCMAKE_HAVE_LIBC_PTHREAD  -Wl,--enable-new-dtags  CMakeFiles/cmTC_6b1fc.dir/src.c.o  -o cmTC_6b1fc 
-CMakeFiles/cmTC_6b1fc.dir/src.c.o: In function `main':
+Building C object CMakeFiles/cmTC_ec3cb.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_ec3cb.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ec3cb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec3cb.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCMAKE_HAVE_LIBC_PTHREAD  -Wl,--enable-new-dtags  CMakeFiles/cmTC_ec3cb.dir/src.c.o  -o cmTC_ec3cb 
+CMakeFiles/cmTC_ec3cb.dir/src.c.o: In function `main':
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_cancel'
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:14: undefined reference to `pthread_join'
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:15: undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_6b1fc.dir/build.make:103: recipe for target 'cmTC_6b1fc' failed
-make[1]: *** [cmTC_6b1fc] Error 1
+CMakeFiles/cmTC_ec3cb.dir/build.make:103: recipe for target 'cmTC_ec3cb' failed
+make[1]: *** [cmTC_ec3cb] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_6b1fc/fast' failed
-make: *** [cmTC_6b1fc/fast] Error 2
+Makefile:138: recipe for target 'cmTC_ec3cb/fast' failed
+make: *** [cmTC_ec3cb/fast] Error 2
 
 
 Source file was:
@@ -46,30 +46,30 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_83c38/fast && /usr/bin/make -f CMakeFiles/cmTC_83c38.dir/build.make CMakeFiles/cmTC_83c38.dir/build
+Run Build Command(s):/usr/bin/make cmTC_22da5/fast && /usr/bin/make -f CMakeFiles/cmTC_22da5.dir/build.make CMakeFiles/cmTC_22da5.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_83c38.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_83c38.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.17/Modules/CheckFunctionExists.c
-Linking C executable cmTC_83c38
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83c38.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--enable-new-dtags  CMakeFiles/cmTC_83c38.dir/CheckFunctionExists.c.o  -o cmTC_83c38  -lpthreads 
+Building C object CMakeFiles/cmTC_22da5.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_22da5.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_22da5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22da5.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--enable-new-dtags  CMakeFiles/cmTC_22da5.dir/CheckFunctionExists.c.o  -o cmTC_22da5  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_83c38.dir/build.make:103: recipe for target 'cmTC_83c38' failed
-make[1]: *** [cmTC_83c38] Error 1
+CMakeFiles/cmTC_22da5.dir/build.make:103: recipe for target 'cmTC_22da5' failed
+make[1]: *** [cmTC_22da5] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_83c38/fast' failed
-make: *** [cmTC_83c38/fast] Error 2
+Makefile:138: recipe for target 'cmTC_22da5/fast' failed
+make: *** [cmTC_22da5/fast] Error 2
 
 
 
 Performing C SOURCE FILE Test C_HAS_SSE3_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_2368f/fast && /usr/bin/make -f CMakeFiles/cmTC_2368f.dir/build.make CMakeFiles/cmTC_2368f.dir/build
+Run Build Command(s):/usr/bin/make cmTC_fbe23/fast && /usr/bin/make -f CMakeFiles/cmTC_fbe23.dir/build.make CMakeFiles/cmTC_fbe23.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2368f.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE3_1   -o CMakeFiles/cmTC_2368f.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_fbe23.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE3_1   -o CMakeFiles/cmTC_fbe23.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     6 |     __m128i a;
@@ -81,11 +81,11 @@ In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/b
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
     7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_2368f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_2368f.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_2368f.dir/src.c.o] Error 1
+CMakeFiles/cmTC_fbe23.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_fbe23.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fbe23.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_2368f/fast' failed
-make: *** [cmTC_2368f/fast] Error 2
+Makefile:138: recipe for target 'cmTC_fbe23/fast' failed
+make: *** [cmTC_fbe23/fast] Error 2
 
 
 ...and run output:
@@ -104,10 +104,10 @@ Source file was:
 Performing C SOURCE FILE Test C_COMPILES_SSE3_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_aed3d/fast && /usr/bin/make -f CMakeFiles/cmTC_aed3d.dir/build.make CMakeFiles/cmTC_aed3d.dir/build
+Run Build Command(s):/usr/bin/make cmTC_3cb65/fast && /usr/bin/make -f CMakeFiles/cmTC_3cb65.dir/build.make CMakeFiles/cmTC_3cb65.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_aed3d.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE3_1   -o CMakeFiles/cmTC_aed3d.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_3cb65.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE3_1   -o CMakeFiles/cmTC_3cb65.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     6 |     __m128i a;
@@ -119,11 +119,11 @@ In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/b
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
     7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_aed3d.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_aed3d.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_aed3d.dir/src.c.o] Error 1
+CMakeFiles/cmTC_3cb65.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_3cb65.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3cb65.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_aed3d/fast' failed
-make: *** [cmTC_aed3d/fast] Error 2
+Makefile:138: recipe for target 'cmTC_3cb65/fast' failed
+make: *** [cmTC_3cb65/fast] Error 2
 
 
 Source file was:
@@ -139,10 +139,10 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_SSE4_1_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_78f4c/fast && /usr/bin/make -f CMakeFiles/cmTC_78f4c.dir/build.make CMakeFiles/cmTC_78f4c.dir/build
+Run Build Command(s):/usr/bin/make cmTC_a4b38/fast && /usr/bin/make -f CMakeFiles/cmTC_a4b38.dir/build.make CMakeFiles/cmTC_a4b38.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_78f4c.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_1_1   -o CMakeFiles/cmTC_78f4c.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_a4b38.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_1_1   -o CMakeFiles/cmTC_a4b38.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
@@ -170,11 +170,11 @@ In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/b
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
     6 |     __m128i res = _mm_max_epi8(a, b);
       |                   ^~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_78f4c.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_78f4c.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_78f4c.dir/src.c.o] Error 1
+CMakeFiles/cmTC_a4b38.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_a4b38.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a4b38.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_78f4c/fast' failed
-make: *** [cmTC_78f4c/fast] Error 2
+Makefile:138: recipe for target 'cmTC_a4b38/fast' failed
+make: *** [cmTC_a4b38/fast] Error 2
 
 
 ...and run output:
@@ -193,10 +193,10 @@ Source file was:
 Performing C SOURCE FILE Test C_COMPILES_SSE4_1_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_2857b/fast && /usr/bin/make -f CMakeFiles/cmTC_2857b.dir/build.make CMakeFiles/cmTC_2857b.dir/build
+Run Build Command(s):/usr/bin/make cmTC_365ae/fast && /usr/bin/make -f CMakeFiles/cmTC_365ae.dir/build.make CMakeFiles/cmTC_365ae.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2857b.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_2857b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_365ae.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_365ae.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
@@ -224,11 +224,11 @@ In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/b
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
     6 |     __m128i res = _mm_max_epi8(a, b);
       |                   ^~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_2857b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_2857b.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_2857b.dir/src.c.o] Error 1
+CMakeFiles/cmTC_365ae.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_365ae.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_365ae.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_2857b/fast' failed
-make: *** [cmTC_2857b/fast] Error 2
+Makefile:138: recipe for target 'cmTC_365ae/fast' failed
+make: *** [cmTC_365ae/fast] Error 2
 
 
 Source file was:
@@ -244,10 +244,10 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_SSE4_2_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_cf6ce/fast && /usr/bin/make -f CMakeFiles/cmTC_cf6ce.dir/build.make CMakeFiles/cmTC_cf6ce.dir/build
+Run Build Command(s):/usr/bin/make cmTC_550e1/fast && /usr/bin/make -f CMakeFiles/cmTC_550e1.dir/build.make CMakeFiles/cmTC_550e1.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_cf6ce.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_2_1   -o CMakeFiles/cmTC_cf6ce.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_550e1.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_2_1   -o CMakeFiles/cmTC_550e1.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
@@ -284,11 +284,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/nmmintrin.h:31,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     c = _mm_cmpgt_epi64(a, b);
       |         ^~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_cf6ce.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_cf6ce.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_cf6ce.dir/src.c.o] Error 1
+CMakeFiles/cmTC_550e1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_550e1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_550e1.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_cf6ce/fast' failed
-make: *** [cmTC_cf6ce/fast] Error 2
+Makefile:138: recipe for target 'cmTC_550e1/fast' failed
+make: *** [cmTC_550e1/fast] Error 2
 
 
 ...and run output:
@@ -307,10 +307,10 @@ Source file was:
 Performing C SOURCE FILE Test C_COMPILES_SSE4_2_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_ab637/fast && /usr/bin/make -f CMakeFiles/cmTC_ab637.dir/build.make CMakeFiles/cmTC_ab637.dir/build
+Run Build Command(s):/usr/bin/make cmTC_5f092/fast && /usr/bin/make -f CMakeFiles/cmTC_5f092.dir/build.make CMakeFiles/cmTC_5f092.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ab637.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_ab637.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_5f092.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_5f092.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
@@ -347,11 +347,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/nmmintrin.h:31,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     c = _mm_cmpgt_epi64(a, b);
       |         ^~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_ab637.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_ab637.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_ab637.dir/src.c.o] Error 1
+CMakeFiles/cmTC_5f092.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_5f092.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5f092.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_ab637/fast' failed
-make: *** [cmTC_ab637/fast] Error 2
+Makefile:138: recipe for target 'cmTC_5f092/fast' failed
+make: *** [cmTC_5f092/fast] Error 2
 
 
 Source file was:
@@ -367,10 +367,10 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_AVX_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_6c234/fast && /usr/bin/make -f CMakeFiles/cmTC_6c234.dir/build.make CMakeFiles/cmTC_6c234.dir/build
+Run Build Command(s):/usr/bin/make cmTC_fa55e/fast && /usr/bin/make -f CMakeFiles/cmTC_fa55e.dir/build.make CMakeFiles/cmTC_fa55e.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6c234.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX_1   -o CMakeFiles/cmTC_6c234.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_fa55e.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX_1   -o CMakeFiles/cmTC_fa55e.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     5 |     __m256 a;
@@ -386,11 +386,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:51,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_set1_ps(0);
       |         ^~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_6c234.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_6c234.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_6c234.dir/src.c.o] Error 1
+CMakeFiles/cmTC_fa55e.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_fa55e.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fa55e.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_6c234/fast' failed
-make: *** [cmTC_6c234/fast] Error 2
+Makefile:138: recipe for target 'cmTC_fa55e/fast' failed
+make: *** [cmTC_fa55e/fast] Error 2
 
 
 ...and run output:
@@ -409,10 +409,10 @@ Source file was:
 Performing C SOURCE FILE Test C_COMPILES_AVX_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_1e1df/fast && /usr/bin/make -f CMakeFiles/cmTC_1e1df.dir/build.make CMakeFiles/cmTC_1e1df.dir/build
+Run Build Command(s):/usr/bin/make cmTC_e571b/fast && /usr/bin/make -f CMakeFiles/cmTC_e571b.dir/build.make CMakeFiles/cmTC_e571b.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1e1df.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX_1   -o CMakeFiles/cmTC_1e1df.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_e571b.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX_1   -o CMakeFiles/cmTC_e571b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     5 |     __m256 a;
@@ -428,11 +428,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:51,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_set1_ps(0);
       |         ^~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_1e1df.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_1e1df.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_1e1df.dir/src.c.o] Error 1
+CMakeFiles/cmTC_e571b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e571b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e571b.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_1e1df/fast' failed
-make: *** [cmTC_1e1df/fast] Error 2
+Makefile:138: recipe for target 'cmTC_e571b/fast' failed
+make: *** [cmTC_e571b/fast] Error 2
 
 
 Source file was:
@@ -448,10 +448,10 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_AVX2_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_b7905/fast && /usr/bin/make -f CMakeFiles/cmTC_b7905.dir/build.make CMakeFiles/cmTC_b7905.dir/build
+Run Build Command(s):/usr/bin/make cmTC_7be7a/fast && /usr/bin/make -f CMakeFiles/cmTC_7be7a.dir/build.make CMakeFiles/cmTC_7be7a.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b7905.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX2_1   -o CMakeFiles/cmTC_b7905.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_7be7a.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX2_1   -o CMakeFiles/cmTC_7be7a.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_abs_epi16(a);
@@ -464,11 +464,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:53,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_abs_epi16(a);
       |         ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_b7905.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_b7905.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_b7905.dir/src.c.o] Error 1
+CMakeFiles/cmTC_7be7a.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_7be7a.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7be7a.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_b7905/fast' failed
-make: *** [cmTC_b7905/fast] Error 2
+Makefile:138: recipe for target 'cmTC_7be7a/fast' failed
+make: *** [cmTC_7be7a/fast] Error 2
 
 
 ...and run output:
@@ -487,10 +487,10 @@ Source file was:
 Performing C SOURCE FILE Test C_COMPILES_AVX2_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_3ad8a/fast && /usr/bin/make -f CMakeFiles/cmTC_3ad8a.dir/build.make CMakeFiles/cmTC_3ad8a.dir/build
+Run Build Command(s):/usr/bin/make cmTC_eb27c/fast && /usr/bin/make -f CMakeFiles/cmTC_eb27c.dir/build.make CMakeFiles/cmTC_eb27c.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3ad8a.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX2_1   -o CMakeFiles/cmTC_3ad8a.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_eb27c.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX2_1   -o CMakeFiles/cmTC_eb27c.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_abs_epi16(a);
@@ -503,11 +503,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:53,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_abs_epi16(a);
       |         ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_3ad8a.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_3ad8a.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_3ad8a.dir/src.c.o] Error 1
+CMakeFiles/cmTC_eb27c.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_eb27c.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_eb27c.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_3ad8a/fast' failed
-make: *** [cmTC_3ad8a/fast] Error 2
+Makefile:138: recipe for target 'cmTC_eb27c/fast' failed
+make: *** [cmTC_eb27c/fast] Error 2
 
 
 Source file was:
@@ -523,10 +523,10 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_AVX512F_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_c5821/fast && /usr/bin/make -f CMakeFiles/cmTC_c5821.dir/build.make CMakeFiles/cmTC_c5821.dir/build
+Run Build Command(s):/usr/bin/make cmTC_59280/fast && /usr/bin/make -f CMakeFiles/cmTC_59280.dir/build.make CMakeFiles/cmTC_59280.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c5821.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512F_1   -o CMakeFiles/cmTC_c5821.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_59280.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512F_1   -o CMakeFiles/cmTC_59280.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512 a = _mm512_set1_ps(1.f);
@@ -555,11 +555,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |                ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_c5821.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c5821.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_c5821.dir/src.c.o] Error 1
+CMakeFiles/cmTC_59280.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_59280.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_59280.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_c5821/fast' failed
-make: *** [cmTC_c5821/fast] Error 2
+Makefile:138: recipe for target 'cmTC_59280/fast' failed
+make: *** [cmTC_59280/fast] Error 2
 
 
 ...and run output:
@@ -578,10 +578,10 @@ Source file was:
 Performing C SOURCE FILE Test C_COMPILES_AVX512F_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_f6e24/fast && /usr/bin/make -f CMakeFiles/cmTC_f6e24.dir/build.make CMakeFiles/cmTC_f6e24.dir/build
+Run Build Command(s):/usr/bin/make cmTC_8a71f/fast && /usr/bin/make -f CMakeFiles/cmTC_8a71f.dir/build.make CMakeFiles/cmTC_8a71f.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f6e24.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_f6e24.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_8a71f.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_8a71f.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512 a = _mm512_set1_ps(1.f);
@@ -610,11 +610,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |                ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_f6e24.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_f6e24.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_f6e24.dir/src.c.o] Error 1
+CMakeFiles/cmTC_8a71f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_8a71f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_8a71f.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_f6e24/fast' failed
-make: *** [cmTC_f6e24/fast] Error 2
+Makefile:138: recipe for target 'cmTC_8a71f/fast' failed
+make: *** [cmTC_8a71f/fast] Error 2
 
 
 Source file was:
@@ -630,10 +630,10 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_AVX512BW_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_eec74/fast && /usr/bin/make -f CMakeFiles/cmTC_eec74.dir/build.make CMakeFiles/cmTC_eec74.dir/build
+Run Build Command(s):/usr/bin/make cmTC_c2f4e/fast && /usr/bin/make -f CMakeFiles/cmTC_c2f4e.dir/build.make CMakeFiles/cmTC_c2f4e.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_eec74.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512BW_1   -o CMakeFiles/cmTC_eec74.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_c2f4e.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512BW_1   -o CMakeFiles/cmTC_c2f4e.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
@@ -654,11 +654,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_eec74.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_eec74.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_eec74.dir/src.c.o] Error 1
+CMakeFiles/cmTC_c2f4e.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c2f4e.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c2f4e.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_eec74/fast' failed
-make: *** [cmTC_eec74/fast] Error 2
+Makefile:138: recipe for target 'cmTC_c2f4e/fast' failed
+make: *** [cmTC_c2f4e/fast] Error 2
 
 
 ...and run output:
@@ -678,10 +678,10 @@ Source file was:
 Performing C SOURCE FILE Test C_COMPILES_AVX512BW_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_c1cf6/fast && /usr/bin/make -f CMakeFiles/cmTC_c1cf6.dir/build.make CMakeFiles/cmTC_c1cf6.dir/build
+Run Build Command(s):/usr/bin/make cmTC_2722b/fast && /usr/bin/make -f CMakeFiles/cmTC_2722b.dir/build.make CMakeFiles/cmTC_2722b.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c1cf6.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_c1cf6.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_2722b.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_2722b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
@@ -702,11 +702,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_c1cf6.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c1cf6.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_c1cf6.dir/src.c.o] Error 1
+CMakeFiles/cmTC_2722b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_2722b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2722b.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_c1cf6/fast' failed
-make: *** [cmTC_c1cf6/fast] Error 2
+Makefile:138: recipe for target 'cmTC_2722b/fast' failed
+make: *** [cmTC_2722b/fast] Error 2
 
 
 Source file was:
@@ -723,19 +723,19 @@ Source file was:
 Performing C SOURCE FILE Test C_HAS_CLFLUSHOPT_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_24767/fast && /usr/bin/make -f CMakeFiles/cmTC_24767.dir/build.make CMakeFiles/cmTC_24767.dir/build
+Run Build Command(s):/usr/bin/make cmTC_3978d/fast && /usr/bin/make -f CMakeFiles/cmTC_3978d.dir/build.make CMakeFiles/cmTC_3978d.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_24767.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_24767.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_3978d.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_3978d.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
     6 |     __builtin_ia32_clflushopt(&flush);
       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_24767.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_24767.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_24767.dir/src.c.o] Error 1
+CMakeFiles/cmTC_3978d.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_3978d.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3978d.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_24767/fast' failed
-make: *** [cmTC_24767/fast] Error 2
+Makefile:138: recipe for target 'cmTC_3978d/fast' failed
+make: *** [cmTC_3978d/fast] Error 2
 
 
 ...and run output:
@@ -754,19 +754,19 @@ Source file was:
 Performing C SOURCE FILE Test C_COMPILES_CLFLUSHOPT_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_12c7c/fast && /usr/bin/make -f CMakeFiles/cmTC_12c7c.dir/build.make CMakeFiles/cmTC_12c7c.dir/build
+Run Build Command(s):/usr/bin/make cmTC_4c1c3/fast && /usr/bin/make -f CMakeFiles/cmTC_4c1c3.dir/build.make CMakeFiles/cmTC_4c1c3.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_12c7c.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_12c7c.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_4c1c3.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_4c1c3.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
     6 |     __builtin_ia32_clflushopt(&flush);
       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_12c7c.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_12c7c.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_12c7c.dir/src.c.o] Error 1
+CMakeFiles/cmTC_4c1c3.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_4c1c3.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_4c1c3.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_12c7c/fast' failed
-make: *** [cmTC_12c7c/fast] Error 2
+Makefile:138: recipe for target 'cmTC_4c1c3/fast' failed
+make: *** [cmTC_4c1c3/fast] Error 2
 
 
 Source file was:
@@ -782,10 +782,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_SSE3_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_f76b9/fast && /usr/bin/make -f CMakeFiles/cmTC_f76b9.dir/build.make CMakeFiles/cmTC_f76b9.dir/build
+Run Build Command(s):/usr/bin/make cmTC_4b23d/fast && /usr/bin/make -f CMakeFiles/cmTC_4b23d.dir/build.make CMakeFiles/cmTC_4b23d.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f76b9.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE3_1   -o CMakeFiles/cmTC_f76b9.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_4b23d.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE3_1   -o CMakeFiles/cmTC_4b23d.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     6 |     __m128i a;
@@ -797,11 +797,11 @@ In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/b
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
     7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_f76b9.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_f76b9.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_f76b9.dir/src.c.o] Error 1
+CMakeFiles/cmTC_4b23d.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_4b23d.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_4b23d.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_f76b9/fast' failed
-make: *** [cmTC_f76b9/fast] Error 2
+Makefile:138: recipe for target 'cmTC_4b23d/fast' failed
+make: *** [cmTC_4b23d/fast] Error 2
 
 
 ...and run output:
@@ -820,10 +820,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_COMPILES_SSE3_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_84665/fast && /usr/bin/make -f CMakeFiles/cmTC_84665.dir/build.make CMakeFiles/cmTC_84665.dir/build
+Run Build Command(s):/usr/bin/make cmTC_33a12/fast && /usr/bin/make -f CMakeFiles/cmTC_33a12.dir/build.make CMakeFiles/cmTC_33a12.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_84665.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE3_1   -o CMakeFiles/cmTC_84665.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_33a12.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE3_1   -o CMakeFiles/cmTC_33a12.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     6 |     __m128i a;
@@ -835,11 +835,11 @@ In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/b
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
     7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_84665.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_84665.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_84665.dir/src.c.o] Error 1
+CMakeFiles/cmTC_33a12.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_33a12.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_33a12.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_84665/fast' failed
-make: *** [cmTC_84665/fast] Error 2
+Makefile:138: recipe for target 'cmTC_33a12/fast' failed
+make: *** [cmTC_33a12/fast] Error 2
 
 
 Source file was:
@@ -855,10 +855,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_SSE4_1_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_0c5c9/fast && /usr/bin/make -f CMakeFiles/cmTC_0c5c9.dir/build.make CMakeFiles/cmTC_0c5c9.dir/build
+Run Build Command(s):/usr/bin/make cmTC_6923b/fast && /usr/bin/make -f CMakeFiles/cmTC_6923b.dir/build.make CMakeFiles/cmTC_6923b.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0c5c9.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_1_1   -o CMakeFiles/cmTC_0c5c9.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_6923b.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_1_1   -o CMakeFiles/cmTC_6923b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
@@ -886,11 +886,11 @@ In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/b
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
     6 |     __m128i res = _mm_max_epi8(a, b);
       |                   ^~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_0c5c9.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_0c5c9.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_0c5c9.dir/src.c.o] Error 1
+CMakeFiles/cmTC_6923b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_6923b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6923b.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_0c5c9/fast' failed
-make: *** [cmTC_0c5c9/fast] Error 2
+Makefile:138: recipe for target 'cmTC_6923b/fast' failed
+make: *** [cmTC_6923b/fast] Error 2
 
 
 ...and run output:
@@ -909,10 +909,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_COMPILES_SSE4_1_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_f64ce/fast && /usr/bin/make -f CMakeFiles/cmTC_f64ce.dir/build.make CMakeFiles/cmTC_f64ce.dir/build
+Run Build Command(s):/usr/bin/make cmTC_0b450/fast && /usr/bin/make -f CMakeFiles/cmTC_0b450.dir/build.make CMakeFiles/cmTC_0b450.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f64ce.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_f64ce.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_0b450.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_0b450.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
@@ -940,11 +940,11 @@ In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/b
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
     6 |     __m128i res = _mm_max_epi8(a, b);
       |                   ^~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_f64ce.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_f64ce.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_f64ce.dir/src.c.o] Error 1
+CMakeFiles/cmTC_0b450.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_0b450.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0b450.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_f64ce/fast' failed
-make: *** [cmTC_f64ce/fast] Error 2
+Makefile:138: recipe for target 'cmTC_0b450/fast' failed
+make: *** [cmTC_0b450/fast] Error 2
 
 
 Source file was:
@@ -960,10 +960,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_SSE4_2_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_aef8b/fast && /usr/bin/make -f CMakeFiles/cmTC_aef8b.dir/build.make CMakeFiles/cmTC_aef8b.dir/build
+Run Build Command(s):/usr/bin/make cmTC_42997/fast && /usr/bin/make -f CMakeFiles/cmTC_42997.dir/build.make CMakeFiles/cmTC_42997.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_aef8b.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_2_1   -o CMakeFiles/cmTC_aef8b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_42997.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_2_1   -o CMakeFiles/cmTC_42997.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
@@ -1000,11 +1000,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/nmmintrin.h:31,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     c = _mm_cmpgt_epi64(a, b);
       |         ^~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_aef8b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_aef8b.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_aef8b.dir/src.c.o] Error 1
+CMakeFiles/cmTC_42997.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_42997.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_42997.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_aef8b/fast' failed
-make: *** [cmTC_aef8b/fast] Error 2
+Makefile:138: recipe for target 'cmTC_42997/fast' failed
+make: *** [cmTC_42997/fast] Error 2
 
 
 ...and run output:
@@ -1023,10 +1023,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_COMPILES_SSE4_2_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_2a499/fast && /usr/bin/make -f CMakeFiles/cmTC_2a499.dir/build.make CMakeFiles/cmTC_2a499.dir/build
+Run Build Command(s):/usr/bin/make cmTC_a1b03/fast && /usr/bin/make -f CMakeFiles/cmTC_a1b03.dir/build.make CMakeFiles/cmTC_a1b03.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2a499.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_2a499.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_a1b03.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_a1b03.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
@@ -1063,11 +1063,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/nmmintrin.h:31,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     c = _mm_cmpgt_epi64(a, b);
       |         ^~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_2a499.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_2a499.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_2a499.dir/src.c.o] Error 1
+CMakeFiles/cmTC_a1b03.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_a1b03.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a1b03.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_2a499/fast' failed
-make: *** [cmTC_2a499/fast] Error 2
+Makefile:138: recipe for target 'cmTC_a1b03/fast' failed
+make: *** [cmTC_a1b03/fast] Error 2
 
 
 Source file was:
@@ -1083,10 +1083,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_AVX_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_c9c46/fast && /usr/bin/make -f CMakeFiles/cmTC_c9c46.dir/build.make CMakeFiles/cmTC_c9c46.dir/build
+Run Build Command(s):/usr/bin/make cmTC_4cbf2/fast && /usr/bin/make -f CMakeFiles/cmTC_4cbf2.dir/build.make CMakeFiles/cmTC_4cbf2.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c9c46.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX_1   -o CMakeFiles/cmTC_c9c46.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_4cbf2.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX_1   -o CMakeFiles/cmTC_4cbf2.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     5 |     __m256 a;
@@ -1102,11 +1102,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:51,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_set1_ps(0);
       |         ^~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_c9c46.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c9c46.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_c9c46.dir/src.c.o] Error 1
+CMakeFiles/cmTC_4cbf2.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_4cbf2.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_4cbf2.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_c9c46/fast' failed
-make: *** [cmTC_c9c46/fast] Error 2
+Makefile:138: recipe for target 'cmTC_4cbf2/fast' failed
+make: *** [cmTC_4cbf2/fast] Error 2
 
 
 ...and run output:
@@ -1125,10 +1125,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_COMPILES_AVX_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_e0e2e/fast && /usr/bin/make -f CMakeFiles/cmTC_e0e2e.dir/build.make CMakeFiles/cmTC_e0e2e.dir/build
+Run Build Command(s):/usr/bin/make cmTC_1decf/fast && /usr/bin/make -f CMakeFiles/cmTC_1decf.dir/build.make CMakeFiles/cmTC_1decf.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e0e2e.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX_1   -o CMakeFiles/cmTC_e0e2e.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_1decf.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX_1   -o CMakeFiles/cmTC_1decf.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     5 |     __m256 a;
@@ -1144,11 +1144,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:51,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_set1_ps(0);
       |         ^~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_e0e2e.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e0e2e.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_e0e2e.dir/src.c.o] Error 1
+CMakeFiles/cmTC_1decf.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_1decf.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_1decf.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_e0e2e/fast' failed
-make: *** [cmTC_e0e2e/fast] Error 2
+Makefile:138: recipe for target 'cmTC_1decf/fast' failed
+make: *** [cmTC_1decf/fast] Error 2
 
 
 Source file was:
@@ -1164,10 +1164,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_AVX2_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_eb0b1/fast && /usr/bin/make -f CMakeFiles/cmTC_eb0b1.dir/build.make CMakeFiles/cmTC_eb0b1.dir/build
+Run Build Command(s):/usr/bin/make cmTC_5df18/fast && /usr/bin/make -f CMakeFiles/cmTC_5df18.dir/build.make CMakeFiles/cmTC_5df18.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_eb0b1.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX2_1   -o CMakeFiles/cmTC_eb0b1.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_5df18.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX2_1   -o CMakeFiles/cmTC_5df18.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_abs_epi16(a);
@@ -1180,11 +1180,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:53,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_abs_epi16(a);
       |         ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_eb0b1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_eb0b1.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_eb0b1.dir/src.c.o] Error 1
+CMakeFiles/cmTC_5df18.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_5df18.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5df18.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_eb0b1/fast' failed
-make: *** [cmTC_eb0b1/fast] Error 2
+Makefile:138: recipe for target 'cmTC_5df18/fast' failed
+make: *** [cmTC_5df18/fast] Error 2
 
 
 ...and run output:
@@ -1203,10 +1203,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_COMPILES_AVX2_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_1983f/fast && /usr/bin/make -f CMakeFiles/cmTC_1983f.dir/build.make CMakeFiles/cmTC_1983f.dir/build
+Run Build Command(s):/usr/bin/make cmTC_7e943/fast && /usr/bin/make -f CMakeFiles/cmTC_7e943.dir/build.make CMakeFiles/cmTC_7e943.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1983f.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX2_1   -o CMakeFiles/cmTC_1983f.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_7e943.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX2_1   -o CMakeFiles/cmTC_7e943.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_abs_epi16(a);
@@ -1219,11 +1219,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:53,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_abs_epi16(a);
       |         ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_1983f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_1983f.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_1983f.dir/src.c.o] Error 1
+CMakeFiles/cmTC_7e943.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_7e943.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7e943.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_1983f/fast' failed
-make: *** [cmTC_1983f/fast] Error 2
+Makefile:138: recipe for target 'cmTC_7e943/fast' failed
+make: *** [cmTC_7e943/fast] Error 2
 
 
 Source file was:
@@ -1239,10 +1239,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_AVX512F_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_ad5de/fast && /usr/bin/make -f CMakeFiles/cmTC_ad5de.dir/build.make CMakeFiles/cmTC_ad5de.dir/build
+Run Build Command(s):/usr/bin/make cmTC_c8976/fast && /usr/bin/make -f CMakeFiles/cmTC_c8976.dir/build.make CMakeFiles/cmTC_c8976.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ad5de.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512F_1   -o CMakeFiles/cmTC_ad5de.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_c8976.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512F_1   -o CMakeFiles/cmTC_c8976.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512 a = _mm512_set1_ps(1.f);
@@ -1271,11 +1271,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |                ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_ad5de.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_ad5de.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_ad5de.dir/src.c.o] Error 1
+CMakeFiles/cmTC_c8976.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c8976.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c8976.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_ad5de/fast' failed
-make: *** [cmTC_ad5de/fast] Error 2
+Makefile:138: recipe for target 'cmTC_c8976/fast' failed
+make: *** [cmTC_c8976/fast] Error 2
 
 
 ...and run output:
@@ -1294,10 +1294,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_COMPILES_AVX512F_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7fe2a/fast && /usr/bin/make -f CMakeFiles/cmTC_7fe2a.dir/build.make CMakeFiles/cmTC_7fe2a.dir/build
+Run Build Command(s):/usr/bin/make cmTC_eb445/fast && /usr/bin/make -f CMakeFiles/cmTC_eb445.dir/build.make CMakeFiles/cmTC_eb445.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7fe2a.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_7fe2a.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_eb445.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_eb445.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512 a = _mm512_set1_ps(1.f);
@@ -1326,11 +1326,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |                ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_7fe2a.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_7fe2a.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_7fe2a.dir/src.c.o] Error 1
+CMakeFiles/cmTC_eb445.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_eb445.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_eb445.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_7fe2a/fast' failed
-make: *** [cmTC_7fe2a/fast] Error 2
+Makefile:138: recipe for target 'cmTC_eb445/fast' failed
+make: *** [cmTC_eb445/fast] Error 2
 
 
 Source file was:
@@ -1346,10 +1346,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_AVX512BW_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_e9291/fast && /usr/bin/make -f CMakeFiles/cmTC_e9291.dir/build.make CMakeFiles/cmTC_e9291.dir/build
+Run Build Command(s):/usr/bin/make cmTC_02a48/fast && /usr/bin/make -f CMakeFiles/cmTC_02a48.dir/build.make CMakeFiles/cmTC_02a48.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e9291.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512BW_1   -o CMakeFiles/cmTC_e9291.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_02a48.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512BW_1   -o CMakeFiles/cmTC_02a48.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
@@ -1370,11 +1370,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_e9291.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e9291.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_e9291.dir/src.c.o] Error 1
+CMakeFiles/cmTC_02a48.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_02a48.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_02a48.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_e9291/fast' failed
-make: *** [cmTC_e9291/fast] Error 2
+Makefile:138: recipe for target 'cmTC_02a48/fast' failed
+make: *** [cmTC_02a48/fast] Error 2
 
 
 ...and run output:
@@ -1394,10 +1394,10 @@ Source file was:
 Performing C SOURCE FILE Test CXX_COMPILES_AVX512BW_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_df785/fast && /usr/bin/make -f CMakeFiles/cmTC_df785.dir/build.make CMakeFiles/cmTC_df785.dir/build
+Run Build Command(s):/usr/bin/make cmTC_2f0d1/fast && /usr/bin/make -f CMakeFiles/cmTC_2f0d1.dir/build.make CMakeFiles/cmTC_2f0d1.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_df785.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_df785.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_2f0d1.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_2f0d1.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
@@ -1418,11 +1418,11 @@ In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_df785.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_df785.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_df785.dir/src.c.o] Error 1
+CMakeFiles/cmTC_2f0d1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_2f0d1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2f0d1.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_df785/fast' failed
-make: *** [cmTC_df785/fast] Error 2
+Makefile:138: recipe for target 'cmTC_2f0d1/fast' failed
+make: *** [cmTC_2f0d1/fast] Error 2
 
 
 Source file was:
@@ -1439,19 +1439,19 @@ Source file was:
 Performing C SOURCE FILE Test CXX_HAS_CLFLUSHOPT_1 failed with the following compile output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7d2a2/fast && /usr/bin/make -f CMakeFiles/cmTC_7d2a2.dir/build.make CMakeFiles/cmTC_7d2a2.dir/build
+Run Build Command(s):/usr/bin/make cmTC_7eb17/fast && /usr/bin/make -f CMakeFiles/cmTC_7eb17.dir/build.make CMakeFiles/cmTC_7eb17.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7d2a2.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_7d2a2.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_7eb17.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_7eb17.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
     6 |     __builtin_ia32_clflushopt(&flush);
       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_7d2a2.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_7d2a2.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_7d2a2.dir/src.c.o] Error 1
+CMakeFiles/cmTC_7eb17.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_7eb17.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7eb17.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_7d2a2/fast' failed
-make: *** [cmTC_7d2a2/fast] Error 2
+Makefile:138: recipe for target 'cmTC_7eb17/fast' failed
+make: *** [cmTC_7eb17/fast] Error 2
 
 
 ...and run output:
@@ -1470,19 +1470,19 @@ Source file was:
 Performing C SOURCE FILE Test CXX_COMPILES_CLFLUSHOPT_1 failed with the following output:
 Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_9dc15/fast && /usr/bin/make -f CMakeFiles/cmTC_9dc15.dir/build.make CMakeFiles/cmTC_9dc15.dir/build
+Run Build Command(s):/usr/bin/make cmTC_8cba9/fast && /usr/bin/make -f CMakeFiles/cmTC_8cba9.dir/build.make CMakeFiles/cmTC_8cba9.dir/build
 make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_9dc15.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_9dc15.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_8cba9.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_8cba9.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
     6 |     __builtin_ia32_clflushopt(&flush);
       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_9dc15.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_9dc15.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_9dc15.dir/src.c.o] Error 1
+CMakeFiles/cmTC_8cba9.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_8cba9.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_8cba9.dir/src.c.o] Error 1
 make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_9dc15/fast' failed
-make: *** [cmTC_9dc15/fast] Error 2
+Makefile:138: recipe for target 'cmTC_8cba9/fast' failed
+make: *** [cmTC_8cba9/fast] Error 2
 
 
 Source file was:
