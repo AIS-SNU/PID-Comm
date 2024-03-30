@@ -1,5 +1,5 @@
 # [ISCA'24] PID-Comm: A Fast and Flexible Collective Communication Framework for Commodity Processing-in-DIMMs
-This repository contains the tutorial code for PID-Comm, a fast and flexible collective communication framework for Commodity Processing-in-DIMMs.
+This repository contains the tutorial code for PID-Comm, a fast and flexible collective communication framework for commodity Processing-in-DIMMs.
 Please cite the paper for more information.
 
 ## Required Hardware
@@ -48,10 +48,10 @@ void pidcomm_all_reduce(
     PIDCOMM_OPERATOR reduction_type)
 ```
 
-Assuming that there are eight participating nodes with an array [0, 1, 2, 3].
-After executing pidcomm_all_reduce(), all nodes will have the same array [0, 8, 16, 24].
+Assume there are eight nodes in communication, each containing 4 integers [0, 1, 2, 3].
+After executing pidcomm_all_reduce(), all nodes will contain the same result [0, 8, 16, 24], the sum of the integers in the communicating nodes.
 
-Now, let's learn how to use PID-Comm.
+The instructions below provide instructions on how to use PID-Comm. 
 First, include the PID-Comm header files with ```#include <pidcomm.h>```.
 After the previous step, you need to configure the hypercube settings.
 Here is an example:
@@ -76,10 +76,14 @@ DPU_ASSERT(dpu_alloc(nr_dpus, NULL, &dpu_set));
 hypercube_manager* hypercube_manager = init_hypercube_manager(dpu_set, dimension, axis_len);
 ```
 Now PID-Comm's settings have been completed.
-You are free to use it in your applications!
+The following line of code is used to execute pidcomm_allreduce().
 ```
 pidcomm_all_reduce(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
 ```
+
+Note that in order to send and receive data from the DPUs, a binary file needs to be loaded on the DPUs.
+We have loaded a dummy binary file DPU_BINARY_USER, to enable data transfer between the host and the DPUs.
+A custom binary file may be used to replace our current dummy binary file.
 
 A script is also available to test the tutorial code.
 ```
