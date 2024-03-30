@@ -77,12 +77,12 @@ hypercube_manager* hypercube_manager = init_hypercube_manager(dpu_set, dimension
 ```
 Now PID-Comm's settings have been completed.
 The following line of code is used to execute pidcomm_allreduce().
+The parameter "100" refers to the axis used in communication, which is the x-axis in this case.
 ```
 pidcomm_all_reduce(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
 ```
 
-Note that in order to send and receive data from the DPUs, a binary file needs to be loaded on the DPUs.
-We have loaded a dummy binary file DPU_BINARY_USER, to enable data transfer between the host and the DPUs.
+Note that a dummy binary file, DPU_BINARY_USER, is loaded in the DPUs for the tutorial.
 A custom binary file may be used to replace our current dummy binary file.
 
 A script is also available to test the tutorial code.
