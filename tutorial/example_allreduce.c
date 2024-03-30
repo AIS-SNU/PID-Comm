@@ -57,7 +57,7 @@ int main(){
     uint32_t data_size_per_dpu = 64*axis_len[0]; //data size for each nodes
     uint32_t data_num_per_dpu = data_size_per_dpu/sizeof(uint32_t);
     
-    //You must allocate and load a DPU bianry file.
+    //You must allocate and load a DPU binary file.
     DPU_ASSERT(dpu_alloc_comm(nr_dpus, NULL, &dpu_set, 1));
     //DPU_ASSERT(dpu_alloc(nr_dpus, NULL, &dpu_set));
     DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_USER, NULL));
@@ -89,13 +89,13 @@ int main(){
         }
     }
 
-    //Send the data for each DPUs
+    //Send data to each DPU
     DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, each_dpu, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, original_data+each_dpu*data_num_per_dpu));
     }
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, data_size_per_dpu, DPU_XFER_DEFAULT));
 
-    //Perform AllReduce by utilizing PID-Comm
+    //Perform AllReduce by utilizing PID-Comm. "100" represents in which direction the DPUs should communicate in, in this case will be the x-axis
     pidcomm_all_reduce(hypercube_manager, "100", data_size_per_dpu, start_offset, target_offset, buffer_offset, sizeof(T), 0);
 
     //Receive the data for each DPUs

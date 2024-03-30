@@ -55,7 +55,7 @@ int main(){
     uint32_t num_comm_dpu = DPU_INPUT_ARGUMENTS_RS1.num_comm_dpu;
     uint32_t dpu_num = DPU_INPUT_ARGUMENTS_RS1.each_dpu;
     uint32_t no_rotate = DPU_INPUT_ARGUMENTS_RS1.no_rotate;
-    uint32_t comm_type = DPU_INPUT_ARGUMENTS_RS1.comm_type; //wether it contains the x axis
+    uint32_t comm_type = DPU_INPUT_ARGUMENTS_RS1.comm_type; //whether it contains the x axis
     uint32_t a_length = DPU_INPUT_ARGUMENTS_RS1.a_length; //length of the x-axis
     uint32_t num_comm_rg = DPU_INPUT_ARGUMENTS_RS1.num_comm_rg; // number of PEs participating in communication in each entangled group 
 
