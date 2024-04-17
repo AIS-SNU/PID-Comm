@@ -60,10 +60,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends
+CMAKE_SOURCE_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build
+CMAKE_BINARY_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build
 
 # Utility rule file for ufi-format.
 
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/buil
 include ufi/CMakeFiles/ufi-format.dir/progress.make
 
 ufi/CMakeFiles/ufi-format:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/ufi && clang-format -style=file -i /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_bit_config.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_ci.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_ci_commands.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_ci_types.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_config.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_debug.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_dma_wavegen_config.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_memory.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_runner.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi.c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_bit_config.c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_ci.c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_config.c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_debug.c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_dma_wavegen_config.c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_memory.c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_rank_utils.h /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_runner.c
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/ufi && clang-format -style=file -i /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_bit_config.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_ci.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_ci_commands.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_ci_types.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_config.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_debug.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_dma_wavegen_config.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_memory.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/include/ufi/ufi_runner.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi.c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_bit_config.c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_ci.c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_config.c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_debug.c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_dma_wavegen_config.c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_memory.c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_rank_utils.h /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi/src/ufi_runner.c
 
 ufi-format: ufi/CMakeFiles/ufi-format
 ufi-format: ufi/CMakeFiles/ufi-format.dir/build.make
@@ -84,10 +84,10 @@ ufi/CMakeFiles/ufi-format.dir/build: ufi-format
 .PHONY : ufi/CMakeFiles/ufi-format.dir/build
 
 ufi/CMakeFiles/ufi-format.dir/clean:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/ufi && $(CMAKE_COMMAND) -P CMakeFiles/ufi-format.dir/cmake_clean.cmake
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/ufi && $(CMAKE_COMMAND) -P CMakeFiles/ufi-format.dir/cmake_clean.cmake
 .PHONY : ufi/CMakeFiles/ufi-format.dir/clean
 
 ufi/CMakeFiles/ufi-format.dir/depend:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/ufi /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/ufi/CMakeFiles/ufi-format.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/ufi /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/ufi /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/ufi/CMakeFiles/ufi-format.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ufi/CMakeFiles/ufi-format.dir/depend
 

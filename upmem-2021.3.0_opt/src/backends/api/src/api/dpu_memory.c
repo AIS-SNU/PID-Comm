@@ -488,13 +488,6 @@ dpu_push_xfer_symbol(struct dpu_set_t dpu_set,
     size_t length,
     dpu_xfer_flags_t flags)
 {
-    // printf("%s, 0x%08x, %d, %d, %zd, 0x%x\n",
-    //     dpu_transfer_to_string(xfer),
-    //     symbol.address,
-    //     symbol.size,
-    //     symbol_offset,
-    //     length,
-    //     flags);
         
     LOG_FN(DEBUG,
         "%s, 0x%08x, %d, %d, %zd, 0x%x",
@@ -580,10 +573,8 @@ make_rnc_threads(
 {
     __attribute__((unused)) dpu_error_t status;
 
-    // printf("Hello! %p: %d\n", job_queue, job_queue->num_ranks);
     for (int r = 0; r < job_queue->num_ranks; r++)
     {
-        // printf("%d/%d\n",r , job_queue->num_ranks);
         struct dpu_program_t *program;
         struct dpu_symbol_t symbol_src;
 
@@ -1228,7 +1219,7 @@ void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_dat
 
     T** result = (T**) calloc(nr_dpus, sizeof(T*));
     for(int i=0; i<nr_dpus; i++)
-        result[i] = (T*) calloc(total_data_size/sizeof(T), sizeof(T));
+        result[i] = (T*) calloc(8/sizeof(T), sizeof(T));
     int i;
 
     uint32_t num_comm_rg = 1;
@@ -1277,7 +1268,7 @@ void pidcomm_alltoall(hypercube_manager* manager, char* comm, uint32_t total_dat
     DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
-    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, start_offset + buffer_offset, total_data_size, DPU_XFER_DEFAULT));
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
 
 
     //relocate after kernel
@@ -1399,10 +1390,8 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
 
     T** result = (T**) calloc(nr_dpus, sizeof(T*));
     for(int i=0; i<nr_dpus; i++)
-        result[i] = (T*) calloc(total_data_size/sizeof(T), sizeof(T));
+        result[i] = (T*) calloc(8/sizeof(T), sizeof(T));
     int i;
-
-    printf("nr_dpu : %d, num_comm_dpu : %d, num_comm_rg : %d\n", nr_dpus, num_comm_dpu, num_comm_rg);
 
     if(axis_len[0]==2 && axis_len[1]==2 && ( ((comm_axis[0]==0) && (comm_axis[1]==1) && (comm_axis[2]==0)) || ((comm_axis[0]==1) && (comm_axis[1]==0) && (comm_axis[2]==1)))){
         // if(size==1) DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_RS_22_INT8"), NULL));
@@ -1432,8 +1421,6 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
     }
 
     else if(axis_len[0] < 8 && ((num_comm_rg < 8) && (num_comm_rg > 1) )){
-        // if(size==1) DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_RS_24_INT8"), NULL));
-        // else DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_RS_24_INT32"), NULL));
         if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_CLOCKWISE_SHORT_INT8, NULL));
         else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_CLOCKWISE_SHORT_INT32, NULL));
 
@@ -1515,7 +1502,7 @@ void pidcomm_reduce_scatter(hypercube_manager* manager, char* comm, uint32_t tot
     DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
-    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, start_offset + buffer_offset, total_data_size, DPU_XFER_DEFAULT));
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, start_offset + buffer_offset, 8, DPU_XFER_DEFAULT));
 
     reduce_scatter(&dpu_set, start_offset, target_offset, total_data_size/num_comm_dpu, comm_type, buffer_offset, dimension, axis_len, comm_axis, size);
     
@@ -1562,7 +1549,7 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
 
     T** result = (T**) calloc(nr_dpus, sizeof(T*));
     for(int i=0; i<nr_dpus; i++)
-        result[i] = (T*) calloc(total_data_size/sizeof(T), sizeof(T));
+        result[i] = (T*) calloc(8/sizeof(T), sizeof(T));
     int i;
 
     uint32_t num_comm_rg = 1;
@@ -1574,12 +1561,8 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
         if(num_comm_rg >= 8) num_comm_rg = 8;
     }
 
-    printf("nr_dpu : %d, num_comm_dpu : %d, num_comm_rg : %d\n", nr_dpus, num_comm_dpu, num_comm_rg);
-
     //relocate before kernel
     if(axis_len[0]==2 && axis_len[1]==2 && ( ((comm_axis[0]==0) && (comm_axis[1]==1) && (comm_axis[2]==0)) || ((comm_axis[0]==1) && (comm_axis[1]==0) && (comm_axis[2]==1)))){
-        // if(size==1) DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_RS_22_INT8"), NULL));
-        // else DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_RS_22_INT32"), NULL));
         if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_MODIFIED_REVERSE_CLOCKWISE_INT8, NULL));
         else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_MODIFIED_REVERSE_CLOCKWISE_INT32, NULL));
 
@@ -1681,8 +1664,6 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
 
     //relocate before kernel
     if(axis_len[0]==2 && axis_len[1]==2 && ((comm_axis[0]==1 && comm_axis[1]==0 && comm_axis[2]==1) || (comm_axis[0]==0 && comm_axis[1]==1 && comm_axis[2]==0))){
-        // if(size==1) DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_ALLTOALL_22_INT8"), NULL));
-        // else DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_ALLTOALL_22_INT32"), NULL));
         if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_MODIFIED_CLOCKWISE_INT8, NULL));
         else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_MODIFIED_CLOCKWISE_INT32, NULL));
 
@@ -1708,8 +1689,6 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
     }
 
     else if(axis_len[0] < 8 && ((num_comm_rg < 8) && (num_comm_rg > 1) )){
-        // if(size==1) DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_AR_24_INT8"), NULL));
-        // else DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_AR_24_INT32"), NULL));
         if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_REVERSE_CLOCKWISE_SHORT_INT8, NULL));
         else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_REVERSE_CLOCKWISE_SHORT_INT32, NULL));
 
@@ -1736,8 +1715,6 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
     }
     else if(!comm_type){
 
-        // if(size==1) DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_BINARY_AR_2_INT8"), NULL));
-        // else DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_BINARY_AR_2_INT32"), NULL));
         if(size==1) DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_COUNTERCLOCKWISE_INT8, NULL));
         else DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_COUNTERCLOCKWISE_INT32, NULL));
 
@@ -1837,10 +1814,6 @@ void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_da
         }
         if(num_comm_rg >= 8) num_comm_rg = 8;
     }
-    printf("nr_dpu : %d, num_comm_rg : %d\n", nr_dpus, num_comm_rg);
-
-    
-
     //relocate before kernel
 
     all_gather(&dpu_set, start_offset, start_offset, total_data_size/num_comm_dpu, comm_type, buffer_offset, dimension, axis_len, comm_axis);
@@ -1990,7 +1963,7 @@ void pidcomm_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_
 
     T** result = (T**) calloc(nr_dpus, sizeof(T*));
     for(int i=0; i<nr_dpus; i++)
-        result[i] = (T*) calloc(total_data_size/sizeof(T), sizeof(T));
+        result[i] = (T*) calloc(8/sizeof(T), sizeof(T));
     int i;
 
     uint32_t num_comm_rg = 1;
@@ -2033,7 +2006,7 @@ void pidcomm_reduce(hypercube_manager* manager, char* comm, uint32_t total_data_
     DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
         DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
     }
-    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, total_data_size, DPU_XFER_DEFAULT));
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
 
 
     //kernel function of All-Reduce
@@ -2083,7 +2056,7 @@ void pidcomm_scatter(hypercube_manager* manager, char* comm, uint32_t total_data
 
     T** result = (T**) calloc(nr_dpus, sizeof(T*));
     for(int i=0; i<nr_dpus; i++)
-        result[i] = (T*) calloc(total_data_size/sizeof(T), sizeof(T));
+        result[i] = (T*) calloc(8/sizeof(T), sizeof(T));
     int i;
 
     uint32_t num_comm_rg = 1;

@@ -65,10 +65,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends
+CMAKE_SOURCE_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build
+CMAKE_BINARY_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -154,14 +154,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api/CMakeFiles/progress.marks
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles 0
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api/CMakeFiles/progress.marks
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/clean
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/clean
 .PHONY : clean
 
 # The main clean target
@@ -171,22 +171,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/preinstall
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/preinstall
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 api/CMakeFiles/dpujni.dir/rule:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/CMakeFiles/dpujni.dir/rule
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/CMakeFiles/dpujni.dir/rule
 .PHONY : api/CMakeFiles/dpujni.dir/rule
 
 # Convenience name for target.
@@ -196,12 +196,12 @@ dpujni: api/CMakeFiles/dpujni.dir/rule
 
 # fast build rule for target.
 dpujni/fast:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpujni.dir/build.make api/CMakeFiles/dpujni.dir/build
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpujni.dir/build.make api/CMakeFiles/dpujni.dir/build
 .PHONY : dpujni/fast
 
 # Convenience name for target.
 api/CMakeFiles/dpu.dir/rule:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/CMakeFiles/dpu.dir/rule
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 api/CMakeFiles/dpu.dir/rule
 .PHONY : api/CMakeFiles/dpu.dir/rule
 
 # Convenience name for target.
@@ -211,7 +211,7 @@ dpu: api/CMakeFiles/dpu.dir/rule
 
 # fast build rule for target.
 dpu/fast:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/build
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/build
 .PHONY : dpu/fast
 
 __/commons/src/dpu_package.o: __/commons/src/dpu_package.c.o
@@ -220,7 +220,7 @@ __/commons/src/dpu_package.o: __/commons/src/dpu_package.c.o
 
 # target to build an object file
 __/commons/src/dpu_package.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_package.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_package.c.o
 .PHONY : __/commons/src/dpu_package.c.o
 
 __/commons/src/dpu_package.i: __/commons/src/dpu_package.c.i
@@ -229,7 +229,7 @@ __/commons/src/dpu_package.i: __/commons/src/dpu_package.c.i
 
 # target to preprocess a source file
 __/commons/src/dpu_package.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_package.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_package.c.i
 .PHONY : __/commons/src/dpu_package.c.i
 
 __/commons/src/dpu_package.s: __/commons/src/dpu_package.c.s
@@ -238,7 +238,7 @@ __/commons/src/dpu_package.s: __/commons/src/dpu_package.c.s
 
 # target to generate assembly for a file
 __/commons/src/dpu_package.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_package.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_package.c.s
 .PHONY : __/commons/src/dpu_package.c.s
 
 __/commons/src/dpu_predef_programs.o: __/commons/src/dpu_predef_programs.c.o
@@ -247,7 +247,7 @@ __/commons/src/dpu_predef_programs.o: __/commons/src/dpu_predef_programs.c.o
 
 # target to build an object file
 __/commons/src/dpu_predef_programs.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_predef_programs.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_predef_programs.c.o
 .PHONY : __/commons/src/dpu_predef_programs.c.o
 
 __/commons/src/dpu_predef_programs.i: __/commons/src/dpu_predef_programs.c.i
@@ -256,7 +256,7 @@ __/commons/src/dpu_predef_programs.i: __/commons/src/dpu_predef_programs.c.i
 
 # target to preprocess a source file
 __/commons/src/dpu_predef_programs.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_predef_programs.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_predef_programs.c.i
 .PHONY : __/commons/src/dpu_predef_programs.c.i
 
 __/commons/src/dpu_predef_programs.s: __/commons/src/dpu_predef_programs.c.s
@@ -265,7 +265,7 @@ __/commons/src/dpu_predef_programs.s: __/commons/src/dpu_predef_programs.c.s
 
 # target to generate assembly for a file
 __/commons/src/dpu_predef_programs.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_predef_programs.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/dpu_predef_programs.c.s
 .PHONY : __/commons/src/dpu_predef_programs.c.s
 
 __/commons/src/properties/dpu_properties.o: __/commons/src/properties/dpu_properties.c.o
@@ -274,7 +274,7 @@ __/commons/src/properties/dpu_properties.o: __/commons/src/properties/dpu_proper
 
 # target to build an object file
 __/commons/src/properties/dpu_properties.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties.c.o
 .PHONY : __/commons/src/properties/dpu_properties.c.o
 
 __/commons/src/properties/dpu_properties.i: __/commons/src/properties/dpu_properties.c.i
@@ -283,7 +283,7 @@ __/commons/src/properties/dpu_properties.i: __/commons/src/properties/dpu_proper
 
 # target to preprocess a source file
 __/commons/src/properties/dpu_properties.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties.c.i
 .PHONY : __/commons/src/properties/dpu_properties.c.i
 
 __/commons/src/properties/dpu_properties.s: __/commons/src/properties/dpu_properties.c.s
@@ -292,7 +292,7 @@ __/commons/src/properties/dpu_properties.s: __/commons/src/properties/dpu_proper
 
 # target to generate assembly for a file
 __/commons/src/properties/dpu_properties.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties.c.s
 .PHONY : __/commons/src/properties/dpu_properties.c.s
 
 __/commons/src/properties/dpu_properties_loader.o: __/commons/src/properties/dpu_properties_loader.c.o
@@ -301,7 +301,7 @@ __/commons/src/properties/dpu_properties_loader.o: __/commons/src/properties/dpu
 
 # target to build an object file
 __/commons/src/properties/dpu_properties_loader.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties_loader.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties_loader.c.o
 .PHONY : __/commons/src/properties/dpu_properties_loader.c.o
 
 __/commons/src/properties/dpu_properties_loader.i: __/commons/src/properties/dpu_properties_loader.c.i
@@ -310,7 +310,7 @@ __/commons/src/properties/dpu_properties_loader.i: __/commons/src/properties/dpu
 
 # target to preprocess a source file
 __/commons/src/properties/dpu_properties_loader.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties_loader.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties_loader.c.i
 .PHONY : __/commons/src/properties/dpu_properties_loader.c.i
 
 __/commons/src/properties/dpu_properties_loader.s: __/commons/src/properties/dpu_properties_loader.c.s
@@ -319,7 +319,7 @@ __/commons/src/properties/dpu_properties_loader.s: __/commons/src/properties/dpu
 
 # target to generate assembly for a file
 __/commons/src/properties/dpu_properties_loader.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties_loader.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/properties/dpu_properties_loader.c.s
 .PHONY : __/commons/src/properties/dpu_properties_loader.c.s
 
 __/commons/src/types/dpu_description.o: __/commons/src/types/dpu_description.c.o
@@ -328,7 +328,7 @@ __/commons/src/types/dpu_description.o: __/commons/src/types/dpu_description.c.o
 
 # target to build an object file
 __/commons/src/types/dpu_description.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/types/dpu_description.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/types/dpu_description.c.o
 .PHONY : __/commons/src/types/dpu_description.c.o
 
 __/commons/src/types/dpu_description.i: __/commons/src/types/dpu_description.c.i
@@ -337,7 +337,7 @@ __/commons/src/types/dpu_description.i: __/commons/src/types/dpu_description.c.i
 
 # target to preprocess a source file
 __/commons/src/types/dpu_description.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/types/dpu_description.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/types/dpu_description.c.i
 .PHONY : __/commons/src/types/dpu_description.c.i
 
 __/commons/src/types/dpu_description.s: __/commons/src/types/dpu_description.c.s
@@ -346,7 +346,7 @@ __/commons/src/types/dpu_description.s: __/commons/src/types/dpu_description.c.s
 
 # target to generate assembly for a file
 __/commons/src/types/dpu_description.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/types/dpu_description.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/commons/src/types/dpu_description.c.s
 .PHONY : __/commons/src/types/dpu_description.c.s
 
 __/ufi/src/ufi.o: __/ufi/src/ufi.c.o
@@ -355,7 +355,7 @@ __/ufi/src/ufi.o: __/ufi/src/ufi.c.o
 
 # target to build an object file
 __/ufi/src/ufi.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi.c.o
 .PHONY : __/ufi/src/ufi.c.o
 
 __/ufi/src/ufi.i: __/ufi/src/ufi.c.i
@@ -364,7 +364,7 @@ __/ufi/src/ufi.i: __/ufi/src/ufi.c.i
 
 # target to preprocess a source file
 __/ufi/src/ufi.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi.c.i
 .PHONY : __/ufi/src/ufi.c.i
 
 __/ufi/src/ufi.s: __/ufi/src/ufi.c.s
@@ -373,7 +373,7 @@ __/ufi/src/ufi.s: __/ufi/src/ufi.c.s
 
 # target to generate assembly for a file
 __/ufi/src/ufi.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi.c.s
 .PHONY : __/ufi/src/ufi.c.s
 
 __/ufi/src/ufi_bit_config.o: __/ufi/src/ufi_bit_config.c.o
@@ -382,7 +382,7 @@ __/ufi/src/ufi_bit_config.o: __/ufi/src/ufi_bit_config.c.o
 
 # target to build an object file
 __/ufi/src/ufi_bit_config.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_bit_config.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_bit_config.c.o
 .PHONY : __/ufi/src/ufi_bit_config.c.o
 
 __/ufi/src/ufi_bit_config.i: __/ufi/src/ufi_bit_config.c.i
@@ -391,7 +391,7 @@ __/ufi/src/ufi_bit_config.i: __/ufi/src/ufi_bit_config.c.i
 
 # target to preprocess a source file
 __/ufi/src/ufi_bit_config.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_bit_config.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_bit_config.c.i
 .PHONY : __/ufi/src/ufi_bit_config.c.i
 
 __/ufi/src/ufi_bit_config.s: __/ufi/src/ufi_bit_config.c.s
@@ -400,7 +400,7 @@ __/ufi/src/ufi_bit_config.s: __/ufi/src/ufi_bit_config.c.s
 
 # target to generate assembly for a file
 __/ufi/src/ufi_bit_config.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_bit_config.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_bit_config.c.s
 .PHONY : __/ufi/src/ufi_bit_config.c.s
 
 __/ufi/src/ufi_ci.o: __/ufi/src/ufi_ci.c.o
@@ -409,7 +409,7 @@ __/ufi/src/ufi_ci.o: __/ufi/src/ufi_ci.c.o
 
 # target to build an object file
 __/ufi/src/ufi_ci.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_ci.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_ci.c.o
 .PHONY : __/ufi/src/ufi_ci.c.o
 
 __/ufi/src/ufi_ci.i: __/ufi/src/ufi_ci.c.i
@@ -418,7 +418,7 @@ __/ufi/src/ufi_ci.i: __/ufi/src/ufi_ci.c.i
 
 # target to preprocess a source file
 __/ufi/src/ufi_ci.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_ci.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_ci.c.i
 .PHONY : __/ufi/src/ufi_ci.c.i
 
 __/ufi/src/ufi_ci.s: __/ufi/src/ufi_ci.c.s
@@ -427,7 +427,7 @@ __/ufi/src/ufi_ci.s: __/ufi/src/ufi_ci.c.s
 
 # target to generate assembly for a file
 __/ufi/src/ufi_ci.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_ci.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_ci.c.s
 .PHONY : __/ufi/src/ufi_ci.c.s
 
 __/ufi/src/ufi_config.o: __/ufi/src/ufi_config.c.o
@@ -436,7 +436,7 @@ __/ufi/src/ufi_config.o: __/ufi/src/ufi_config.c.o
 
 # target to build an object file
 __/ufi/src/ufi_config.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_config.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_config.c.o
 .PHONY : __/ufi/src/ufi_config.c.o
 
 __/ufi/src/ufi_config.i: __/ufi/src/ufi_config.c.i
@@ -445,7 +445,7 @@ __/ufi/src/ufi_config.i: __/ufi/src/ufi_config.c.i
 
 # target to preprocess a source file
 __/ufi/src/ufi_config.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_config.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_config.c.i
 .PHONY : __/ufi/src/ufi_config.c.i
 
 __/ufi/src/ufi_config.s: __/ufi/src/ufi_config.c.s
@@ -454,7 +454,7 @@ __/ufi/src/ufi_config.s: __/ufi/src/ufi_config.c.s
 
 # target to generate assembly for a file
 __/ufi/src/ufi_config.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_config.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_config.c.s
 .PHONY : __/ufi/src/ufi_config.c.s
 
 __/ufi/src/ufi_debug.o: __/ufi/src/ufi_debug.c.o
@@ -463,7 +463,7 @@ __/ufi/src/ufi_debug.o: __/ufi/src/ufi_debug.c.o
 
 # target to build an object file
 __/ufi/src/ufi_debug.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_debug.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_debug.c.o
 .PHONY : __/ufi/src/ufi_debug.c.o
 
 __/ufi/src/ufi_debug.i: __/ufi/src/ufi_debug.c.i
@@ -472,7 +472,7 @@ __/ufi/src/ufi_debug.i: __/ufi/src/ufi_debug.c.i
 
 # target to preprocess a source file
 __/ufi/src/ufi_debug.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_debug.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_debug.c.i
 .PHONY : __/ufi/src/ufi_debug.c.i
 
 __/ufi/src/ufi_debug.s: __/ufi/src/ufi_debug.c.s
@@ -481,7 +481,7 @@ __/ufi/src/ufi_debug.s: __/ufi/src/ufi_debug.c.s
 
 # target to generate assembly for a file
 __/ufi/src/ufi_debug.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_debug.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_debug.c.s
 .PHONY : __/ufi/src/ufi_debug.c.s
 
 __/ufi/src/ufi_dma_wavegen_config.o: __/ufi/src/ufi_dma_wavegen_config.c.o
@@ -490,7 +490,7 @@ __/ufi/src/ufi_dma_wavegen_config.o: __/ufi/src/ufi_dma_wavegen_config.c.o
 
 # target to build an object file
 __/ufi/src/ufi_dma_wavegen_config.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_dma_wavegen_config.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_dma_wavegen_config.c.o
 .PHONY : __/ufi/src/ufi_dma_wavegen_config.c.o
 
 __/ufi/src/ufi_dma_wavegen_config.i: __/ufi/src/ufi_dma_wavegen_config.c.i
@@ -499,7 +499,7 @@ __/ufi/src/ufi_dma_wavegen_config.i: __/ufi/src/ufi_dma_wavegen_config.c.i
 
 # target to preprocess a source file
 __/ufi/src/ufi_dma_wavegen_config.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_dma_wavegen_config.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_dma_wavegen_config.c.i
 .PHONY : __/ufi/src/ufi_dma_wavegen_config.c.i
 
 __/ufi/src/ufi_dma_wavegen_config.s: __/ufi/src/ufi_dma_wavegen_config.c.s
@@ -508,7 +508,7 @@ __/ufi/src/ufi_dma_wavegen_config.s: __/ufi/src/ufi_dma_wavegen_config.c.s
 
 # target to generate assembly for a file
 __/ufi/src/ufi_dma_wavegen_config.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_dma_wavegen_config.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_dma_wavegen_config.c.s
 .PHONY : __/ufi/src/ufi_dma_wavegen_config.c.s
 
 __/ufi/src/ufi_memory.o: __/ufi/src/ufi_memory.c.o
@@ -517,7 +517,7 @@ __/ufi/src/ufi_memory.o: __/ufi/src/ufi_memory.c.o
 
 # target to build an object file
 __/ufi/src/ufi_memory.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_memory.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_memory.c.o
 .PHONY : __/ufi/src/ufi_memory.c.o
 
 __/ufi/src/ufi_memory.i: __/ufi/src/ufi_memory.c.i
@@ -526,7 +526,7 @@ __/ufi/src/ufi_memory.i: __/ufi/src/ufi_memory.c.i
 
 # target to preprocess a source file
 __/ufi/src/ufi_memory.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_memory.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_memory.c.i
 .PHONY : __/ufi/src/ufi_memory.c.i
 
 __/ufi/src/ufi_memory.s: __/ufi/src/ufi_memory.c.s
@@ -535,7 +535,7 @@ __/ufi/src/ufi_memory.s: __/ufi/src/ufi_memory.c.s
 
 # target to generate assembly for a file
 __/ufi/src/ufi_memory.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_memory.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_memory.c.s
 .PHONY : __/ufi/src/ufi_memory.c.s
 
 __/ufi/src/ufi_runner.o: __/ufi/src/ufi_runner.c.o
@@ -544,7 +544,7 @@ __/ufi/src/ufi_runner.o: __/ufi/src/ufi_runner.c.o
 
 # target to build an object file
 __/ufi/src/ufi_runner.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_runner.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_runner.c.o
 .PHONY : __/ufi/src/ufi_runner.c.o
 
 __/ufi/src/ufi_runner.i: __/ufi/src/ufi_runner.c.i
@@ -553,7 +553,7 @@ __/ufi/src/ufi_runner.i: __/ufi/src/ufi_runner.c.i
 
 # target to preprocess a source file
 __/ufi/src/ufi_runner.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_runner.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_runner.c.i
 .PHONY : __/ufi/src/ufi_runner.c.i
 
 __/ufi/src/ufi_runner.s: __/ufi/src/ufi_runner.c.s
@@ -562,7 +562,7 @@ __/ufi/src/ufi_runner.s: __/ufi/src/ufi_runner.c.s
 
 # target to generate assembly for a file
 __/ufi/src/ufi_runner.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_runner.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/__/ufi/src/ufi_runner.c.s
 .PHONY : __/ufi/src/ufi_runner.c.s
 
 src/api/dpu_checkpoint.o: src/api/dpu_checkpoint.c.o
@@ -571,7 +571,7 @@ src/api/dpu_checkpoint.o: src/api/dpu_checkpoint.c.o
 
 # target to build an object file
 src/api/dpu_checkpoint.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_checkpoint.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_checkpoint.c.o
 .PHONY : src/api/dpu_checkpoint.c.o
 
 src/api/dpu_checkpoint.i: src/api/dpu_checkpoint.c.i
@@ -580,7 +580,7 @@ src/api/dpu_checkpoint.i: src/api/dpu_checkpoint.c.i
 
 # target to preprocess a source file
 src/api/dpu_checkpoint.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_checkpoint.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_checkpoint.c.i
 .PHONY : src/api/dpu_checkpoint.c.i
 
 src/api/dpu_checkpoint.s: src/api/dpu_checkpoint.c.s
@@ -589,7 +589,7 @@ src/api/dpu_checkpoint.s: src/api/dpu_checkpoint.c.s
 
 # target to generate assembly for a file
 src/api/dpu_checkpoint.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_checkpoint.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_checkpoint.c.s
 .PHONY : src/api/dpu_checkpoint.c.s
 
 src/api/dpu_jni.o: src/api/dpu_jni.c.o
@@ -598,7 +598,7 @@ src/api/dpu_jni.o: src/api/dpu_jni.c.o
 
 # target to build an object file
 src/api/dpu_jni.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpujni.dir/build.make api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpujni.dir/build.make api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.o
 .PHONY : src/api/dpu_jni.c.o
 
 src/api/dpu_jni.i: src/api/dpu_jni.c.i
@@ -607,7 +607,7 @@ src/api/dpu_jni.i: src/api/dpu_jni.c.i
 
 # target to preprocess a source file
 src/api/dpu_jni.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpujni.dir/build.make api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpujni.dir/build.make api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.i
 .PHONY : src/api/dpu_jni.c.i
 
 src/api/dpu_jni.s: src/api/dpu_jni.c.s
@@ -616,7 +616,7 @@ src/api/dpu_jni.s: src/api/dpu_jni.c.s
 
 # target to generate assembly for a file
 src/api/dpu_jni.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpujni.dir/build.make api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpujni.dir/build.make api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.s
 .PHONY : src/api/dpu_jni.c.s
 
 src/api/dpu_loader.o: src/api/dpu_loader.c.o
@@ -625,7 +625,7 @@ src/api/dpu_loader.o: src/api/dpu_loader.c.o
 
 # target to build an object file
 src/api/dpu_loader.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_loader.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_loader.c.o
 .PHONY : src/api/dpu_loader.c.o
 
 src/api/dpu_loader.i: src/api/dpu_loader.c.i
@@ -634,7 +634,7 @@ src/api/dpu_loader.i: src/api/dpu_loader.c.i
 
 # target to preprocess a source file
 src/api/dpu_loader.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_loader.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_loader.c.i
 .PHONY : src/api/dpu_loader.c.i
 
 src/api/dpu_loader.s: src/api/dpu_loader.c.s
@@ -643,7 +643,7 @@ src/api/dpu_loader.s: src/api/dpu_loader.c.s
 
 # target to generate assembly for a file
 src/api/dpu_loader.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_loader.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_loader.c.s
 .PHONY : src/api/dpu_loader.c.s
 
 src/api/dpu_memory.o: src/api/dpu_memory.c.o
@@ -652,7 +652,7 @@ src/api/dpu_memory.o: src/api/dpu_memory.c.o
 
 # target to build an object file
 src/api/dpu_memory.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_memory.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_memory.c.o
 .PHONY : src/api/dpu_memory.c.o
 
 src/api/dpu_memory.i: src/api/dpu_memory.c.i
@@ -661,7 +661,7 @@ src/api/dpu_memory.i: src/api/dpu_memory.c.i
 
 # target to preprocess a source file
 src/api/dpu_memory.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_memory.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_memory.c.i
 .PHONY : src/api/dpu_memory.c.i
 
 src/api/dpu_memory.s: src/api/dpu_memory.c.s
@@ -670,7 +670,7 @@ src/api/dpu_memory.s: src/api/dpu_memory.c.s
 
 # target to generate assembly for a file
 src/api/dpu_memory.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_memory.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_memory.c.s
 .PHONY : src/api/dpu_memory.c.s
 
 src/api/dpu_polling.o: src/api/dpu_polling.c.o
@@ -679,7 +679,7 @@ src/api/dpu_polling.o: src/api/dpu_polling.c.o
 
 # target to build an object file
 src/api/dpu_polling.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_polling.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_polling.c.o
 .PHONY : src/api/dpu_polling.c.o
 
 src/api/dpu_polling.i: src/api/dpu_polling.c.i
@@ -688,7 +688,7 @@ src/api/dpu_polling.i: src/api/dpu_polling.c.i
 
 # target to preprocess a source file
 src/api/dpu_polling.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_polling.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_polling.c.i
 .PHONY : src/api/dpu_polling.c.i
 
 src/api/dpu_polling.s: src/api/dpu_polling.c.s
@@ -697,7 +697,7 @@ src/api/dpu_polling.s: src/api/dpu_polling.c.s
 
 # target to generate assembly for a file
 src/api/dpu_polling.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_polling.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_polling.c.s
 .PHONY : src/api/dpu_polling.c.s
 
 src/api/dpu_python_wrappers.o: src/api/dpu_python_wrappers.c.o
@@ -706,7 +706,7 @@ src/api/dpu_python_wrappers.o: src/api/dpu_python_wrappers.c.o
 
 # target to build an object file
 src/api/dpu_python_wrappers.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_python_wrappers.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_python_wrappers.c.o
 .PHONY : src/api/dpu_python_wrappers.c.o
 
 src/api/dpu_python_wrappers.i: src/api/dpu_python_wrappers.c.i
@@ -715,7 +715,7 @@ src/api/dpu_python_wrappers.i: src/api/dpu_python_wrappers.c.i
 
 # target to preprocess a source file
 src/api/dpu_python_wrappers.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_python_wrappers.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_python_wrappers.c.i
 .PHONY : src/api/dpu_python_wrappers.c.i
 
 src/api/dpu_python_wrappers.s: src/api/dpu_python_wrappers.c.s
@@ -724,7 +724,7 @@ src/api/dpu_python_wrappers.s: src/api/dpu_python_wrappers.c.s
 
 # target to generate assembly for a file
 src/api/dpu_python_wrappers.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_python_wrappers.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_python_wrappers.c.s
 .PHONY : src/api/dpu_python_wrappers.c.s
 
 src/api/dpu_runner.o: src/api/dpu_runner.c.o
@@ -733,7 +733,7 @@ src/api/dpu_runner.o: src/api/dpu_runner.c.o
 
 # target to build an object file
 src/api/dpu_runner.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_runner.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_runner.c.o
 .PHONY : src/api/dpu_runner.c.o
 
 src/api/dpu_runner.i: src/api/dpu_runner.c.i
@@ -742,7 +742,7 @@ src/api/dpu_runner.i: src/api/dpu_runner.c.i
 
 # target to preprocess a source file
 src/api/dpu_runner.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_runner.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_runner.c.i
 .PHONY : src/api/dpu_runner.c.i
 
 src/api/dpu_runner.s: src/api/dpu_runner.c.s
@@ -751,7 +751,7 @@ src/api/dpu_runner.s: src/api/dpu_runner.c.s
 
 # target to generate assembly for a file
 src/api/dpu_runner.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_runner.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_runner.c.s
 .PHONY : src/api/dpu_runner.c.s
 
 src/api/dpu_set.o: src/api/dpu_set.c.o
@@ -760,7 +760,7 @@ src/api/dpu_set.o: src/api/dpu_set.c.o
 
 # target to build an object file
 src/api/dpu_set.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_set.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_set.c.o
 .PHONY : src/api/dpu_set.c.o
 
 src/api/dpu_set.i: src/api/dpu_set.c.i
@@ -769,7 +769,7 @@ src/api/dpu_set.i: src/api/dpu_set.c.i
 
 # target to preprocess a source file
 src/api/dpu_set.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_set.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_set.c.i
 .PHONY : src/api/dpu_set.c.i
 
 src/api/dpu_set.s: src/api/dpu_set.c.s
@@ -778,7 +778,7 @@ src/api/dpu_set.s: src/api/dpu_set.c.s
 
 # target to generate assembly for a file
 src/api/dpu_set.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_set.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_set.c.s
 .PHONY : src/api/dpu_set.c.s
 
 src/api/dpu_thread_job.o: src/api/dpu_thread_job.c.o
@@ -787,7 +787,7 @@ src/api/dpu_thread_job.o: src/api/dpu_thread_job.c.o
 
 # target to build an object file
 src/api/dpu_thread_job.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_thread_job.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_thread_job.c.o
 .PHONY : src/api/dpu_thread_job.c.o
 
 src/api/dpu_thread_job.i: src/api/dpu_thread_job.c.i
@@ -796,7 +796,7 @@ src/api/dpu_thread_job.i: src/api/dpu_thread_job.c.i
 
 # target to preprocess a source file
 src/api/dpu_thread_job.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_thread_job.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_thread_job.c.i
 .PHONY : src/api/dpu_thread_job.c.i
 
 src/api/dpu_thread_job.s: src/api/dpu_thread_job.c.s
@@ -805,7 +805,7 @@ src/api/dpu_thread_job.s: src/api/dpu_thread_job.c.s
 
 # target to generate assembly for a file
 src/api/dpu_thread_job.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_thread_job.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/api/dpu_thread_job.c.s
 .PHONY : src/api/dpu_thread_job.c.s
 
 src/dpu_config.o: src/dpu_config.c.o
@@ -814,7 +814,7 @@ src/dpu_config.o: src/dpu_config.c.o
 
 # target to build an object file
 src/dpu_config.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_config.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_config.c.o
 .PHONY : src/dpu_config.c.o
 
 src/dpu_config.i: src/dpu_config.c.i
@@ -823,7 +823,7 @@ src/dpu_config.i: src/dpu_config.c.i
 
 # target to preprocess a source file
 src/dpu_config.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_config.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_config.c.i
 .PHONY : src/dpu_config.c.i
 
 src/dpu_config.s: src/dpu_config.c.s
@@ -832,7 +832,7 @@ src/dpu_config.s: src/dpu_config.c.s
 
 # target to generate assembly for a file
 src/dpu_config.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_config.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_config.c.s
 .PHONY : src/dpu_config.c.s
 
 src/dpu_custom.o: src/dpu_custom.c.o
@@ -841,7 +841,7 @@ src/dpu_custom.o: src/dpu_custom.c.o
 
 # target to build an object file
 src/dpu_custom.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_custom.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_custom.c.o
 .PHONY : src/dpu_custom.c.o
 
 src/dpu_custom.i: src/dpu_custom.c.i
@@ -850,7 +850,7 @@ src/dpu_custom.i: src/dpu_custom.c.i
 
 # target to preprocess a source file
 src/dpu_custom.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_custom.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_custom.c.i
 .PHONY : src/dpu_custom.c.i
 
 src/dpu_custom.s: src/dpu_custom.c.s
@@ -859,7 +859,7 @@ src/dpu_custom.s: src/dpu_custom.c.s
 
 # target to generate assembly for a file
 src/dpu_custom.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_custom.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_custom.c.s
 .PHONY : src/dpu_custom.c.s
 
 src/dpu_debug.o: src/dpu_debug.c.o
@@ -868,7 +868,7 @@ src/dpu_debug.o: src/dpu_debug.c.o
 
 # target to build an object file
 src/dpu_debug.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_debug.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_debug.c.o
 .PHONY : src/dpu_debug.c.o
 
 src/dpu_debug.i: src/dpu_debug.c.i
@@ -877,7 +877,7 @@ src/dpu_debug.i: src/dpu_debug.c.i
 
 # target to preprocess a source file
 src/dpu_debug.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_debug.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_debug.c.i
 .PHONY : src/dpu_debug.c.i
 
 src/dpu_debug.s: src/dpu_debug.c.s
@@ -886,7 +886,7 @@ src/dpu_debug.s: src/dpu_debug.c.s
 
 # target to generate assembly for a file
 src/dpu_debug.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_debug.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_debug.c.s
 .PHONY : src/dpu_debug.c.s
 
 src/dpu_elf.o: src/dpu_elf.c.o
@@ -895,7 +895,7 @@ src/dpu_elf.o: src/dpu_elf.c.o
 
 # target to build an object file
 src/dpu_elf.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_elf.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_elf.c.o
 .PHONY : src/dpu_elf.c.o
 
 src/dpu_elf.i: src/dpu_elf.c.i
@@ -904,7 +904,7 @@ src/dpu_elf.i: src/dpu_elf.c.i
 
 # target to preprocess a source file
 src/dpu_elf.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_elf.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_elf.c.i
 .PHONY : src/dpu_elf.c.i
 
 src/dpu_elf.s: src/dpu_elf.c.s
@@ -913,7 +913,7 @@ src/dpu_elf.s: src/dpu_elf.c.s
 
 # target to generate assembly for a file
 src/dpu_elf.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_elf.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_elf.c.s
 .PHONY : src/dpu_elf.c.s
 
 src/dpu_error.o: src/dpu_error.c.o
@@ -922,7 +922,7 @@ src/dpu_error.o: src/dpu_error.c.o
 
 # target to build an object file
 src/dpu_error.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_error.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_error.c.o
 .PHONY : src/dpu_error.c.o
 
 src/dpu_error.i: src/dpu_error.c.i
@@ -931,7 +931,7 @@ src/dpu_error.i: src/dpu_error.c.i
 
 # target to preprocess a source file
 src/dpu_error.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_error.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_error.c.i
 .PHONY : src/dpu_error.c.i
 
 src/dpu_error.s: src/dpu_error.c.s
@@ -940,7 +940,7 @@ src/dpu_error.s: src/dpu_error.c.s
 
 # target to generate assembly for a file
 src/dpu_error.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_error.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_error.c.s
 .PHONY : src/dpu_error.c.s
 
 src/dpu_internals.o: src/dpu_internals.c.o
@@ -949,7 +949,7 @@ src/dpu_internals.o: src/dpu_internals.c.o
 
 # target to build an object file
 src/dpu_internals.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_internals.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_internals.c.o
 .PHONY : src/dpu_internals.c.o
 
 src/dpu_internals.i: src/dpu_internals.c.i
@@ -958,7 +958,7 @@ src/dpu_internals.i: src/dpu_internals.c.i
 
 # target to preprocess a source file
 src/dpu_internals.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_internals.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_internals.c.i
 .PHONY : src/dpu_internals.c.i
 
 src/dpu_internals.s: src/dpu_internals.c.s
@@ -967,7 +967,7 @@ src/dpu_internals.s: src/dpu_internals.c.s
 
 # target to generate assembly for a file
 src/dpu_internals.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_internals.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_internals.c.s
 .PHONY : src/dpu_internals.c.s
 
 src/dpu_loader.o: src/dpu_loader.c.o
@@ -976,7 +976,7 @@ src/dpu_loader.o: src/dpu_loader.c.o
 
 # target to build an object file
 src/dpu_loader.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_loader.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_loader.c.o
 .PHONY : src/dpu_loader.c.o
 
 src/dpu_loader.i: src/dpu_loader.c.i
@@ -985,7 +985,7 @@ src/dpu_loader.i: src/dpu_loader.c.i
 
 # target to preprocess a source file
 src/dpu_loader.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_loader.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_loader.c.i
 .PHONY : src/dpu_loader.c.i
 
 src/dpu_loader.s: src/dpu_loader.c.s
@@ -994,7 +994,7 @@ src/dpu_loader.s: src/dpu_loader.c.s
 
 # target to generate assembly for a file
 src/dpu_loader.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_loader.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_loader.c.s
 .PHONY : src/dpu_loader.c.s
 
 src/dpu_log.o: src/dpu_log.c.o
@@ -1003,7 +1003,7 @@ src/dpu_log.o: src/dpu_log.c.o
 
 # target to build an object file
 src/dpu_log.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_log.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_log.c.o
 .PHONY : src/dpu_log.c.o
 
 src/dpu_log.i: src/dpu_log.c.i
@@ -1012,7 +1012,7 @@ src/dpu_log.i: src/dpu_log.c.i
 
 # target to preprocess a source file
 src/dpu_log.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_log.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_log.c.i
 .PHONY : src/dpu_log.c.i
 
 src/dpu_log.s: src/dpu_log.c.s
@@ -1021,7 +1021,7 @@ src/dpu_log.s: src/dpu_log.c.s
 
 # target to generate assembly for a file
 src/dpu_log.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_log.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_log.c.s
 .PHONY : src/dpu_log.c.s
 
 src/dpu_management.o: src/dpu_management.c.o
@@ -1030,7 +1030,7 @@ src/dpu_management.o: src/dpu_management.c.o
 
 # target to build an object file
 src/dpu_management.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_management.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_management.c.o
 .PHONY : src/dpu_management.c.o
 
 src/dpu_management.i: src/dpu_management.c.i
@@ -1039,7 +1039,7 @@ src/dpu_management.i: src/dpu_management.c.i
 
 # target to preprocess a source file
 src/dpu_management.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_management.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_management.c.i
 .PHONY : src/dpu_management.c.i
 
 src/dpu_management.s: src/dpu_management.c.s
@@ -1048,7 +1048,7 @@ src/dpu_management.s: src/dpu_management.c.s
 
 # target to generate assembly for a file
 src/dpu_management.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_management.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_management.c.s
 .PHONY : src/dpu_management.c.s
 
 src/dpu_memory.o: src/dpu_memory.c.o
@@ -1057,7 +1057,7 @@ src/dpu_memory.o: src/dpu_memory.c.o
 
 # target to build an object file
 src/dpu_memory.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_memory.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_memory.c.o
 .PHONY : src/dpu_memory.c.o
 
 src/dpu_memory.i: src/dpu_memory.c.i
@@ -1066,7 +1066,7 @@ src/dpu_memory.i: src/dpu_memory.c.i
 
 # target to preprocess a source file
 src/dpu_memory.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_memory.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_memory.c.i
 .PHONY : src/dpu_memory.c.i
 
 src/dpu_memory.s: src/dpu_memory.c.s
@@ -1075,7 +1075,7 @@ src/dpu_memory.s: src/dpu_memory.c.s
 
 # target to generate assembly for a file
 src/dpu_memory.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_memory.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_memory.c.s
 .PHONY : src/dpu_memory.c.s
 
 src/dpu_profiler.o: src/dpu_profiler.c.o
@@ -1084,7 +1084,7 @@ src/dpu_profiler.o: src/dpu_profiler.c.o
 
 # target to build an object file
 src/dpu_profiler.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_profiler.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_profiler.c.o
 .PHONY : src/dpu_profiler.c.o
 
 src/dpu_profiler.i: src/dpu_profiler.c.i
@@ -1093,7 +1093,7 @@ src/dpu_profiler.i: src/dpu_profiler.c.i
 
 # target to preprocess a source file
 src/dpu_profiler.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_profiler.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_profiler.c.i
 .PHONY : src/dpu_profiler.c.i
 
 src/dpu_profiler.s: src/dpu_profiler.c.s
@@ -1102,7 +1102,7 @@ src/dpu_profiler.s: src/dpu_profiler.c.s
 
 # target to generate assembly for a file
 src/dpu_profiler.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_profiler.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_profiler.c.s
 .PHONY : src/dpu_profiler.c.s
 
 src/dpu_program.o: src/dpu_program.c.o
@@ -1111,7 +1111,7 @@ src/dpu_program.o: src/dpu_program.c.o
 
 # target to build an object file
 src/dpu_program.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_program.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_program.c.o
 .PHONY : src/dpu_program.c.o
 
 src/dpu_program.i: src/dpu_program.c.i
@@ -1120,7 +1120,7 @@ src/dpu_program.i: src/dpu_program.c.i
 
 # target to preprocess a source file
 src/dpu_program.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_program.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_program.c.i
 .PHONY : src/dpu_program.c.i
 
 src/dpu_program.s: src/dpu_program.c.s
@@ -1129,7 +1129,7 @@ src/dpu_program.s: src/dpu_program.c.s
 
 # target to generate assembly for a file
 src/dpu_program.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_program.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_program.c.s
 .PHONY : src/dpu_program.c.s
 
 src/dpu_rank_handler_allocator.o: src/dpu_rank_handler_allocator.c.o
@@ -1138,7 +1138,7 @@ src/dpu_rank_handler_allocator.o: src/dpu_rank_handler_allocator.c.o
 
 # target to build an object file
 src/dpu_rank_handler_allocator.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_rank_handler_allocator.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_rank_handler_allocator.c.o
 .PHONY : src/dpu_rank_handler_allocator.c.o
 
 src/dpu_rank_handler_allocator.i: src/dpu_rank_handler_allocator.c.i
@@ -1147,7 +1147,7 @@ src/dpu_rank_handler_allocator.i: src/dpu_rank_handler_allocator.c.i
 
 # target to preprocess a source file
 src/dpu_rank_handler_allocator.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_rank_handler_allocator.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_rank_handler_allocator.c.i
 .PHONY : src/dpu_rank_handler_allocator.c.i
 
 src/dpu_rank_handler_allocator.s: src/dpu_rank_handler_allocator.c.s
@@ -1156,7 +1156,7 @@ src/dpu_rank_handler_allocator.s: src/dpu_rank_handler_allocator.c.s
 
 # target to generate assembly for a file
 src/dpu_rank_handler_allocator.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_rank_handler_allocator.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_rank_handler_allocator.c.s
 .PHONY : src/dpu_rank_handler_allocator.c.s
 
 src/dpu_runner.o: src/dpu_runner.c.o
@@ -1165,7 +1165,7 @@ src/dpu_runner.o: src/dpu_runner.c.o
 
 # target to build an object file
 src/dpu_runner.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_runner.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_runner.c.o
 .PHONY : src/dpu_runner.c.o
 
 src/dpu_runner.i: src/dpu_runner.c.i
@@ -1174,7 +1174,7 @@ src/dpu_runner.i: src/dpu_runner.c.i
 
 # target to preprocess a source file
 src/dpu_runner.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_runner.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_runner.c.i
 .PHONY : src/dpu_runner.c.i
 
 src/dpu_runner.s: src/dpu_runner.c.s
@@ -1183,7 +1183,7 @@ src/dpu_runner.s: src/dpu_runner.c.s
 
 # target to generate assembly for a file
 src/dpu_runner.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_runner.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/dpu_runner.c.s
 .PHONY : src/dpu_runner.c.s
 
 src/runtime_info.o: src/runtime_info.c.o
@@ -1192,7 +1192,7 @@ src/runtime_info.o: src/runtime_info.c.o
 
 # target to build an object file
 src/runtime_info.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/runtime_info.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/runtime_info.c.o
 .PHONY : src/runtime_info.c.o
 
 src/runtime_info.i: src/runtime_info.c.i
@@ -1201,7 +1201,7 @@ src/runtime_info.i: src/runtime_info.c.i
 
 # target to preprocess a source file
 src/runtime_info.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/runtime_info.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/runtime_info.c.i
 .PHONY : src/runtime_info.c.i
 
 src/runtime_info.s: src/runtime_info.c.s
@@ -1210,7 +1210,7 @@ src/runtime_info.s: src/runtime_info.c.s
 
 # target to generate assembly for a file
 src/runtime_info.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/runtime_info.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f api/CMakeFiles/dpu.dir/build.make api/CMakeFiles/dpu.dir/src/runtime_info.c.s
 .PHONY : src/runtime_info.c.s
 
 # Help Target
@@ -1350,6 +1350,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

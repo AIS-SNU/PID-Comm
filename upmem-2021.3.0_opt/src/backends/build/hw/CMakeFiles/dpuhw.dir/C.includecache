@@ -310,15 +310,15 @@ verbose_config.h
 stdbool.h
 -
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/dpu_chip_description.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/dpu_chip_description.c
 stddef.h
 -
 dpu_description.h
 -
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.c
 dpu_properties.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.h
 stdio.h
 -
 string.h
@@ -330,7 +330,7 @@ static_verbose.h
 dpu_log_utils.h
 -
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.h
 stdlib.h
 -
 stdbool.h
@@ -338,19 +338,19 @@ stdbool.h
 static_verbose.h
 -
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c
 stdint.h
 -
 dpu_region_address_translation.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/dpu_region_address_translation.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/dpu_region_address_translation.h
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/pid_comm.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/pid_comm.c
 stdint.h
 -
 sys/time.h
 -
 dpu_region_address_translation.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/dpu_region_address_translation.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/dpu_region_address_translation.h
 sys/ioctl.h
 -
 sys/fcntl.h
@@ -390,15 +390,15 @@ sys/sysinfo.h
 time.h
 -
 static_verbose.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/static_verbose.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/static_verbose.h
 omp.h
 -
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c
 stdint.h
 -
 dpu_region_address_translation.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/dpu_region_address_translation.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/dpu_region_address_translation.h
 sys/ioctl.h
 -
 sys/fcntl.h
@@ -438,13 +438,13 @@ sys/sysinfo.h
 time.h
 -
 static_verbose.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/static_verbose.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/static_verbose.h
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_fpga_ila.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_fpga_ila.h
 hw_dpu_sysfs.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/fpga_ila.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/fpga_ila.c
 unistd.h
 -
 stdlib.h
@@ -464,11 +464,11 @@ stdint.h
 dpu_rank_ioctl.h
 -
 dpu_fpga_ila.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_fpga_ila.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_fpga_ila.h
 hw_dpu_sysfs.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_rank.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_rank.c
 sys/time.h
 -
 stdint.h
@@ -510,29 +510,29 @@ dpu_internals.h
 dpu_target_macros.h
 -
 dpu_attributes.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_attributes.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_attributes.h
 dpu_rank.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_rank.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_rank.h
 dpu_mask.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_mask.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_mask.h
 dpu_region_address_translation.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_region_address_translation.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_region_address_translation.h
 dpu_region_constants.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_region_constants.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_region_constants.h
 hw_dpu_sysfs.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
 dpu_rank_ioctl.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_rank_ioctl.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_rank_ioctl.h
 dpu_fpga_ila.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_fpga_ila.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_fpga_ila.h
 dpu_module_compatibility.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_module_compatibility.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_module_compatibility.h
 static_verbose.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/static_verbose.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/static_verbose.h
 pthread.h
 -
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.c
 stdio.h
 -
 stdint.h
@@ -560,19 +560,19 @@ inttypes.h
 dpu_description.h
 -
 dpu_rank_ioctl.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_rank_ioctl.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_rank_ioctl.h
 dpu_region_address_translation.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_region_address_translation.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_region_address_translation.h
 dpu_region_constants.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_region_constants.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_region_constants.h
 hw_dpu_sysfs.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
 dpu_log_utils.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_log_utils.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/dpu_log_utils.h
 static_verbose.h
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/static_verbose.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/static_verbose.h
 
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.h
 stdio.h
 -
 dpu_description.h

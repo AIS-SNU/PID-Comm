@@ -60,10 +60,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends
+CMAKE_SOURCE_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build
+CMAKE_BINARY_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build
 
 # Utility rule file for autogen.
 
@@ -84,6 +84,6 @@ CMakeFiles/autogen.dir/clean:
 .PHONY : CMakeFiles/autogen.dir/clean
 
 CMakeFiles/autogen.dir/depend:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/autogen.dir/depend
 

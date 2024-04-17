@@ -65,10 +65,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends
+CMAKE_SOURCE_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build
+CMAKE_BINARY_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -154,14 +154,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose/CMakeFiles/progress.marks
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles 0
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose/CMakeFiles/progress.marks
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/clean
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/clean
 .PHONY : clean
 
 # The main clean target
@@ -171,22 +171,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/preinstall
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/preinstall
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 verbose/CMakeFiles/dpuverbose.dir/rule:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/CMakeFiles/dpuverbose.dir/rule
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 verbose/CMakeFiles/dpuverbose.dir/rule
 .PHONY : verbose/CMakeFiles/dpuverbose.dir/rule
 
 # Convenience name for target.
@@ -196,7 +196,7 @@ dpuverbose: verbose/CMakeFiles/dpuverbose.dir/rule
 
 # fast build rule for target.
 dpuverbose/fast:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/build
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/build
 .PHONY : dpuverbose/fast
 
 src/static_verbose.o: src/static_verbose.c.o
@@ -205,7 +205,7 @@ src/static_verbose.o: src/static_verbose.c.o
 
 # target to build an object file
 src/static_verbose.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.o
 .PHONY : src/static_verbose.c.o
 
 src/static_verbose.i: src/static_verbose.c.i
@@ -214,7 +214,7 @@ src/static_verbose.i: src/static_verbose.c.i
 
 # target to preprocess a source file
 src/static_verbose.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.i
 .PHONY : src/static_verbose.c.i
 
 src/static_verbose.s: src/static_verbose.c.s
@@ -223,7 +223,7 @@ src/static_verbose.s: src/static_verbose.c.s
 
 # target to generate assembly for a file
 src/static_verbose.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.s
 .PHONY : src/static_verbose.c.s
 
 src/verbose_config.o: src/verbose_config.c.o
@@ -232,7 +232,7 @@ src/verbose_config.o: src/verbose_config.c.o
 
 # target to build an object file
 src/verbose_config.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.o
 .PHONY : src/verbose_config.c.o
 
 src/verbose_config.i: src/verbose_config.c.i
@@ -241,7 +241,7 @@ src/verbose_config.i: src/verbose_config.c.i
 
 # target to preprocess a source file
 src/verbose_config.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.i
 .PHONY : src/verbose_config.c.i
 
 src/verbose_config.s: src/verbose_config.c.s
@@ -250,7 +250,7 @@ src/verbose_config.s: src/verbose_config.c.s
 
 # target to generate assembly for a file
 src/verbose_config.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.s
 .PHONY : src/verbose_config.c.s
 
 src/verbose_control.o: src/verbose_control.c.o
@@ -259,7 +259,7 @@ src/verbose_control.o: src/verbose_control.c.o
 
 # target to build an object file
 src/verbose_control.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.o
 .PHONY : src/verbose_control.c.o
 
 src/verbose_control.i: src/verbose_control.c.i
@@ -268,7 +268,7 @@ src/verbose_control.i: src/verbose_control.c.i
 
 # target to preprocess a source file
 src/verbose_control.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.i
 .PHONY : src/verbose_control.c.i
 
 src/verbose_control.s: src/verbose_control.c.s
@@ -277,7 +277,7 @@ src/verbose_control.s: src/verbose_control.c.s
 
 # target to generate assembly for a file
 src/verbose_control.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.s
 .PHONY : src/verbose_control.c.s
 
 src/verbose_profile.o: src/verbose_profile.c.o
@@ -286,7 +286,7 @@ src/verbose_profile.o: src/verbose_profile.c.o
 
 # target to build an object file
 src/verbose_profile.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.o
 .PHONY : src/verbose_profile.c.o
 
 src/verbose_profile.i: src/verbose_profile.c.i
@@ -295,7 +295,7 @@ src/verbose_profile.i: src/verbose_profile.c.i
 
 # target to preprocess a source file
 src/verbose_profile.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.i
 .PHONY : src/verbose_profile.c.i
 
 src/verbose_profile.s: src/verbose_profile.c.s
@@ -304,7 +304,7 @@ src/verbose_profile.s: src/verbose_profile.c.s
 
 # target to generate assembly for a file
 src/verbose_profile.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f verbose/CMakeFiles/dpuverbose.dir/build.make verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.s
 .PHONY : src/verbose_profile.c.s
 
 # Help Target
@@ -344,6 +344,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

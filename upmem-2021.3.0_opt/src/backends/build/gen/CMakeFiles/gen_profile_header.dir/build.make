@@ -60,10 +60,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends
+CMAKE_SOURCE_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build
+CMAKE_BINARY_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build
 
 # Utility rule file for gen_profile_header.
 
@@ -74,8 +74,8 @@ gen/CMakeFiles/gen_profile_header: gen/include/dpu_profile_properties.h
 
 
 gen/include/dpu_profile_properties.h: ../gen/gen_profile_files.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen/include/dpu_profile_properties.h from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/gen/gen_profile_files.py"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen && /usr/bin/python3.8 /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/gen/gen_profile_files.py defs /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen/include/dpu_profile_properties.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen/include/dpu_profile_properties.h from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/gen/gen_profile_files.py"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen && /usr/bin/python3.8 /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/gen/gen_profile_files.py defs /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen/include/dpu_profile_properties.h
 
 gen_profile_header: gen/CMakeFiles/gen_profile_header
 gen_profile_header: gen/include/dpu_profile_properties.h
@@ -89,10 +89,10 @@ gen/CMakeFiles/gen_profile_header.dir/build: gen_profile_header
 .PHONY : gen/CMakeFiles/gen_profile_header.dir/build
 
 gen/CMakeFiles/gen_profile_header.dir/clean:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen && $(CMAKE_COMMAND) -P CMakeFiles/gen_profile_header.dir/cmake_clean.cmake
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen && $(CMAKE_COMMAND) -P CMakeFiles/gen_profile_header.dir/cmake_clean.cmake
 .PHONY : gen/CMakeFiles/gen_profile_header.dir/clean
 
 gen/CMakeFiles/gen_profile_header.dir/depend:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/gen /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen/CMakeFiles/gen_profile_header.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/gen /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/gen/CMakeFiles/gen_profile_header.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : gen/CMakeFiles/gen_profile_header.dir/depend
 

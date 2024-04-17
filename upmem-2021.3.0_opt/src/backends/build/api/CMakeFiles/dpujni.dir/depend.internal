@@ -31,6 +31,6 @@ api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.o
  ../verbose/src/verbose_config.h
  ../verbose/src/verbose_control.h
  ../verbose/src/verbose_profile.h
- /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/api/src/api/dpu_jni.c
+ /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/api/src/api/dpu_jni.c
  /usr/lib/jvm/java-8-openjdk-amd64/include/jni.h
  /usr/lib/jvm/java-8-openjdk-amd64/include/linux/jni_md.h

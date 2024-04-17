@@ -65,10 +65,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends
+CMAKE_SOURCE_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build
+CMAKE_BINARY_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -154,14 +154,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw/CMakeFiles/progress.marks
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles 0
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw/CMakeFiles/progress.marks
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/clean
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/clean
 .PHONY : clean
 
 # The main clean target
@@ -171,22 +171,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/preinstall
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/preinstall
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hw/CMakeFiles/dpuhw.dir/rule:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/CMakeFiles/dpuhw.dir/rule
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f CMakeFiles/Makefile2 hw/CMakeFiles/dpuhw.dir/rule
 .PHONY : hw/CMakeFiles/dpuhw.dir/rule
 
 # Convenience name for target.
@@ -196,7 +196,7 @@ dpuhw: hw/CMakeFiles/dpuhw.dir/rule
 
 # fast build rule for target.
 dpuhw/fast:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/build
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/build
 .PHONY : dpuhw/fast
 
 __/commons/src/dpu_chip_description.o: __/commons/src/dpu_chip_description.c.o
@@ -205,7 +205,7 @@ __/commons/src/dpu_chip_description.o: __/commons/src/dpu_chip_description.c.o
 
 # target to build an object file
 __/commons/src/dpu_chip_description.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.o
 .PHONY : __/commons/src/dpu_chip_description.c.o
 
 __/commons/src/dpu_chip_description.i: __/commons/src/dpu_chip_description.c.i
@@ -214,7 +214,7 @@ __/commons/src/dpu_chip_description.i: __/commons/src/dpu_chip_description.c.i
 
 # target to preprocess a source file
 __/commons/src/dpu_chip_description.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.i
 .PHONY : __/commons/src/dpu_chip_description.c.i
 
 __/commons/src/dpu_chip_description.s: __/commons/src/dpu_chip_description.c.s
@@ -223,7 +223,7 @@ __/commons/src/dpu_chip_description.s: __/commons/src/dpu_chip_description.c.s
 
 # target to generate assembly for a file
 __/commons/src/dpu_chip_description.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.s
 .PHONY : __/commons/src/dpu_chip_description.c.s
 
 __/commons/src/properties/dpu_properties.o: __/commons/src/properties/dpu_properties.c.o
@@ -232,7 +232,7 @@ __/commons/src/properties/dpu_properties.o: __/commons/src/properties/dpu_proper
 
 # target to build an object file
 __/commons/src/properties/dpu_properties.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o
 .PHONY : __/commons/src/properties/dpu_properties.c.o
 
 __/commons/src/properties/dpu_properties.i: __/commons/src/properties/dpu_properties.c.i
@@ -241,7 +241,7 @@ __/commons/src/properties/dpu_properties.i: __/commons/src/properties/dpu_proper
 
 # target to preprocess a source file
 __/commons/src/properties/dpu_properties.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.i
 .PHONY : __/commons/src/properties/dpu_properties.c.i
 
 __/commons/src/properties/dpu_properties.s: __/commons/src/properties/dpu_properties.c.s
@@ -250,7 +250,7 @@ __/commons/src/properties/dpu_properties.s: __/commons/src/properties/dpu_proper
 
 # target to generate assembly for a file
 __/commons/src/properties/dpu_properties.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.s
 .PHONY : __/commons/src/properties/dpu_properties.c.s
 
 src/mappings/fpga_aws/fpga_aws_translation.o: src/mappings/fpga_aws/fpga_aws_translation.c.o
@@ -259,7 +259,7 @@ src/mappings/fpga_aws/fpga_aws_translation.o: src/mappings/fpga_aws/fpga_aws_tra
 
 # target to build an object file
 src/mappings/fpga_aws/fpga_aws_translation.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.o
 .PHONY : src/mappings/fpga_aws/fpga_aws_translation.c.o
 
 src/mappings/fpga_aws/fpga_aws_translation.i: src/mappings/fpga_aws/fpga_aws_translation.c.i
@@ -268,7 +268,7 @@ src/mappings/fpga_aws/fpga_aws_translation.i: src/mappings/fpga_aws/fpga_aws_tra
 
 # target to preprocess a source file
 src/mappings/fpga_aws/fpga_aws_translation.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.i
 .PHONY : src/mappings/fpga_aws/fpga_aws_translation.c.i
 
 src/mappings/fpga_aws/fpga_aws_translation.s: src/mappings/fpga_aws/fpga_aws_translation.c.s
@@ -277,7 +277,7 @@ src/mappings/fpga_aws/fpga_aws_translation.s: src/mappings/fpga_aws/fpga_aws_tra
 
 # target to generate assembly for a file
 src/mappings/fpga_aws/fpga_aws_translation.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.s
 .PHONY : src/mappings/fpga_aws/fpga_aws_translation.c.s
 
 src/mappings/xeon_sp/pid_comm.o: src/mappings/xeon_sp/pid_comm.c.o
@@ -286,7 +286,7 @@ src/mappings/xeon_sp/pid_comm.o: src/mappings/xeon_sp/pid_comm.c.o
 
 # target to build an object file
 src/mappings/xeon_sp/pid_comm.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o
 .PHONY : src/mappings/xeon_sp/pid_comm.c.o
 
 src/mappings/xeon_sp/pid_comm.i: src/mappings/xeon_sp/pid_comm.c.i
@@ -295,7 +295,7 @@ src/mappings/xeon_sp/pid_comm.i: src/mappings/xeon_sp/pid_comm.c.i
 
 # target to preprocess a source file
 src/mappings/xeon_sp/pid_comm.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.i
 .PHONY : src/mappings/xeon_sp/pid_comm.c.i
 
 src/mappings/xeon_sp/pid_comm.s: src/mappings/xeon_sp/pid_comm.c.s
@@ -304,7 +304,7 @@ src/mappings/xeon_sp/pid_comm.s: src/mappings/xeon_sp/pid_comm.c.s
 
 # target to generate assembly for a file
 src/mappings/xeon_sp/pid_comm.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.s
 .PHONY : src/mappings/xeon_sp/pid_comm.c.s
 
 src/mappings/xeon_sp/xeon_sp_translation.o: src/mappings/xeon_sp/xeon_sp_translation.c.o
@@ -313,7 +313,7 @@ src/mappings/xeon_sp/xeon_sp_translation.o: src/mappings/xeon_sp/xeon_sp_transla
 
 # target to build an object file
 src/mappings/xeon_sp/xeon_sp_translation.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o
 .PHONY : src/mappings/xeon_sp/xeon_sp_translation.c.o
 
 src/mappings/xeon_sp/xeon_sp_translation.i: src/mappings/xeon_sp/xeon_sp_translation.c.i
@@ -322,7 +322,7 @@ src/mappings/xeon_sp/xeon_sp_translation.i: src/mappings/xeon_sp/xeon_sp_transla
 
 # target to preprocess a source file
 src/mappings/xeon_sp/xeon_sp_translation.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.i
 .PHONY : src/mappings/xeon_sp/xeon_sp_translation.c.i
 
 src/mappings/xeon_sp/xeon_sp_translation.s: src/mappings/xeon_sp/xeon_sp_translation.c.s
@@ -331,7 +331,7 @@ src/mappings/xeon_sp/xeon_sp_translation.s: src/mappings/xeon_sp/xeon_sp_transla
 
 # target to generate assembly for a file
 src/mappings/xeon_sp/xeon_sp_translation.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.s
 .PHONY : src/mappings/xeon_sp/xeon_sp_translation.c.s
 
 src/rank/fpga_ila.o: src/rank/fpga_ila.c.o
@@ -340,7 +340,7 @@ src/rank/fpga_ila.o: src/rank/fpga_ila.c.o
 
 # target to build an object file
 src/rank/fpga_ila.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o
 .PHONY : src/rank/fpga_ila.c.o
 
 src/rank/fpga_ila.i: src/rank/fpga_ila.c.i
@@ -349,7 +349,7 @@ src/rank/fpga_ila.i: src/rank/fpga_ila.c.i
 
 # target to preprocess a source file
 src/rank/fpga_ila.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.i
 .PHONY : src/rank/fpga_ila.c.i
 
 src/rank/fpga_ila.s: src/rank/fpga_ila.c.s
@@ -358,7 +358,7 @@ src/rank/fpga_ila.s: src/rank/fpga_ila.c.s
 
 # target to generate assembly for a file
 src/rank/fpga_ila.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.s
 .PHONY : src/rank/fpga_ila.c.s
 
 src/rank/hw_dpu_rank.o: src/rank/hw_dpu_rank.c.o
@@ -367,7 +367,7 @@ src/rank/hw_dpu_rank.o: src/rank/hw_dpu_rank.c.o
 
 # target to build an object file
 src/rank/hw_dpu_rank.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o
 .PHONY : src/rank/hw_dpu_rank.c.o
 
 src/rank/hw_dpu_rank.i: src/rank/hw_dpu_rank.c.i
@@ -376,7 +376,7 @@ src/rank/hw_dpu_rank.i: src/rank/hw_dpu_rank.c.i
 
 # target to preprocess a source file
 src/rank/hw_dpu_rank.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.i
 .PHONY : src/rank/hw_dpu_rank.c.i
 
 src/rank/hw_dpu_rank.s: src/rank/hw_dpu_rank.c.s
@@ -385,7 +385,7 @@ src/rank/hw_dpu_rank.s: src/rank/hw_dpu_rank.c.s
 
 # target to generate assembly for a file
 src/rank/hw_dpu_rank.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.s
 .PHONY : src/rank/hw_dpu_rank.c.s
 
 src/rank/hw_dpu_sysfs.o: src/rank/hw_dpu_sysfs.c.o
@@ -394,7 +394,7 @@ src/rank/hw_dpu_sysfs.o: src/rank/hw_dpu_sysfs.c.o
 
 # target to build an object file
 src/rank/hw_dpu_sysfs.c.o:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o
 .PHONY : src/rank/hw_dpu_sysfs.c.o
 
 src/rank/hw_dpu_sysfs.i: src/rank/hw_dpu_sysfs.c.i
@@ -403,7 +403,7 @@ src/rank/hw_dpu_sysfs.i: src/rank/hw_dpu_sysfs.c.i
 
 # target to preprocess a source file
 src/rank/hw_dpu_sysfs.c.i:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.i
 .PHONY : src/rank/hw_dpu_sysfs.c.i
 
 src/rank/hw_dpu_sysfs.s: src/rank/hw_dpu_sysfs.c.s
@@ -412,7 +412,7 @@ src/rank/hw_dpu_sysfs.s: src/rank/hw_dpu_sysfs.c.s
 
 # target to generate assembly for a file
 src/rank/hw_dpu_sysfs.c.s:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(MAKE) -f hw/CMakeFiles/dpuhw.dir/build.make hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.s
 .PHONY : src/rank/hw_dpu_sysfs.c.s
 
 # Help Target
@@ -464,6 +464,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -60,10 +60,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends
+CMAKE_SOURCE_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build
+CMAKE_BINARY_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build
 
 # Include any dependencies generated for this target.
 include verbose/CMakeFiles/dpuverbose.dir/depend.make
@@ -76,55 +76,55 @@ include verbose/CMakeFiles/dpuverbose.dir/flags.make
 
 verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.o: verbose/CMakeFiles/dpuverbose.dir/flags.make
 verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.o: ../verbose/src/static_verbose.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuverbose.dir/src/static_verbose.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/static_verbose.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuverbose.dir/src/static_verbose.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/static_verbose.c
 
 verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuverbose.dir/src/static_verbose.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/static_verbose.c > CMakeFiles/dpuverbose.dir/src/static_verbose.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/static_verbose.c > CMakeFiles/dpuverbose.dir/src/static_verbose.c.i
 
 verbose/CMakeFiles/dpuverbose.dir/src/static_verbose.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuverbose.dir/src/static_verbose.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/static_verbose.c -o CMakeFiles/dpuverbose.dir/src/static_verbose.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/static_verbose.c -o CMakeFiles/dpuverbose.dir/src/static_verbose.c.s
 
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.o: verbose/CMakeFiles/dpuverbose.dir/flags.make
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.o: ../verbose/src/verbose_config.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuverbose.dir/src/verbose_config.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_config.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuverbose.dir/src/verbose_config.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_config.c
 
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuverbose.dir/src/verbose_config.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_config.c > CMakeFiles/dpuverbose.dir/src/verbose_config.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_config.c > CMakeFiles/dpuverbose.dir/src/verbose_config.c.i
 
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_config.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuverbose.dir/src/verbose_config.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_config.c -o CMakeFiles/dpuverbose.dir/src/verbose_config.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_config.c -o CMakeFiles/dpuverbose.dir/src/verbose_config.c.s
 
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.o: verbose/CMakeFiles/dpuverbose.dir/flags.make
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.o: ../verbose/src/verbose_control.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuverbose.dir/src/verbose_control.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_control.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuverbose.dir/src/verbose_control.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_control.c
 
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuverbose.dir/src/verbose_control.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_control.c > CMakeFiles/dpuverbose.dir/src/verbose_control.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_control.c > CMakeFiles/dpuverbose.dir/src/verbose_control.c.i
 
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_control.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuverbose.dir/src/verbose_control.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_control.c -o CMakeFiles/dpuverbose.dir/src/verbose_control.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_control.c -o CMakeFiles/dpuverbose.dir/src/verbose_control.c.s
 
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.o: verbose/CMakeFiles/dpuverbose.dir/flags.make
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.o: ../verbose/src/verbose_profile.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuverbose.dir/src/verbose_profile.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_profile.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuverbose.dir/src/verbose_profile.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_profile.c
 
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuverbose.dir/src/verbose_profile.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_profile.c > CMakeFiles/dpuverbose.dir/src/verbose_profile.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_profile.c > CMakeFiles/dpuverbose.dir/src/verbose_profile.c.i
 
 verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuverbose.dir/src/verbose_profile.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_profile.c -o CMakeFiles/dpuverbose.dir/src/verbose_profile.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose/src/verbose_profile.c -o CMakeFiles/dpuverbose.dir/src/verbose_profile.c.s
 
 # Object files for target dpuverbose
 dpuverbose_OBJECTS = \
@@ -142,9 +142,9 @@ verbose/libdpuverbose.so.0.0: verbose/CMakeFiles/dpuverbose.dir/src/verbose_cont
 verbose/libdpuverbose.so.0.0: verbose/CMakeFiles/dpuverbose.dir/src/verbose_profile.c.o
 verbose/libdpuverbose.so.0.0: verbose/CMakeFiles/dpuverbose.dir/build.make
 verbose/libdpuverbose.so.0.0: verbose/CMakeFiles/dpuverbose.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C shared library libdpuverbose.so"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dpuverbose.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && $(CMAKE_COMMAND) -E cmake_symlink_library libdpuverbose.so.0.0 libdpuverbose.so.0.0 libdpuverbose.so
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C shared library libdpuverbose.so"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dpuverbose.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && $(CMAKE_COMMAND) -E cmake_symlink_library libdpuverbose.so.0.0 libdpuverbose.so.0.0 libdpuverbose.so
 
 verbose/libdpuverbose.so: verbose/libdpuverbose.so.0.0
 	@$(CMAKE_COMMAND) -E touch_nocreate verbose/libdpuverbose.so
@@ -155,10 +155,10 @@ verbose/CMakeFiles/dpuverbose.dir/build: verbose/libdpuverbose.so
 .PHONY : verbose/CMakeFiles/dpuverbose.dir/build
 
 verbose/CMakeFiles/dpuverbose.dir/clean:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && $(CMAKE_COMMAND) -P CMakeFiles/dpuverbose.dir/cmake_clean.cmake
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose && $(CMAKE_COMMAND) -P CMakeFiles/dpuverbose.dir/cmake_clean.cmake
 .PHONY : verbose/CMakeFiles/dpuverbose.dir/clean
 
 verbose/CMakeFiles/dpuverbose.dir/depend:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose/CMakeFiles/dpuverbose.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/verbose /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/verbose/CMakeFiles/dpuverbose.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : verbose/CMakeFiles/dpuverbose.dir/depend
 

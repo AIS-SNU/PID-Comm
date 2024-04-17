@@ -60,10 +60,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends
+CMAKE_SOURCE_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build
+CMAKE_BINARY_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build
 
 # Include any dependencies generated for this target.
 include hw/CMakeFiles/dpuhw.dir/depend.make
@@ -76,107 +76,107 @@ include hw/CMakeFiles/dpuhw.dir/flags.make
 
 hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o: hw/CMakeFiles/dpuhw.dir/flags.make
 hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o: ../commons/src/properties/dpu_properties.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.c
 
 hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.c > CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.c > CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.i
 
 hw/CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.c -o CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/properties/dpu_properties.c -o CMakeFiles/dpuhw.dir/__/commons/src/properties/dpu_properties.c.s
 
 hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.o: hw/CMakeFiles/dpuhw.dir/flags.make
 hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.o: ../commons/src/dpu_chip_description.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/dpu_chip_description.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/dpu_chip_description.c
 
 hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/dpu_chip_description.c > CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/dpu_chip_description.c > CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.i
 
 hw/CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/dpu_chip_description.c -o CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/commons/src/dpu_chip_description.c -o CMakeFiles/dpuhw.dir/__/commons/src/dpu_chip_description.c.s
 
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o: hw/CMakeFiles/dpuhw.dir/flags.make
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o: ../hw/src/rank/hw_dpu_rank.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_rank.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_rank.c
 
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_rank.c > CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_rank.c > CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.i
 
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_rank.c -o CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_rank.c -o CMakeFiles/dpuhw.dir/src/rank/hw_dpu_rank.c.s
 
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o: hw/CMakeFiles/dpuhw.dir/flags.make
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o: ../hw/src/rank/hw_dpu_sysfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.c
 
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.c > CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.c > CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.i
 
 hw/CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.c -o CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/hw_dpu_sysfs.c -o CMakeFiles/dpuhw.dir/src/rank/hw_dpu_sysfs.c.s
 
 hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o: hw/CMakeFiles/dpuhw.dir/flags.make
 hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o: ../hw/src/rank/fpga_ila.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/fpga_ila.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/fpga_ila.c
 
 hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/fpga_ila.c > CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/fpga_ila.c > CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.i
 
 hw/CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/fpga_ila.c -o CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/rank/fpga_ila.c -o CMakeFiles/dpuhw.dir/src/rank/fpga_ila.c.s
 
 hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.o: hw/CMakeFiles/dpuhw.dir/flags.make
 hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.o: ../hw/src/mappings/fpga_aws/fpga_aws_translation.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c
 
 hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c > CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c > CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.i
 
 hw/CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c -o CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/fpga_aws/fpga_aws_translation.c -o CMakeFiles/dpuhw.dir/src/mappings/fpga_aws/fpga_aws_translation.c.s
 
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o: hw/CMakeFiles/dpuhw.dir/flags.make
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o: ../hw/src/mappings/xeon_sp/xeon_sp_translation.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c
 
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c > CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c > CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.i
 
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c -o CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/xeon_sp_translation.c -o CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/xeon_sp_translation.c.s
 
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o: hw/CMakeFiles/dpuhw.dir/flags.make
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o: ../hw/src/mappings/xeon_sp/pid_comm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/pid_comm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/pid_comm.c
 
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/pid_comm.c > CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/pid_comm.c > CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.i
 
 hw/CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/pid_comm.c -o CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw/src/mappings/xeon_sp/pid_comm.c -o CMakeFiles/dpuhw.dir/src/mappings/xeon_sp/pid_comm.c.s
 
 # Object files for target dpuhw
 dpuhw_OBJECTS = \
@@ -206,9 +206,9 @@ hw/libdpuhw.so.0.0: /lib/x86_64-linux-gnu/libudev.so
 hw/libdpuhw.so.0.0: /usr/lib/x86_64-linux-gnu/libnuma.so
 hw/libdpuhw.so.0.0: verbose/libdpuverbose.so.0.0
 hw/libdpuhw.so.0.0: hw/CMakeFiles/dpuhw.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C shared library libdpuhw.so"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dpuhw.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && $(CMAKE_COMMAND) -E cmake_symlink_library libdpuhw.so.0.0 libdpuhw.so.0.0 libdpuhw.so
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C shared library libdpuhw.so"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dpuhw.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && $(CMAKE_COMMAND) -E cmake_symlink_library libdpuhw.so.0.0 libdpuhw.so.0.0 libdpuhw.so
 
 hw/libdpuhw.so: hw/libdpuhw.so.0.0
 	@$(CMAKE_COMMAND) -E touch_nocreate hw/libdpuhw.so
@@ -219,10 +219,10 @@ hw/CMakeFiles/dpuhw.dir/build: hw/libdpuhw.so
 .PHONY : hw/CMakeFiles/dpuhw.dir/build
 
 hw/CMakeFiles/dpuhw.dir/clean:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && $(CMAKE_COMMAND) -P CMakeFiles/dpuhw.dir/cmake_clean.cmake
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw && $(CMAKE_COMMAND) -P CMakeFiles/dpuhw.dir/cmake_clean.cmake
 .PHONY : hw/CMakeFiles/dpuhw.dir/clean
 
 hw/CMakeFiles/dpuhw.dir/depend:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/hw /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw/CMakeFiles/dpuhw.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/hw /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/hw/CMakeFiles/dpuhw.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : hw/CMakeFiles/dpuhw.dir/depend
 

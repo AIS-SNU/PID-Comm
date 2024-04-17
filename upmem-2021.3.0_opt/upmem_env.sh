@@ -2,10 +2,10 @@
 
 SCRIPT_DIR="$(readlink -f "$(dirname "${BASH_SOURCE[0]}")")"
 
-echo "Enter UPMEM_HOME directory (default /home/siung/reduce_scatter/upmem-2021.3.0_opt): "
+echo "Enter UPMEM_HOME directory (default /home): "
 read upmem_home_dir
 if [ "${upmem_home_dir}" = "" ]; then
-    export UPMEM_HOME="/home/joungwook/PID-Comm/upmem-2021.3.0_opt" #directory of UPMEM SDK. Copy only necessary modified .so files built inside the repo for now - Comment
+    export UPMEM_HOME="/home" #directory of UPMEM SDK. Copy only necessary modified .so files built inside the repo for now - Comment
 else
     export UPMEM_HOME=$upmem_home_dir
 fi

@@ -1,25 +1,25 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_ec3cb/fast && /usr/bin/make -f CMakeFiles/cmTC_ec3cb.dir/build.make CMakeFiles/cmTC_ec3cb.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ec3cb.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_ec3cb.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_ec3cb
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec3cb.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCMAKE_HAVE_LIBC_PTHREAD  -Wl,--enable-new-dtags  CMakeFiles/cmTC_ec3cb.dir/src.c.o  -o cmTC_ec3cb 
-CMakeFiles/cmTC_ec3cb.dir/src.c.o: In function `main':
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_cancel'
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:14: undefined reference to `pthread_join'
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:15: undefined reference to `pthread_atfork'
+Run Build Command(s):/usr/bin/make cmTC_70589/fast && /usr/bin/make -f CMakeFiles/cmTC_70589.dir/build.make CMakeFiles/cmTC_70589.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_70589.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_70589.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_70589
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70589.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCMAKE_HAVE_LIBC_PTHREAD  -Wl,--enable-new-dtags  CMakeFiles/cmTC_70589.dir/src.c.o  -o cmTC_70589 
+CMakeFiles/cmTC_70589.dir/src.c.o: In function `main':
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_cancel'
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:14: undefined reference to `pthread_join'
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:15: undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_ec3cb.dir/build.make:103: recipe for target 'cmTC_ec3cb' failed
-make[1]: *** [cmTC_ec3cb] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_ec3cb/fast' failed
-make: *** [cmTC_ec3cb/fast] Error 2
+CMakeFiles/cmTC_70589.dir/build.make:103: recipe for target 'cmTC_70589' failed
+make[1]: *** [cmTC_70589] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_70589/fast' failed
+make: *** [cmTC_70589/fast] Error 2
 
 
 Source file was:
@@ -44,48 +44,48 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_22da5/fast && /usr/bin/make -f CMakeFiles/cmTC_22da5.dir/build.make CMakeFiles/cmTC_22da5.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_22da5.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_22da5.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.17/Modules/CheckFunctionExists.c
-Linking C executable cmTC_22da5
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22da5.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--enable-new-dtags  CMakeFiles/cmTC_22da5.dir/CheckFunctionExists.c.o  -o cmTC_22da5  -lpthreads 
+Run Build Command(s):/usr/bin/make cmTC_add27/fast && /usr/bin/make -f CMakeFiles/cmTC_add27.dir/build.make CMakeFiles/cmTC_add27.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_add27.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_add27.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_add27
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_add27.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -std=gnu11  -O3  -g -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--enable-new-dtags  CMakeFiles/cmTC_add27.dir/CheckFunctionExists.c.o  -o cmTC_add27  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_22da5.dir/build.make:103: recipe for target 'cmTC_22da5' failed
-make[1]: *** [cmTC_22da5] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_22da5/fast' failed
-make: *** [cmTC_22da5/fast] Error 2
+CMakeFiles/cmTC_add27.dir/build.make:103: recipe for target 'cmTC_add27' failed
+make[1]: *** [cmTC_add27] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_add27/fast' failed
+make: *** [cmTC_add27/fast] Error 2
 
 
 
 Performing C SOURCE FILE Test C_HAS_SSE3_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_fbe23/fast && /usr/bin/make -f CMakeFiles/cmTC_fbe23.dir/build.make CMakeFiles/cmTC_fbe23.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_fbe23.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE3_1   -o CMakeFiles/cmTC_fbe23.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+Run Build Command(s):/usr/bin/make cmTC_2e404/fast && /usr/bin/make -f CMakeFiles/cmTC_2e404.dir/build.make CMakeFiles/cmTC_2e404.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2e404.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE3_1   -o CMakeFiles/cmTC_2e404.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     6 |     __m128i a;
       |             ^
-In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/pmmintrin.h:110:1: error: inlining failed in call to always_inline ‘_mm_lddqu_si128’: target specific option mismatch
-  110 | _mm_lddqu_si128 (__m128i const *__P)
+In file included from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/pmmintrin.h:111:1: error: inlining failed in call to ‘always_inline’ ‘_mm_lddqu_si128’: target specific option mismatch
+  111 | _mm_lddqu_si128 (__m128i const *__P)
       | ^~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
     7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_fbe23.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_fbe23.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_fbe23.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_fbe23/fast' failed
-make: *** [cmTC_fbe23/fast] Error 2
+CMakeFiles/cmTC_2e404.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_2e404.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2e404.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_2e404/fast' failed
+make: *** [cmTC_2e404/fast] Error 2
 
 
 ...and run output:
@@ -102,28 +102,28 @@ Source file was:
     return 0;
   }
 Performing C SOURCE FILE Test C_COMPILES_SSE3_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_3cb65/fast && /usr/bin/make -f CMakeFiles/cmTC_3cb65.dir/build.make CMakeFiles/cmTC_3cb65.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3cb65.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE3_1   -o CMakeFiles/cmTC_3cb65.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+Run Build Command(s):/usr/bin/make cmTC_9aea5/fast && /usr/bin/make -f CMakeFiles/cmTC_9aea5.dir/build.make CMakeFiles/cmTC_9aea5.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9aea5.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE3_1   -o CMakeFiles/cmTC_9aea5.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     6 |     __m128i a;
       |             ^
-In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/pmmintrin.h:110:1: error: inlining failed in call to always_inline ‘_mm_lddqu_si128’: target specific option mismatch
-  110 | _mm_lddqu_si128 (__m128i const *__P)
+In file included from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/pmmintrin.h:111:1: error: inlining failed in call to ‘always_inline’ ‘_mm_lddqu_si128’: target specific option mismatch
+  111 | _mm_lddqu_si128 (__m128i const *__P)
       | ^~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
     7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_3cb65.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_3cb65.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_3cb65.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_3cb65/fast' failed
-make: *** [cmTC_3cb65/fast] Error 2
+CMakeFiles/cmTC_9aea5.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_9aea5.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9aea5.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_9aea5/fast' failed
+make: *** [cmTC_9aea5/fast] Error 2
 
 
 Source file was:
@@ -137,44 +137,44 @@ Source file was:
     return 0;
   }
 Performing C SOURCE FILE Test C_HAS_SSE4_1_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_a4b38/fast && /usr/bin/make -f CMakeFiles/cmTC_a4b38.dir/build.make CMakeFiles/cmTC_a4b38.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a4b38.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_1_1   -o CMakeFiles/cmTC_a4b38.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+Run Build Command(s):/usr/bin/make cmTC_4b033/fast && /usr/bin/make -f CMakeFiles/cmTC_4b033.dir/build.make CMakeFiles/cmTC_4b033.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4b033.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_1_1   -o CMakeFiles/cmTC_4b033.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                        ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                                     ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                                       ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
     6 |     __m128i res = _mm_max_epi8(a, b);
       |             ^~~
-In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+In file included from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
   282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
       | ^~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
     6 |     __m128i res = _mm_max_epi8(a, b);
       |                   ^~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_a4b38.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_a4b38.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_a4b38.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_a4b38/fast' failed
-make: *** [cmTC_a4b38/fast] Error 2
+CMakeFiles/cmTC_4b033.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_4b033.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_4b033.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_4b033/fast' failed
+make: *** [cmTC_4b033/fast] Error 2
 
 
 ...and run output:
@@ -191,44 +191,44 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_COMPILES_SSE4_1_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_365ae/fast && /usr/bin/make -f CMakeFiles/cmTC_365ae.dir/build.make CMakeFiles/cmTC_365ae.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_365ae.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_365ae.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+Run Build Command(s):/usr/bin/make cmTC_6949f/fast && /usr/bin/make -f CMakeFiles/cmTC_6949f.dir/build.make CMakeFiles/cmTC_6949f.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6949f.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_6949f.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                        ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                                     ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                                       ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
     6 |     __m128i res = _mm_max_epi8(a, b);
       |             ^~~
-In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+In file included from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
   282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
       | ^~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
     6 |     __m128i res = _mm_max_epi8(a, b);
       |                   ^~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_365ae.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_365ae.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_365ae.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_365ae/fast' failed
-make: *** [cmTC_365ae/fast] Error 2
+CMakeFiles/cmTC_6949f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_6949f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6949f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_6949f/fast' failed
+make: *** [cmTC_6949f/fast] Error 2
 
 
 Source file was:
@@ -242,53 +242,53 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_HAS_SSE4_2_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_550e1/fast && /usr/bin/make -f CMakeFiles/cmTC_550e1.dir/build.make CMakeFiles/cmTC_550e1.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_550e1.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_2_1   -o CMakeFiles/cmTC_550e1.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+Run Build Command(s):/usr/bin/make cmTC_f080b/fast && /usr/bin/make -f CMakeFiles/cmTC_f080b.dir/build.make CMakeFiles/cmTC_f080b.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f080b.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_SSE4_2_1   -o CMakeFiles/cmTC_f080b.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                        ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                     ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                       ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                                    ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                           ^
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/nmmintrin.h:31,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
-  796 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/nmmintrin.h:31,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
       | ^~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     c = _mm_cmpgt_epi64(a, b);
       |         ^~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_550e1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_550e1.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_550e1.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_550e1/fast' failed
-make: *** [cmTC_550e1/fast] Error 2
+CMakeFiles/cmTC_f080b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_f080b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_f080b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_f080b/fast' failed
+make: *** [cmTC_f080b/fast] Error 2
 
 
 ...and run output:
@@ -305,53 +305,53 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_COMPILES_SSE4_2_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_5f092/fast && /usr/bin/make -f CMakeFiles/cmTC_5f092.dir/build.make CMakeFiles/cmTC_5f092.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5f092.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_5f092.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+Run Build Command(s):/usr/bin/make cmTC_a51da/fast && /usr/bin/make -f CMakeFiles/cmTC_a51da.dir/build.make CMakeFiles/cmTC_a51da.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a51da.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_a51da.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                        ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                     ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                       ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                                    ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                           ^
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/nmmintrin.h:31,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
-  796 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/nmmintrin.h:31,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
       | ^~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     c = _mm_cmpgt_epi64(a, b);
       |         ^~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_5f092.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_5f092.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_5f092.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_5f092/fast' failed
-make: *** [cmTC_5f092/fast] Error 2
+CMakeFiles/cmTC_a51da.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_a51da.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a51da.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_a51da/fast' failed
+make: *** [cmTC_a51da/fast] Error 2
 
 
 Source file was:
@@ -365,32 +365,32 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_HAS_AVX_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_fa55e/fast && /usr/bin/make -f CMakeFiles/cmTC_fa55e.dir/build.make CMakeFiles/cmTC_fa55e.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_fa55e.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX_1   -o CMakeFiles/cmTC_fa55e.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+Run Build Command(s):/usr/bin/make cmTC_e912d/fast && /usr/bin/make -f CMakeFiles/cmTC_e912d.dir/build.make CMakeFiles/cmTC_e912d.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e912d.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX_1   -o CMakeFiles/cmTC_e912d.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     5 |     __m256 a;
       |            ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_set1_ps(0);
       |     ~~^~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:51,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
- 1311 | _mm256_set1_ps (float __A)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:43,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h:1327:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_set1_ps’: target specific option mismatch
+ 1327 | _mm256_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_set1_ps(0);
       |         ^~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_fa55e.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_fa55e.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_fa55e.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_fa55e/fast' failed
-make: *** [cmTC_fa55e/fast] Error 2
+CMakeFiles/cmTC_e912d.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e912d.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e912d.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_e912d/fast' failed
+make: *** [cmTC_e912d/fast] Error 2
 
 
 ...and run output:
@@ -407,32 +407,32 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_COMPILES_AVX_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_e571b/fast && /usr/bin/make -f CMakeFiles/cmTC_e571b.dir/build.make CMakeFiles/cmTC_e571b.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e571b.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX_1   -o CMakeFiles/cmTC_e571b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+Run Build Command(s):/usr/bin/make cmTC_cc293/fast && /usr/bin/make -f CMakeFiles/cmTC_cc293.dir/build.make CMakeFiles/cmTC_cc293.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cc293.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX_1   -o CMakeFiles/cmTC_cc293.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     5 |     __m256 a;
       |            ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_set1_ps(0);
       |     ~~^~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:51,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
- 1311 | _mm256_set1_ps (float __A)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:43,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h:1327:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_set1_ps’: target specific option mismatch
+ 1327 | _mm256_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_set1_ps(0);
       |         ^~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_e571b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e571b.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_e571b.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_e571b/fast' failed
-make: *** [cmTC_e571b/fast] Error 2
+CMakeFiles/cmTC_cc293.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_cc293.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_cc293.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_cc293/fast' failed
+make: *** [cmTC_cc293/fast] Error 2
 
 
 Source file was:
@@ -446,29 +446,29 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_HAS_AVX2_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7be7a/fast && /usr/bin/make -f CMakeFiles/cmTC_7be7a.dir/build.make CMakeFiles/cmTC_7be7a.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7be7a.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX2_1   -o CMakeFiles/cmTC_7be7a.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_132c3/fast && /usr/bin/make -f CMakeFiles/cmTC_132c3.dir/build.make CMakeFiles/cmTC_132c3.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_132c3.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX2_1   -o CMakeFiles/cmTC_132c3.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_abs_epi16(a);
       |     ~~^~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:53,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:51,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx2intrin.h:63:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_abs_epi16’: target specific option mismatch
    63 | _mm256_abs_epi16 (__m256i __A)
       | ^~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_abs_epi16(a);
       |         ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_7be7a.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_7be7a.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_7be7a.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_7be7a/fast' failed
-make: *** [cmTC_7be7a/fast] Error 2
+CMakeFiles/cmTC_132c3.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_132c3.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_132c3.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_132c3/fast' failed
+make: *** [cmTC_132c3/fast] Error 2
 
 
 ...and run output:
@@ -485,29 +485,29 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_COMPILES_AVX2_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_eb27c/fast && /usr/bin/make -f CMakeFiles/cmTC_eb27c.dir/build.make CMakeFiles/cmTC_eb27c.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_eb27c.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX2_1   -o CMakeFiles/cmTC_eb27c.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_e768d/fast && /usr/bin/make -f CMakeFiles/cmTC_e768d.dir/build.make CMakeFiles/cmTC_e768d.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e768d.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX2_1   -o CMakeFiles/cmTC_e768d.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_abs_epi16(a);
       |     ~~^~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:53,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:51,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx2intrin.h:63:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_abs_epi16’: target specific option mismatch
    63 | _mm256_abs_epi16 (__m256i __A)
       | ^~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_abs_epi16(a);
       |         ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_eb27c.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_eb27c.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_eb27c.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_eb27c/fast' failed
-make: *** [cmTC_eb27c/fast] Error 2
+CMakeFiles/cmTC_e768d.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_e768d.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e768d.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_e768d/fast' failed
+make: *** [cmTC_e768d/fast] Error 2
 
 
 Source file was:
@@ -521,45 +521,41 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_HAS_AVX512F_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_59280/fast && /usr/bin/make -f CMakeFiles/cmTC_59280.dir/build.make CMakeFiles/cmTC_59280.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_59280.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512F_1   -o CMakeFiles/cmTC_59280.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_c95bb/fast && /usr/bin/make -f CMakeFiles/cmTC_c95bb.dir/build.make CMakeFiles/cmTC_c95bb.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c95bb.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512F_1   -o CMakeFiles/cmTC_c95bb.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |            ^
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:12294:1: error: inlining failed in call to always_inline ‘_mm512_add_ps’: target specific option mismatch
-12294 | _mm512_add_ps (__m512 __A, __m512 __B)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:53,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:12607:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_add_ps’: target specific option mismatch
+12607 | _mm512_add_ps (__m512 __A, __m512 __B)
       | ^~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:251:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
-  251 | _mm512_set1_ps (float __A)
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:257:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  257 | _mm512_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:251:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
-  251 | _mm512_set1_ps (float __A)
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:257:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  257 | _mm512_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |                ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_59280.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_59280.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_59280.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_59280/fast' failed
-make: *** [cmTC_59280/fast] Error 2
+CMakeFiles/cmTC_c95bb.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c95bb.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c95bb.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_c95bb/fast' failed
+make: *** [cmTC_c95bb/fast] Error 2
 
 
 ...and run output:
@@ -576,45 +572,41 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_COMPILES_AVX512F_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_8a71f/fast && /usr/bin/make -f CMakeFiles/cmTC_8a71f.dir/build.make CMakeFiles/cmTC_8a71f.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8a71f.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_8a71f.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_444f0/fast && /usr/bin/make -f CMakeFiles/cmTC_444f0.dir/build.make CMakeFiles/cmTC_444f0.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_444f0.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_444f0.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |            ^
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:12294:1: error: inlining failed in call to always_inline ‘_mm512_add_ps’: target specific option mismatch
-12294 | _mm512_add_ps (__m512 __A, __m512 __B)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:53,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:12607:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_add_ps’: target specific option mismatch
+12607 | _mm512_add_ps (__m512 __A, __m512 __B)
       | ^~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:251:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
-  251 | _mm512_set1_ps (float __A)
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:257:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  257 | _mm512_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:251:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
-  251 | _mm512_set1_ps (float __A)
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:257:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  257 | _mm512_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |                ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_8a71f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_8a71f.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_8a71f.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_8a71f/fast' failed
-make: *** [cmTC_8a71f/fast] Error 2
+CMakeFiles/cmTC_444f0.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_444f0.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_444f0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_444f0/fast' failed
+make: *** [cmTC_444f0/fast] Error 2
 
 
 Source file was:
@@ -628,37 +620,36 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_HAS_AVX512BW_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_c2f4e/fast && /usr/bin/make -f CMakeFiles/cmTC_c2f4e.dir/build.make CMakeFiles/cmTC_c2f4e.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c2f4e.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512BW_1   -o CMakeFiles/cmTC_c2f4e.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_a2109/fast && /usr/bin/make -f CMakeFiles/cmTC_a2109.dir/build.make CMakeFiles/cmTC_a2109.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a2109.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_AVX512BW_1   -o CMakeFiles/cmTC_a2109.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |             ^~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:65,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512bwintrin.h:1852:1: error: inlining failed in call to always_inline ‘_mm512_shuffle_epi8’: target specific option mismatch
- 1852 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:63,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h:1884:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_shuffle_epi8’: target specific option mismatch
+ 1884 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
       | ^~~~~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
     7 |     load = _mm512_shuffle_epi8(load, mask);
       |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:79:1: error: inlining failed in call to always_inline ‘_mm512_set_epi64’: target specific option mismatch
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:53:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:79:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set_epi64’: target specific option mismatch
    79 | _mm512_set_epi64 (long long __A, long long __B, long long __C,
       | ^~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_c2f4e.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c2f4e.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_c2f4e.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_c2f4e/fast' failed
-make: *** [cmTC_c2f4e/fast] Error 2
+CMakeFiles/cmTC_a2109.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_a2109.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a2109.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_a2109/fast' failed
+make: *** [cmTC_a2109/fast] Error 2
 
 
 ...and run output:
@@ -676,37 +667,36 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_COMPILES_AVX512BW_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_2722b/fast && /usr/bin/make -f CMakeFiles/cmTC_2722b.dir/build.make CMakeFiles/cmTC_2722b.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2722b.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_2722b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_90d5b/fast && /usr/bin/make -f CMakeFiles/cmTC_90d5b.dir/build.make CMakeFiles/cmTC_90d5b.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_90d5b.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_90d5b.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |             ^~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:65,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512bwintrin.h:1852:1: error: inlining failed in call to always_inline ‘_mm512_shuffle_epi8’: target specific option mismatch
- 1852 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:63,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h:1884:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_shuffle_epi8’: target specific option mismatch
+ 1884 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
       | ^~~~~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
     7 |     load = _mm512_shuffle_epi8(load, mask);
       |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:79:1: error: inlining failed in call to always_inline ‘_mm512_set_epi64’: target specific option mismatch
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:53:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:79:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set_epi64’: target specific option mismatch
    79 | _mm512_set_epi64 (long long __A, long long __B, long long __C,
       | ^~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_2722b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_2722b.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_2722b.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_2722b/fast' failed
-make: *** [cmTC_2722b/fast] Error 2
+CMakeFiles/cmTC_90d5b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_90d5b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_90d5b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_90d5b/fast' failed
+make: *** [cmTC_90d5b/fast] Error 2
 
 
 Source file was:
@@ -721,21 +711,28 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_HAS_CLFLUSHOPT_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_3978d/fast && /usr/bin/make -f CMakeFiles/cmTC_3978d.dir/build.make CMakeFiles/cmTC_3978d.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3978d.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_3978d.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+Run Build Command(s):/usr/bin/make cmTC_be664/fast && /usr/bin/make -f CMakeFiles/cmTC_be664.dir/build.make CMakeFiles/cmTC_be664.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_be664.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_be664.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: warning: ‘flush’ may be used uninitialized [-Wmaybe-uninitialized]
     6 |     __builtin_ia32_clflushopt(&flush);
       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_3978d.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_3978d.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_3978d.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_3978d/fast' failed
-make: *** [cmTC_3978d/fast] Error 2
+<built-in>: note: by argument 1 of type ‘const void *’ to ‘__builtin_ia32_clflushopt’ declared here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:9: note: ‘flush’ declared here
+    5 |     int flush;
+      |         ^~~~~
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+    6 |     __builtin_ia32_clflushopt(&flush);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_be664.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_be664.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_be664.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_be664/fast' failed
+make: *** [cmTC_be664/fast] Error 2
 
 
 ...and run output:
@@ -752,21 +749,28 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test C_COMPILES_CLFLUSHOPT_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_4c1c3/fast && /usr/bin/make -f CMakeFiles/cmTC_4c1c3.dir/build.make CMakeFiles/cmTC_4c1c3.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4c1c3.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_4c1c3.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+Run Build Command(s):/usr/bin/make cmTC_383d5/fast && /usr/bin/make -f CMakeFiles/cmTC_383d5.dir/build.make CMakeFiles/cmTC_383d5.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_383d5.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DC_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_383d5.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: warning: ‘flush’ may be used uninitialized [-Wmaybe-uninitialized]
     6 |     __builtin_ia32_clflushopt(&flush);
       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_4c1c3.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_4c1c3.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_4c1c3.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_4c1c3/fast' failed
-make: *** [cmTC_4c1c3/fast] Error 2
+<built-in>: note: by argument 1 of type ‘const void *’ to ‘__builtin_ia32_clflushopt’ declared here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:9: note: ‘flush’ declared here
+    5 |     int flush;
+      |         ^~~~~
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+    6 |     __builtin_ia32_clflushopt(&flush);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_383d5.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_383d5.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_383d5.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_383d5/fast' failed
+make: *** [cmTC_383d5/fast] Error 2
 
 
 Source file was:
@@ -780,28 +784,28 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_HAS_SSE3_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_4b23d/fast && /usr/bin/make -f CMakeFiles/cmTC_4b23d.dir/build.make CMakeFiles/cmTC_4b23d.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4b23d.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE3_1   -o CMakeFiles/cmTC_4b23d.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+Run Build Command(s):/usr/bin/make cmTC_d7f5c/fast && /usr/bin/make -f CMakeFiles/cmTC_d7f5c.dir/build.make CMakeFiles/cmTC_d7f5c.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d7f5c.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE3_1   -o CMakeFiles/cmTC_d7f5c.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     6 |     __m128i a;
       |             ^
-In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/pmmintrin.h:110:1: error: inlining failed in call to always_inline ‘_mm_lddqu_si128’: target specific option mismatch
-  110 | _mm_lddqu_si128 (__m128i const *__P)
+In file included from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/pmmintrin.h:111:1: error: inlining failed in call to ‘always_inline’ ‘_mm_lddqu_si128’: target specific option mismatch
+  111 | _mm_lddqu_si128 (__m128i const *__P)
       | ^~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
     7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_4b23d.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_4b23d.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_4b23d.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_4b23d/fast' failed
-make: *** [cmTC_4b23d/fast] Error 2
+CMakeFiles/cmTC_d7f5c.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_d7f5c.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d7f5c.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_d7f5c/fast' failed
+make: *** [cmTC_d7f5c/fast] Error 2
 
 
 ...and run output:
@@ -818,28 +822,28 @@ Source file was:
     return 0;
   }
 Performing C SOURCE FILE Test CXX_COMPILES_SSE3_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_33a12/fast && /usr/bin/make -f CMakeFiles/cmTC_33a12.dir/build.make CMakeFiles/cmTC_33a12.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_33a12.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE3_1   -o CMakeFiles/cmTC_33a12.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+Run Build Command(s):/usr/bin/make cmTC_059ae/fast && /usr/bin/make -f CMakeFiles/cmTC_059ae.dir/build.make CMakeFiles/cmTC_059ae.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_059ae.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE3_1   -o CMakeFiles/cmTC_059ae.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     6 |     __m128i a;
       |             ^
-In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/pmmintrin.h:110:1: error: inlining failed in call to always_inline ‘_mm_lddqu_si128’: target specific option mismatch
-  110 | _mm_lddqu_si128 (__m128i const *__P)
+In file included from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/pmmintrin.h:111:1: error: inlining failed in call to ‘always_inline’ ‘_mm_lddqu_si128’: target specific option mismatch
+  111 | _mm_lddqu_si128 (__m128i const *__P)
       | ^~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:9: note: called from here
     7 |     a = _mm_lddqu_si128( (const __m128i*)vals );
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_33a12.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_33a12.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_33a12.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_33a12/fast' failed
-make: *** [cmTC_33a12/fast] Error 2
+CMakeFiles/cmTC_059ae.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_059ae.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_059ae.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_059ae/fast' failed
+make: *** [cmTC_059ae/fast] Error 2
 
 
 Source file was:
@@ -853,44 +857,44 @@ Source file was:
     return 0;
   }
 Performing C SOURCE FILE Test CXX_HAS_SSE4_1_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_6923b/fast && /usr/bin/make -f CMakeFiles/cmTC_6923b.dir/build.make CMakeFiles/cmTC_6923b.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6923b.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_1_1   -o CMakeFiles/cmTC_6923b.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+Run Build Command(s):/usr/bin/make cmTC_dc850/fast && /usr/bin/make -f CMakeFiles/cmTC_dc850.dir/build.make CMakeFiles/cmTC_dc850.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dc850.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_1_1   -o CMakeFiles/cmTC_dc850.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                        ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                                     ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                                       ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
     6 |     __m128i res = _mm_max_epi8(a, b);
       |             ^~~
-In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+In file included from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
   282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
       | ^~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
     6 |     __m128i res = _mm_max_epi8(a, b);
       |                   ^~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_6923b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_6923b.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_6923b.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_6923b/fast' failed
-make: *** [cmTC_6923b/fast] Error 2
+CMakeFiles/cmTC_dc850.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_dc850.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_dc850.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_dc850/fast' failed
+make: *** [cmTC_dc850/fast] Error 2
 
 
 ...and run output:
@@ -907,44 +911,44 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_COMPILES_SSE4_1_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_0b450/fast && /usr/bin/make -f CMakeFiles/cmTC_0b450.dir/build.make CMakeFiles/cmTC_0b450.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0b450.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_0b450.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+Run Build Command(s):/usr/bin/make cmTC_c3b5f/fast && /usr/bin/make -f CMakeFiles/cmTC_c3b5f.dir/build.make CMakeFiles/cmTC_c3b5f.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c3b5f.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE4_1_1   -o CMakeFiles/cmTC_c3b5f.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                        ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                                     ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0};
       |                                       ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:13: warning: unused variable ‘res’ [-Wunused-variable]
     6 |     __m128i res = _mm_max_epi8(a, b);
       |             ^~~
-In file included from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/smmintrin.h:282:1: error: inlining failed in call to always_inline ‘_mm_max_epi8’: target specific option mismatch
+In file included from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:282:1: error: inlining failed in call to ‘always_inline’ ‘_mm_max_epi8’: target specific option mismatch
   282 | _mm_max_epi8 (__m128i __X, __m128i __Y)
       | ^~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:19: note: called from here
     6 |     __m128i res = _mm_max_epi8(a, b);
       |                   ^~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_0b450.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_0b450.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_0b450.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_0b450/fast' failed
-make: *** [cmTC_0b450/fast] Error 2
+CMakeFiles/cmTC_c3b5f.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c3b5f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c3b5f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_c3b5f/fast' failed
+make: *** [cmTC_c3b5f/fast] Error 2
 
 
 Source file was:
@@ -958,53 +962,53 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_HAS_SSE4_2_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_42997/fast && /usr/bin/make -f CMakeFiles/cmTC_42997.dir/build.make CMakeFiles/cmTC_42997.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_42997.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_2_1   -o CMakeFiles/cmTC_42997.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+Run Build Command(s):/usr/bin/make cmTC_cf59b/fast && /usr/bin/make -f CMakeFiles/cmTC_cf59b.dir/build.make CMakeFiles/cmTC_cf59b.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cf59b.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_SSE4_2_1   -o CMakeFiles/cmTC_cf59b.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                        ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                     ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                       ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                                    ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                           ^
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/nmmintrin.h:31,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
-  796 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/nmmintrin.h:31,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
       | ^~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     c = _mm_cmpgt_epi64(a, b);
       |         ^~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_42997.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_42997.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_42997.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_42997/fast' failed
-make: *** [cmTC_42997/fast] Error 2
+CMakeFiles/cmTC_cf59b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_cf59b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_cf59b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_cf59b/fast' failed
+make: *** [cmTC_cf59b/fast] Error 2
 
 
 ...and run output:
@@ -1021,53 +1025,53 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_COMPILES_SSE4_2_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_a1b03/fast && /usr/bin/make -f CMakeFiles/cmTC_a1b03.dir/build.make CMakeFiles/cmTC_a1b03.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a1b03.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_a1b03.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
+Run Build Command(s):/usr/bin/make cmTC_224b1/fast && /usr/bin/make -f CMakeFiles/cmTC_224b1.dir/build.make CMakeFiles/cmTC_224b1.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_224b1.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_SSE4_2_1   -o CMakeFiles/cmTC_224b1.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:22: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                        ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:24: note: (near initialization for ‘a’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                     ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:37: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                       ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:39: note: (near initialization for ‘b’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                                    ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:52: note: (near initialization for ‘c’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: warning: excess elements in vector initializer
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                                      ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:54: note: (near initialization for ‘c’)
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:43: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
     5 |     __m128i a = {0,0,0,0}, b = {0,0,0,0}, c = {0,0,0,0};
       |                                           ^
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/nmmintrin.h:31,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/smmintrin.h:796:1: error: inlining failed in call to always_inline ‘_mm_cmpgt_epi64’: target specific option mismatch
-  796 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/nmmintrin.h:31,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:797:1: error: inlining failed in call to ‘always_inline’ ‘_mm_cmpgt_epi64’: target specific option mismatch
+  797 | _mm_cmpgt_epi64 (__m128i __X, __m128i __Y)
       | ^~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     c = _mm_cmpgt_epi64(a, b);
       |         ^~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_a1b03.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_a1b03.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_a1b03.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_a1b03/fast' failed
-make: *** [cmTC_a1b03/fast] Error 2
+CMakeFiles/cmTC_224b1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_224b1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_224b1.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_224b1/fast' failed
+make: *** [cmTC_224b1/fast] Error 2
 
 
 Source file was:
@@ -1081,32 +1085,32 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_HAS_AVX_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_4cbf2/fast && /usr/bin/make -f CMakeFiles/cmTC_4cbf2.dir/build.make CMakeFiles/cmTC_4cbf2.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4cbf2.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX_1   -o CMakeFiles/cmTC_4cbf2.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+Run Build Command(s):/usr/bin/make cmTC_9a1f2/fast && /usr/bin/make -f CMakeFiles/cmTC_9a1f2.dir/build.make CMakeFiles/cmTC_9a1f2.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9a1f2.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX_1   -o CMakeFiles/cmTC_9a1f2.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     5 |     __m256 a;
       |            ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_set1_ps(0);
       |     ~~^~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:51,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
- 1311 | _mm256_set1_ps (float __A)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:43,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h:1327:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_set1_ps’: target specific option mismatch
+ 1327 | _mm256_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_set1_ps(0);
       |         ^~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_4cbf2.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_4cbf2.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_4cbf2.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_4cbf2/fast' failed
-make: *** [cmTC_4cbf2/fast] Error 2
+CMakeFiles/cmTC_9a1f2.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_9a1f2.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9a1f2.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_9a1f2/fast' failed
+make: *** [cmTC_9a1f2/fast] Error 2
 
 
 ...and run output:
@@ -1123,32 +1127,32 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_COMPILES_AVX_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_1decf/fast && /usr/bin/make -f CMakeFiles/cmTC_1decf.dir/build.make CMakeFiles/cmTC_1decf.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1decf.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX_1   -o CMakeFiles/cmTC_1decf.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+Run Build Command(s):/usr/bin/make cmTC_fd860/fast && /usr/bin/make -f CMakeFiles/cmTC_fd860.dir/build.make CMakeFiles/cmTC_fd860.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fd860.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX_1   -o CMakeFiles/cmTC_fd860.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
     5 |     __m256 a;
       |            ^
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_set1_ps(0);
       |     ~~^~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:51,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
- 1311 | _mm256_set1_ps (float __A)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:43,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h:1327:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_set1_ps’: target specific option mismatch
+ 1327 | _mm256_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_set1_ps(0);
       |         ^~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_1decf.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_1decf.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_1decf.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_1decf/fast' failed
-make: *** [cmTC_1decf/fast] Error 2
+CMakeFiles/cmTC_fd860.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_fd860.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fd860.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_fd860/fast' failed
+make: *** [cmTC_fd860/fast] Error 2
 
 
 Source file was:
@@ -1162,29 +1166,29 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_HAS_AVX2_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_5df18/fast && /usr/bin/make -f CMakeFiles/cmTC_5df18.dir/build.make CMakeFiles/cmTC_5df18.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5df18.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX2_1   -o CMakeFiles/cmTC_5df18.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_fe556/fast && /usr/bin/make -f CMakeFiles/cmTC_fe556.dir/build.make CMakeFiles/cmTC_fe556.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fe556.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX2_1   -o CMakeFiles/cmTC_fe556.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_abs_epi16(a);
       |     ~~^~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:53,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:51,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx2intrin.h:63:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_abs_epi16’: target specific option mismatch
    63 | _mm256_abs_epi16 (__m256i __A)
       | ^~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_abs_epi16(a);
       |         ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_5df18.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_5df18.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_5df18.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_5df18/fast' failed
-make: *** [cmTC_5df18/fast] Error 2
+CMakeFiles/cmTC_fe556.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_fe556.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fe556.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_fe556/fast' failed
+make: *** [cmTC_fe556/fast] Error 2
 
 
 ...and run output:
@@ -1201,29 +1205,29 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_COMPILES_AVX2_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7e943/fast && /usr/bin/make -f CMakeFiles/cmTC_7e943.dir/build.make CMakeFiles/cmTC_7e943.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7e943.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX2_1   -o CMakeFiles/cmTC_7e943.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_355a0/fast && /usr/bin/make -f CMakeFiles/cmTC_355a0.dir/build.make CMakeFiles/cmTC_355a0.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_355a0.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX2_1   -o CMakeFiles/cmTC_355a0.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
     6 |     a = _mm256_abs_epi16(a);
       |     ~~^~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:53,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:51,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx2intrin.h:63:1: error: inlining failed in call to ‘always_inline’ ‘_mm256_abs_epi16’: target specific option mismatch
    63 | _mm256_abs_epi16 (__m256i __A)
       | ^~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm256_abs_epi16(a);
       |         ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_7e943.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_7e943.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_7e943.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_7e943/fast' failed
-make: *** [cmTC_7e943/fast] Error 2
+CMakeFiles/cmTC_355a0.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_355a0.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_355a0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_355a0/fast' failed
+make: *** [cmTC_355a0/fast] Error 2
 
 
 Source file was:
@@ -1237,45 +1241,41 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_HAS_AVX512F_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_c8976/fast && /usr/bin/make -f CMakeFiles/cmTC_c8976.dir/build.make CMakeFiles/cmTC_c8976.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c8976.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512F_1   -o CMakeFiles/cmTC_c8976.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_1a2d5/fast && /usr/bin/make -f CMakeFiles/cmTC_1a2d5.dir/build.make CMakeFiles/cmTC_1a2d5.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1a2d5.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512F_1   -o CMakeFiles/cmTC_1a2d5.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |            ^
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:12294:1: error: inlining failed in call to always_inline ‘_mm512_add_ps’: target specific option mismatch
-12294 | _mm512_add_ps (__m512 __A, __m512 __B)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:53,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:12607:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_add_ps’: target specific option mismatch
+12607 | _mm512_add_ps (__m512 __A, __m512 __B)
       | ^~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:251:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
-  251 | _mm512_set1_ps (float __A)
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:257:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  257 | _mm512_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:251:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
-  251 | _mm512_set1_ps (float __A)
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:257:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  257 | _mm512_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |                ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_c8976.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c8976.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_c8976.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_c8976/fast' failed
-make: *** [cmTC_c8976/fast] Error 2
+CMakeFiles/cmTC_1a2d5.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_1a2d5.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_1a2d5.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_1a2d5/fast' failed
+make: *** [cmTC_1a2d5/fast] Error 2
 
 
 ...and run output:
@@ -1292,45 +1292,41 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_COMPILES_AVX512F_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_eb445/fast && /usr/bin/make -f CMakeFiles/cmTC_eb445.dir/build.make CMakeFiles/cmTC_eb445.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_eb445.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_eb445.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_9565c/fast && /usr/bin/make -f CMakeFiles/cmTC_9565c.dir/build.make CMakeFiles/cmTC_9565c.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9565c.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX512F_1   -o CMakeFiles/cmTC_9565c.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:12: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |            ^
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:12294:1: error: inlining failed in call to always_inline ‘_mm512_add_ps’: target specific option mismatch
-12294 | _mm512_add_ps (__m512 __A, __m512 __B)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:53,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:12607:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_add_ps’: target specific option mismatch
+12607 | _mm512_add_ps (__m512 __A, __m512 __B)
       | ^~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:251:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
-  251 | _mm512_set1_ps (float __A)
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:257:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  257 | _mm512_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:9: note: called from here
     6 |     a = _mm512_add_ps(a, _mm512_set1_ps(1.f));;
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:251:1: error: inlining failed in call to always_inline ‘_mm512_set1_ps’: target specific option mismatch
-  251 | _mm512_set1_ps (float __A)
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:257:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set1_ps’: target specific option mismatch
+  257 | _mm512_set1_ps (float __A)
       | ^~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:16: note: called from here
     5 |     __m512 a = _mm512_set1_ps(1.f);
       |                ^~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_eb445.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_eb445.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_eb445.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_eb445/fast' failed
-make: *** [cmTC_eb445/fast] Error 2
+CMakeFiles/cmTC_9565c.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_9565c.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9565c.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_9565c/fast' failed
+make: *** [cmTC_9565c/fast] Error 2
 
 
 Source file was:
@@ -1344,37 +1340,36 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_HAS_AVX512BW_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_02a48/fast && /usr/bin/make -f CMakeFiles/cmTC_02a48.dir/build.make CMakeFiles/cmTC_02a48.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_02a48.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512BW_1   -o CMakeFiles/cmTC_02a48.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_05b39/fast && /usr/bin/make -f CMakeFiles/cmTC_05b39.dir/build.make CMakeFiles/cmTC_05b39.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_05b39.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_AVX512BW_1   -o CMakeFiles/cmTC_05b39.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |             ^~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:65,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512bwintrin.h:1852:1: error: inlining failed in call to always_inline ‘_mm512_shuffle_epi8’: target specific option mismatch
- 1852 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:63,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h:1884:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_shuffle_epi8’: target specific option mismatch
+ 1884 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
       | ^~~~~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
     7 |     load = _mm512_shuffle_epi8(load, mask);
       |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:79:1: error: inlining failed in call to always_inline ‘_mm512_set_epi64’: target specific option mismatch
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:53:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:79:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set_epi64’: target specific option mismatch
    79 | _mm512_set_epi64 (long long __A, long long __B, long long __C,
       | ^~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_02a48.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_02a48.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_02a48.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_02a48/fast' failed
-make: *** [cmTC_02a48/fast] Error 2
+CMakeFiles/cmTC_05b39.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_05b39.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_05b39.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_05b39/fast' failed
+make: *** [cmTC_05b39/fast] Error 2
 
 
 ...and run output:
@@ -1392,37 +1387,36 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_COMPILES_AVX512BW_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_2f0d1/fast && /usr/bin/make -f CMakeFiles/cmTC_2f0d1.dir/build.make CMakeFiles/cmTC_2f0d1.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2f0d1.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_2f0d1.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
+Run Build Command(s):/usr/bin/make cmTC_c98fa/fast && /usr/bin/make -f CMakeFiles/cmTC_c98fa.dir/build.make CMakeFiles/cmTC_c98fa.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c98fa.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_AVX512BW_1   -o CMakeFiles/cmTC_c98fa.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:13: warning: AVX512F vector return without AVX512F enabled changes the ABI [-Wpsabi]
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |             ^~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:65,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512bwintrin.h:1852:1: error: inlining failed in call to always_inline ‘_mm512_shuffle_epi8’: target specific option mismatch
- 1852 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:63,
+                 from /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h:1884:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_shuffle_epi8’: target specific option mismatch
+ 1884 | _mm512_shuffle_epi8 (__m512i __A, __m512i __B)
       | ^~~~~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:7:12: note: called from here
     7 |     load = _mm512_shuffle_epi8(load, mask);
       |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
-                 from /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:2:
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:79:1: error: inlining failed in call to always_inline ‘_mm512_set_epi64’: target specific option mismatch
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:53:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:79:1: error: inlining failed in call to ‘always_inline’ ‘_mm512_set_epi64’: target specific option mismatch
    79 | _mm512_set_epi64 (long long __A, long long __B, long long __C,
       | ^~~~~~~~~~~~~~~~
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:20: note: called from here
     5 |     __m512i mask = _mm512_set_epi64(0, 0, 0, 0, 0, 0, 0, 0);
       |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_2f0d1.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_2f0d1.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_2f0d1.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_2f0d1/fast' failed
-make: *** [cmTC_2f0d1/fast] Error 2
+CMakeFiles/cmTC_c98fa.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_c98fa.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c98fa.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_c98fa/fast' failed
+make: *** [cmTC_c98fa/fast] Error 2
 
 
 Source file was:
@@ -1437,21 +1431,28 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_HAS_CLFLUSHOPT_1 failed with the following compile output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7eb17/fast && /usr/bin/make -f CMakeFiles/cmTC_7eb17.dir/build.make CMakeFiles/cmTC_7eb17.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7eb17.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_7eb17.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+Run Build Command(s):/usr/bin/make cmTC_675be/fast && /usr/bin/make -f CMakeFiles/cmTC_675be.dir/build.make CMakeFiles/cmTC_675be.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_675be.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_HAS_CLFLUSHOPT_1   -o CMakeFiles/cmTC_675be.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: warning: ‘flush’ may be used uninitialized [-Wmaybe-uninitialized]
     6 |     __builtin_ia32_clflushopt(&flush);
       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_7eb17.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_7eb17.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_7eb17.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_7eb17/fast' failed
-make: *** [cmTC_7eb17/fast] Error 2
+<built-in>: note: by argument 1 of type ‘const void *’ to ‘__builtin_ia32_clflushopt’ declared here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:9: note: ‘flush’ declared here
+    5 |     int flush;
+      |         ^~~~~
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+    6 |     __builtin_ia32_clflushopt(&flush);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_675be.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_675be.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_675be.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_675be/fast' failed
+make: *** [cmTC_675be/fast] Error 2
 
 
 ...and run output:
@@ -1468,21 +1469,28 @@ Source file was:
   }
 
 Performing C SOURCE FILE Test CXX_COMPILES_CLFLUSHOPT_1 failed with the following output:
-Change Dir: /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
+Change Dir: /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_8cba9/fast && /usr/bin/make -f CMakeFiles/cmTC_8cba9.dir/build.make CMakeFiles/cmTC_8cba9.dir/build
-make[1]: Entering directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8cba9.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_8cba9.dir/src.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
-/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+Run Build Command(s):/usr/bin/make cmTC_8889b/fast && /usr/bin/make -f CMakeFiles/cmTC_8889b.dir/build.make CMakeFiles/cmTC_8889b.dir/build
+make[1]: Entering directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8889b.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -std=gnu11  -O3  -g -DCXX_COMPILES_CLFLUSHOPT_1   -o CMakeFiles/cmTC_8889b.dir/src.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: warning: ‘flush’ may be used uninitialized [-Wmaybe-uninitialized]
     6 |     __builtin_ia32_clflushopt(&flush);
       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CMakeFiles/cmTC_8cba9.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_8cba9.dir/src.c.o' failed
-make[1]: *** [CMakeFiles/cmTC_8cba9.dir/src.c.o] Error 1
-make[1]: Leaving directory '/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
-Makefile:138: recipe for target 'cmTC_8cba9/fast' failed
-make: *** [cmTC_8cba9/fast] Error 2
+<built-in>: note: by argument 1 of type ‘const void *’ to ‘__builtin_ia32_clflushopt’ declared here
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:5:9: note: ‘flush’ declared here
+    5 |     int flush;
+      |         ^~~~~
+/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp/src.c:6:5: error: ‘__builtin_ia32_clflushopt’ needs isa option -mclflushopt
+    6 |     __builtin_ia32_clflushopt(&flush);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_8889b.dir/build.make:82: recipe for target 'CMakeFiles/cmTC_8889b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_8889b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles/CMakeTmp'
+Makefile:138: recipe for target 'cmTC_8889b/fast' failed
+make: *** [cmTC_8889b/fast] Error 2
 
 
 Source file was:

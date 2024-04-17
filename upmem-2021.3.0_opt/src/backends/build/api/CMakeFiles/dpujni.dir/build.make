@@ -60,10 +60,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends
+CMAKE_SOURCE_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build
+CMAKE_BINARY_DIR = /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build
 
 # Include any dependencies generated for this target.
 include api/CMakeFiles/dpujni.dir/depend.make
@@ -76,16 +76,16 @@ include api/CMakeFiles/dpujni.dir/flags.make
 
 api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.o: api/CMakeFiles/dpujni.dir/flags.make
 api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.o: ../api/src/api/dpu_jni.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.o"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpujni.dir/src/api/dpu_jni.c.o   -c /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/api/src/api/dpu_jni.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.o"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpujni.dir/src/api/dpu_jni.c.o   -c /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/api/src/api/dpu_jni.c
 
 api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpujni.dir/src/api/dpu_jni.c.i"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/api/src/api/dpu_jni.c > CMakeFiles/dpujni.dir/src/api/dpu_jni.c.i
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/api/src/api/dpu_jni.c > CMakeFiles/dpujni.dir/src/api/dpu_jni.c.i
 
 api/CMakeFiles/dpujni.dir/src/api/dpu_jni.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpujni.dir/src/api/dpu_jni.c.s"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/api/src/api/dpu_jni.c -o CMakeFiles/dpujni.dir/src/api/dpu_jni.c.s
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/api/src/api/dpu_jni.c -o CMakeFiles/dpujni.dir/src/api/dpu_jni.c.s
 
 # Object files for target dpujni
 dpujni_OBJECTS = \
@@ -102,9 +102,9 @@ api/libdpujni.so.0.0: /usr/lib/x86_64-linux-gnu/libelf.so
 api/libdpujni.so.0.0: /usr/lib/x86_64-linux-gnu/libpython3.8.so
 api/libdpujni.so.0.0: /usr/lib/x86_64-linux-gnu/libnuma.so
 api/libdpujni.so.0.0: api/CMakeFiles/dpujni.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library libdpujni.so"
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dpujni.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && $(CMAKE_COMMAND) -E cmake_symlink_library libdpujni.so.0.0 libdpujni.so.0.0 libdpujni.so
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library libdpujni.so"
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dpujni.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && $(CMAKE_COMMAND) -E cmake_symlink_library libdpujni.so.0.0 libdpujni.so.0.0 libdpujni.so
 
 api/libdpujni.so: api/libdpujni.so.0.0
 	@$(CMAKE_COMMAND) -E touch_nocreate api/libdpujni.so
@@ -115,10 +115,10 @@ api/CMakeFiles/dpujni.dir/build: api/libdpujni.so
 .PHONY : api/CMakeFiles/dpujni.dir/build
 
 api/CMakeFiles/dpujni.dir/clean:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && $(CMAKE_COMMAND) -P CMakeFiles/dpujni.dir/cmake_clean.cmake
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api && $(CMAKE_COMMAND) -P CMakeFiles/dpujni.dir/cmake_clean.cmake
 .PHONY : api/CMakeFiles/dpujni.dir/clean
 
 api/CMakeFiles/dpujni.dir/depend:
-	cd /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/api /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api /home/joungwook/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api/CMakeFiles/dpujni.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/api /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api /home/siung/reduce_scatter/temp/PID-Comm/upmem-2021.3.0_opt/src/backends/build/api/CMakeFiles/dpujni.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : api/CMakeFiles/dpujni.dir/depend
 
