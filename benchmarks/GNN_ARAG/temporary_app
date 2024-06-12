@@ -1,0 +1,588 @@
+    for(int cycle = 2; cycle <= cycle_num; cycle++){
+
+        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY, NULL));
+
+        i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            input_args_A[transpose_num(i, nr_of_partitions)].cycle = cycle;
+            DPU_ASSERT(dpu_prepare_xfer(dpu, input_args_A+transpose_num(i, nr_of_partitions)));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_A", 0, sizeof(dpu_arguments_t), DPU_XFER_DEFAULT));
+
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, input_args_feat+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_feat", 0, sizeof(dpu_arguments_t), DPU_XFER_DEFAULT));
+
+
+         // Copy input feature to DPUs
+        startTimer(&timer, 1);
+       i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS) {
+            //same data may be sent multiple times => dealt with on the dpu side 
+            DPU_ASSERT(dpu_prepare_xfer(dpu, new_feat_cycle[i /nr_of_partitions]));
+        } 
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T) + feature->ncols * max_rows_per_dpu_A * sizeof(T), max_rows_per_dpu_feat * feature->ncols * sizeof(T), DPU_XFER_DEFAULT));
+
+        stopTimer(&timer, 1);
+
+        // Run kernel on DPUs
+        startTimer(&timer, 2);
+        DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
+        stopTimer(&timer, 2);
+
+
+/*************************************reduce scatter y host codes********************************************
+
+        //retrieve results
+        startTimer(&timer, 3);
+        i=0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, *(partial_mid + i)));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T), feature->ncols * max_rows_per_dpu_A * sizeof(T), DPU_XFER_DEFAULT));
+
+
+        //merge new mid_cycle
+        reducescatter_y(new_mid_cycle, partial_mid, dpu_info_mid, nr_of_partitions, nr_of_dpus, max_rows_per_dpu_feat, max_cols_per_dpu_mid, feature->ncols);
+stopTimer(&timer, 3);
+/*****************************RELOCATE!!!************************************/
+
+        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_ARRAY, NULL));
+
+        target_offset = 32*1024*1024;
+
+        for(int i=0; i<NR_DPUS; i++){
+            dpu_argument[i].start_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T);
+            dpu_argument[i].target_offset = target_offset;
+            dpu_argument[i].total_data_size = feature->ncols * sizeof(T);
+            dpu_argument[i].num_comm_dpu = num_comm_dpu;
+            dpu_argument[i].no_rotate = 1;
+            dpu_argument[i].num_row = max_rows_per_dpu_A;
+        }
+
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            dpu_argument[i].each_dpu = i;
+            DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
+
+        startTimer(&timer, 3);
+        DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
+        stopTimer(&timer, 3);
+
+
+/*****************************************************************************/
+
+/*****************************Check functionality*****************************/
+
+        T** new_mid_cycle1 = (T**)malloc(nr_of_dpus * sizeof(T*));
+        for(i=0;i<nr_of_dpus;i++){
+            new_mid_cycle1[i] = (T*) calloc(max_rows_per_dpu_A * max_cols_per_dpu_mid, sizeof(T));
+        }
+startTimer(&timer, 5);
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, *(partial_mid + i)));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, target_offset, feature->ncols * max_rows_per_dpu_A * sizeof(T), DPU_XFER_DEFAULT));
+
+        
+        reducescatter_y_new(new_mid_cycle1, partial_mid, num_comm_dpu, feature->ncols * max_rows_per_dpu_A * sizeof(T), 32, 32, 1);
+stopTimer(&timer, 5);
+
+/*****************************************************************************/
+
+/******************************reduce scatter y library codes*************************************
+
+        start_offset = 32*1024*1024;
+        target_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T) + weight->ncols * max_rows_per_dpu_mid * sizeof(T);
+        buffer_offset = 16*1024*1024;
+        total_data_size = feature->ncols * max_rows_per_dpu_A * sizeof(T);
+
+        printf("target_offset : %d\n", target_offset);
+        //data_size_per_iter = total_data_size / max_rows_per_dpu_A;
+startTimer(&timer, 5);
+        reduce_scatter_y_CPU(dpu_set, dpu, dpu_argument, total_data_size, start_offset, target_offset, buffer_offset, NR_DPUS, num_comm_dpu, 32, 32, 1, sizeof(T));
+stopTimer(&timer, 5);
+/**********************************************************************************************************************************************************/
+
+        //compute cpu version result
+        startTimer(&timer, 4);
+        GNN_host_mid_2(B, y_final, y_host);
+        stopTimer(&timer, 4);
+
+         //compare y_host and mid for correctness
+        status = true;
+        i = 0;
+        j=0;
+        t=0;
+
+         for(i=0; i<nr_of_dpus; i++){
+            for(unsigned int row = 0; row < dpu_info_mid[i].rows_per_dpu; row++){
+                for(unsigned int col = 0; col<dpu_info_mid[i].cols_per_dpu; col++){
+                    if(new_mid_cycle1[i][row * max_cols_per_dpu_mid + col] != y_host[(row + dpu_info_mid[i].prev_rows_dpu) * feature->ncols + (col + dpu_info_mid[i].prev_cols_dpu)]){
+                        status = false; j++; t++;
+                        //if(t<100) printf("dpu_num : %d, row : %d, col : %d, %d != %d\n", i, row, col, y_host[(row + dpu_info_mid[i].prev_rows_dpu) * feature->ncols + (col + dpu_info_mid[i].prev_cols_dpu)], new_mid_cycle[i][row * max_cols_per_dpu_mid + col]);
+                    }
+        //            else printf("row : %d, col : %d, %d == %d\n", row, col, y_host[row * feature->ncols + col], mid->val[row * feature->ncols + col]);
+                }
+            }
+        }
+        if (status) {
+            printf("[ OK ] Outputs are equal\n");
+        } else {
+            printf("[ ERROR ] Outputs differ!. %d\n", j);
+        }
+
+
+        // Print timing results
+        printf("\n");
+        printf("cycle num : %d", cycle);
+        printf("\n");
+        printf("Load feature ");
+        printTimer(&timer, 1);
+        printf("Kernel ");
+        printTimer(&timer, 2);
+        printf("Relocate Kernel ");
+        printTimer(&timer, 3);
+        printf("Retrieve & merge ");
+        printTimer(&timer, 5);
+        /* printf("Calculate in CPU ");
+        printTimer(&timer, 4); */
+        printf("\n\n");
+
+
+        //the second part
+
+        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY2, NULL));
+
+        //send arguments to dpu
+        i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, input_args_mid+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_mid", 0, sizeof(dpu_arguments_t), DPU_XFER_DEFAULT));
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, input_args_w+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_weight", 0, sizeof(dpu_arguments_t), DPU_XFER_DEFAULT));
+
+        //send input matrices to DPUs
+        startTimer(&timer, 6);
+
+        i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS) {
+            //same data may be sent multiple times => dealt with on the dpu side
+            //printf("%d %d\n", i, (i%nr_of_partitions)); 
+            DPU_ASSERT(dpu_prepare_xfer(dpu, weight->val + max_rows_per_dpu_w * weight->ncols  * (i/nr_of_partitions)));
+        } 
+
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2 * max_nnz_per_dpu * sizeof(struct elem_t), max_rows_per_dpu_w * weight->ncols * sizeof(T), DPU_XFER_DEFAULT));
+
+        i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS) {
+            //set address to start data sending
+            DPU_ASSERT(dpu_prepare_xfer(dpu, new_mid_cycle1[i]));
+        }
+        //offset : total number of rows * T + size of feature_matrix values
+        //total size : max num of non-zero elements * sizeof(elem_t)
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2*max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T) + weight->ncols * max_rows_per_dpu_mid * sizeof(T), max_rows_per_dpu_mid * max_cols_per_dpu_mid * sizeof(T), DPU_XFER_DEFAULT));
+
+        stopTimer(&timer, 6);
+
+        // Run kernel on DPUs
+        startTimer(&timer, 8);
+        DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
+        stopTimer(&timer, 8);
+
+        
+
+/****************************************ALL Reduce y host codes*******************************************************************/
+        //retrieve results
+startTimer(&timer, 9);        
+        i=0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, *(partial_feat + i)));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2*max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T), weight->ncols * max_rows_per_dpu_mid * sizeof(T), DPU_XFER_DEFAULT));
+        
+
+        allreduce_2(new_feat_cycle, partial_feat, nr_of_partitions, nr_of_dpus, max_rows_per_dpu_feat, feature->ncols);
+stopTimer(&timer, 9);
+/*********************************************************************************************************************************/
+
+/****************************************ALL-REDUCE y library CODES************************************************
+
+    T** new_feat_cycle1 = (T**)malloc((nr_of_dpus) * sizeof(T*));
+    for(i=0;i<nr_of_dpus;i++){
+        new_feat_cycle1[i] = (T*) calloc(max_rows_per_dpu_feat * feature->ncols, sizeof(T));
+    }
+
+    start_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T);
+    target_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T) + feature->ncols * max_rows_per_dpu_A * sizeof(T);
+    buffer_offset = 32*1024*1024;
+    total_data_size = weight->ncols * max_rows_per_dpu_mid * sizeof(T);
+
+startTimer(&timer, 9);
+
+    all_reduce_y_CPU(dpu_set, dpu, dpu_argument, total_data_size, start_offset, target_offset, buffer_offset, NR_DPUS, num_comm_dpu, 32, 32, 1, sizeof(T));
+stopTimer(&timer, 9);
+
+    //for checking
+    DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS) {
+        //set address to start data sending
+        DPU_ASSERT(dpu_prepare_xfer(dpu, new_feat_cycle1[i]));
+    }
+    //offset : total number of rows * T + size of feature_matrix values
+    //total size : max num of non-zero elements * sizeof(elem_t)
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, target_offset, weight->ncols * max_rows_per_dpu_mid * sizeof(T), DPU_XFER_DEFAULT)); 
+
+    
+/**************************************************************************************************************/
+
+
+
+
+        //compute result on cpu
+        startTimer(&timer, 10);
+        GNN_host_rest(y_final, y_host, weight_2);
+        stopTimer(&timer, 10);
+
+        //compare y_host and mid for correctness
+        status = true;
+        i = 0;
+        j=0;
+        t=0;
+         for(i=0;i<nr_of_partitions;i++){
+            for(unsigned int row = 0; row < dpu_info_feat[i].rows_per_dpu; row++){
+                for(unsigned int col = 0; col < feature->ncols; col++){
+                    if(y_final->val[(row + dpu_info_feat[i].prev_rows_dpu) * feature->ncols + col] != new_feat_cycle[i][row * feature->ncols + col]){
+                        //if(y_final->val[row * feature->ncols + (col + dpu_info_feat[i].prev_cols_dpu)] == 2048 && t<1000)
+                        //     printf("partition : %d, row : %d, col : %d, %d != %d\n", i, row, (col + dpu_info_feat[i].prev_cols_dpu), y_final->val[row * feature->ncols + (col + dpu_info_feat[i].prev_cols_dpu)], new_feat_cycle[i][row * max_cols_per_dpu_feat + col]);
+                        status = false; j++; t++;
+                        //if(t<50) printf("partition : %d, new_feat_index : %d, row : %d, col : %d, %d != %d\n", i, row * feature->ncols + col, (row + dpu_info_feat[i].prev_rows_dpu), col, y_final->val[(row + dpu_info_feat[i].prev_rows_dpu) * feature->ncols + col], new_feat_cycle[i][row * feature->ncols + col]);
+                    }
+                }
+            }
+        }
+
+        if (status) {
+            printf("[ OK ] Outputs are equal\n");
+        } else {
+            printf("[ ERROR ] Outputs differ!. %d\n", j);
+        } 
+
+        // Print timing results
+        printf("\n");
+        printf("Load mid-result ");
+        printTimer(&timer, 6);
+        printf("Kernel ");
+        printTimer(&timer, 8);
+        printf("Retrieve & merge ");
+        printTimer(&timer, 9);
+        /* printf("Calculate in CPU ");
+        printTimer(&timer, 10); */
+        printf("\n\n");
+
+        
+        /****************************** NEW CYCLE !! ************************************************/
+
+        cycle++;
+        if(cycle > cycle_num) goto EXIT;
+
+        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY, NULL));
+
+        i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            input_args_A[i].cycle = cycle;
+            DPU_ASSERT(dpu_prepare_xfer(dpu, input_args_A+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_A", 0, sizeof(dpu_arguments_t), DPU_XFER_DEFAULT));
+
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, input_args_feat+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_feat", 0, sizeof(dpu_arguments_t), DPU_XFER_DEFAULT));
+
+
+        // Copy input feature to DPUs
+        startTimer(&timer, 1);
+        i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS) {
+            //same data may be sent multiple times => dealt with on the dpu side 
+            DPU_ASSERT(dpu_prepare_xfer(dpu, new_feat_cycle[i%nr_of_partitions]));
+        } 
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T) + feature->ncols * max_rows_per_dpu_A * sizeof(T), max_rows_per_dpu_feat * feature->ncols * sizeof(T), DPU_XFER_DEFAULT));
+        stopTimer(&timer, 1);
+
+        // Run kernel on DPUs
+        startTimer(&timer, 2);
+        DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
+        stopTimer(&timer, 2);
+
+
+/*******************************************HOST REDUCE-SCATTER x CODES*********************************************************
+        //retrieve results
+        startTimer(&timer, 3);
+        i=0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, *(partial_mid + i)));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T), feature->ncols * max_rows_per_dpu_A * sizeof(T), DPU_XFER_DEFAULT));
+
+
+        //merge new mid_cycle
+
+        reducescatter(new_mid_cycle, partial_mid, dpu_info_mid, nr_of_partitions, nr_of_dpus, max_rows_per_dpu_feat, max_cols_per_dpu_mid, feature->ncols);
+
+        stopTimer(&timer, 3);
+/************************************************************************************************************************************/
+
+/*****************************RELOCATE!!!************************************/
+
+        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_ARRAY, NULL));
+
+        target_offset = 32*1024*1024;
+
+        for(int i=0; i<NR_DPUS; i++){
+            dpu_argument[i].start_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T);
+            dpu_argument[i].target_offset = target_offset;
+            dpu_argument[i].total_data_size = feature->ncols * sizeof(T);
+            dpu_argument[i].num_comm_dpu = num_comm_dpu;
+            dpu_argument[i].no_rotate = 1;
+            dpu_argument[i].num_row = max_rows_per_dpu_A;
+        }
+
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            dpu_argument[i].each_dpu = i;
+            DPU_ASSERT(dpu_prepare_xfer(dpu, dpu_argument+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_RS1", 0, sizeof(dpu_arguments_comm_t), DPU_XFER_DEFAULT));
+
+        startTimer(&timer, 3);
+        DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
+        stopTimer(&timer, 3);
+
+
+/*****************************************************************************/
+
+/*****************************Check functionality*****************************/
+
+        new_mid_cycle1 = (T**)malloc(nr_of_dpus * sizeof(T*));
+        for(i=0;i<nr_of_dpus;i++){
+            new_mid_cycle1[i] = (T*) calloc(max_rows_per_dpu_A * max_cols_per_dpu_mid, sizeof(T));
+        }
+        startTimer(&timer, 5);
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, *(partial_mid + i)));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, target_offset, feature->ncols * max_rows_per_dpu_A * sizeof(T), DPU_XFER_DEFAULT));
+
+        
+        reducescatter_x_new(new_mid_cycle1, partial_mid, num_comm_dpu, feature->ncols * max_rows_per_dpu_A * sizeof(T), 32, 32, 1);
+        stopTimer(&timer, 5);
+
+/*****************************************************************************/
+    
+/******************************** Reduce scatter x library codes **********************************************
+//    
+
+
+        //comm library reduce scatter
+        //startTimer(&timer, 3);
+
+        start_offset = 32*1024*1024;
+        target_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T) + weight->ncols * max_rows_per_dpu_mid * sizeof(T);
+        buffer_offset = 16*1024*1024;
+        total_data_size = feature->ncols * max_rows_per_dpu_A * sizeof(T);
+
+        printf("target_offset : %d\n", target_offset);
+        //data_size_per_iter = total_data_size / max_rows_per_dpu_A;
+startTimer(&timer, 5);
+        reduce_scatter_x_CPU(dpu_set, dpu, dpu_argument, total_data_size, start_offset, target_offset, buffer_offset, NR_DPUS, num_comm_dpu, 32, 32, 1, sizeof(T));
+stopTimer(&timer, 5);       
+
+/*******************************************************************************************************************************/
+
+
+
+ 
+        //compute cpu version result
+        startTimer(&timer, 4);
+        GNN_host_mid_2(B, y_final, y_host);
+        stopTimer(&timer, 4);
+
+        //compare y_host and mid for correctness
+        status = true;
+        i = 0;
+        j=0;
+        t=0;
+ 
+          for(i=0; i<nr_of_dpus; i++){
+            for(unsigned int row = 0; row < dpu_info_mid[i].rows_per_dpu; row++){
+                for(unsigned int col = 0; col<dpu_info_mid[i].cols_per_dpu; col++){
+                    if(new_mid_cycle1[transpose_num(i, nr_of_partitions)][row * max_cols_per_dpu_mid + col] != y_host[(row + dpu_info_mid[i].prev_rows_dpu) * feature->ncols + (col + dpu_info_mid[i].prev_cols_dpu)]){
+                        status = false; j++; t++;
+                        //if(t<100) printf("dpu_num : %d, row : %d, col : %d, %d != %d\n", i, row, col, y_host[(row + dpu_info_mid[i].prev_rows_dpu) * feature->ncols + (col + dpu_info_mid[i].prev_cols_dpu)], new_mid_cycle[i][row * max_cols_per_dpu_mid + col]);
+                    }
+        //            else printf("row : %d, col : %d, %d == %d\n", row, col, y_host[row * feature->ncols + col], mid->val[row * feature->ncols + col]);
+                }
+            }
+        }
+        if (status) {
+            printf("[ OK ] Outputs are equal\n");
+        } else {
+            printf("[ ERROR ] Outputs differ!. %d\n", j);
+        }
+
+
+        // Print timing results
+        printf("\n");
+        printf("cycle num : %d", cycle);
+        printf("\n");
+        printf("Load feature ");
+        printTimer(&timer, 1);
+        printf("Kernel ");
+        printTimer(&timer, 2);
+        printf("RELOCATE Kernel ");
+        printTimer(&timer, 3);
+        printf("Retrieve & merge ");
+        printTimer(&timer, 5);
+        /* printf("Calculate in CPU ");
+        printTimer(&timer, 4); */
+        printf("\n\n");
+
+
+        //the second part
+
+        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY2, NULL));
+
+        //send arguments to dpu
+        i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, input_args_mid+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_mid", 0, sizeof(dpu_arguments_t), DPU_XFER_DEFAULT));
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, input_args_w+i));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, "DPU_INPUT_ARGUMENTS_weight", 0, sizeof(dpu_arguments_t), DPU_XFER_DEFAULT));
+
+        //send input matrices to DPUs
+        startTimer(&timer, 6);
+
+        i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS) {
+            //same data may be sent multiple times => dealt with on the dpu side
+            //printf("%d %d\n", i, (i%nr_of_partitions)); 
+            DPU_ASSERT(dpu_prepare_xfer(dpu, weight->val + max_rows_per_dpu_w * weight->ncols  * (transpose_num(i, nr_of_partitions)/nr_of_partitions)));
+        } 
+
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2 * max_nnz_per_dpu * sizeof(struct elem_t), max_rows_per_dpu_w * weight->ncols * sizeof(T), DPU_XFER_DEFAULT));
+
+        i = 0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS) {
+            //set address to start data sending
+            DPU_ASSERT(dpu_prepare_xfer(dpu, new_mid_cycle1[i]));
+        }
+        //offset : total number of rows * T + size of feature_matrix values
+        //total size : max num of non-zero elements * sizeof(elem_t)
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2*max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T) + weight->ncols * max_rows_per_dpu_mid * sizeof(T), max_rows_per_dpu_mid * max_cols_per_dpu_mid * sizeof(T), DPU_XFER_DEFAULT));
+
+        stopTimer(&timer, 6);
+
+        // Run kernel on DPUs
+        startTimer(&timer, 8);
+        DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
+        stopTimer(&timer, 8);
+
+        /***************************************HOST ALL REDUCE CODES******************************************************/
+
+        //retrieve results
+startTimer(&timer, 9);        
+        i=0;
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS){
+            DPU_ASSERT(dpu_prepare_xfer(dpu, *(partial_feat + i)));
+        }
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2*max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T), weight->ncols * max_rows_per_dpu_mid * sizeof(T), DPU_XFER_DEFAULT));
+        
+
+        allreduce(new_feat_cycle, partial_feat, nr_of_partitions, nr_of_dpus, max_rows_per_dpu_feat, feature->ncols);
+stopTimer(&timer, 9);
+
+        /**************************************************************************************************************/
+
+
+/****************************************ALL-REDUCE x library CODES************************************************
+
+        new_feat_cycle1 = (T**)malloc((nr_of_dpus) * sizeof(T*));
+        for(i=0;i<nr_of_dpus;i++){
+            new_feat_cycle1[i] = (T*) calloc(max_rows_per_dpu_feat * feature->ncols, sizeof(T));
+        }
+
+        start_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T);
+        target_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_rows_per_dpu_w * weight->ncols * sizeof(T) + feature->ncols * max_rows_per_dpu_A * sizeof(T);
+        buffer_offset = 32*1024*1024;
+        total_data_size = weight->ncols * max_rows_per_dpu_mid * sizeof(T);
+
+        startTimer(&timer, 9);
+
+        all_reduce_x_CPU(dpu_set, dpu, dpu_argument, total_data_size, start_offset, target_offset, buffer_offset, NR_DPUS, num_comm_dpu, 32, 32, 1, sizeof(T));
+    stopTimer(&timer, 9);
+
+/*         //for checking
+        DPU_FOREACH_ROTATE_GROUP(dpu_set, dpu, i, NR_DPUS) {
+            //set address to start data sending
+            DPU_ASSERT(dpu_prepare_xfer(dpu, new_feat_cycle1[i]));
+        }
+        //offset : total number of rows * T + size of feature_matrix values
+        //total size : max num of non-zero elements * sizeof(elem_t)
+        DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, target_offset, weight->ncols * max_rows_per_dpu_mid * sizeof(T), DPU_XFER_DEFAULT)); 
+
+     */
+/**************************************************************************************************************/
+
+
+
+        //compute result on cpu
+        startTimer(&timer, 10);
+        GNN_host_rest(y_final, y_host, weight_2);
+        stopTimer(&timer, 10);
+
+        //compare y_host and mid for correctness
+        status = true;
+        i = 0;
+        j=0;
+        t=0;
+         for(i=0;i<nr_of_partitions;i++){
+            for(unsigned int row = 0; row < dpu_info_feat[i].rows_per_dpu; row++){
+                for(unsigned int col = 0; col < feature->ncols; col++){
+                    if(y_final->val[(row + dpu_info_feat[i].prev_rows_dpu) * feature->ncols + col] != new_feat_cycle[i][row * feature->ncols + col]){
+                        //if(y_final->val[row * feature->ncols + (col + dpu_info_feat[i].prev_cols_dpu)] == 2048 && t<1000)
+                        //     printf("partition : %d, row : %d, col : %d, %d != %d\n", i, row, (col + dpu_info_feat[i].prev_cols_dpu), y_final->val[row * feature->ncols + (col + dpu_info_feat[i].prev_cols_dpu)], new_feat_cycle[i][row * max_cols_per_dpu_feat + col]);
+                        status = false; j++; t++;
+                        //if(t<50) printf("partition : %d, new_feat_index : %d, row : %d, col : %d, %d != %d\n", i, row * feature->ncols + col, (row + dpu_info_feat[i].prev_rows_dpu), col, y_final->val[(row + dpu_info_feat[i].prev_rows_dpu) * feature->ncols + col], new_feat_cycle[i][row * feature->ncols + col]);
+                    }
+                }
+            }
+        }
+
+        if (status) {
+            printf("[ OK ] Outputs are equal\n");
+        } else {
+            printf("[ ERROR ] Outputs differ!. %d\n", j);
+        }
+
+        // Print timing results
+        printf("\n");
+        printf("Load mid-result ");
+        printTimer(&timer, 6);
+        printf("Kernel ");
+        printTimer(&timer, 8);
+        printf("Retrieve & merge ");
+        printTimer(&timer, 9);
+        /* printf("Calculate in CPU ");
+        printTimer(&timer, 10); */
+        printf("\n\n");
+
+    }

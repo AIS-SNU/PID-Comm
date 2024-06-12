@@ -2862,7 +2862,7 @@ void xeon_sp_trans_all_reduce_rg(void **base_region_addr_src, void *base_region_
         _mm_mfence();
 
         for(uint32_t j=0; j<num_iter_src*8; j++){
-            RNS_FLUSH_SRC(iteration, src_rank_addr_iter[j]);
+            RNS_FLUSH_DST(iteration, src_rank_addr_iter[j]);
         }
         for(uint32_t j=0; j<num_iter_src*8; j++){
             RNS_FLUSH_DST(iteration, dst_rank_addr_iter[j]);
@@ -2902,13 +2902,13 @@ void xeon_sp_trans_all_reduce_y_rg(void **base_region_addr_src, void *base_regio
     uint32_t dst_rotate_group_offset_256_64= (dst_rg_id%4) * (256*1024) + (dst_rg_id/4) * 64;
     uint32_t src_rotate_group_offset_256_64;
 
-    void *src_rank_addr_iter[num_iter_src * 8];
+    void *src_rank_addr_iter[num_iter_src];
     uint32_t mram_64_bit_word_offset;
     uint64_t next_data;
     void *src_rank_addr;
 
     void *dst_rank_addr;
-    void *dst_rank_addr_iter[num_iter_src * 8];
+    void *dst_rank_addr_iter[num_iter_src];
 
     dst_rank_base_addr = base_region_addr_dst;
 
@@ -2945,7 +2945,7 @@ void xeon_sp_trans_all_reduce_y_rg(void **base_region_addr_src, void *base_regio
         _mm_mfence();
 
         for(uint32_t j=0; j<num_iter_src; j++){
-            RNS_FLUSH_SRC(iteration, src_rank_addr_iter[j]);
+            RNS_FLUSH_DST(iteration, src_rank_addr_iter[j]);
         }
         for(uint32_t j=0; j<num_iter_src; j++){
             RNS_FLUSH_DST(iteration, dst_rank_addr_iter[j]);
@@ -4466,8 +4466,8 @@ void xeon_sp_trans_all_gather_rg(void *base_region_addr_src, void **base_region_
     if(allgather_comm_type==0){ //parallel to the entangled group
 
         //threaded
-        src_mram_offset = src_start_offset + 1024*1024 + 8*(iter_length/num_thread)*thread_id;
-        dst_mram_offset = dst_start_offset + 1024*1024 + communication_buffer_offset + 8*(iter_length/num_thread)*thread_id;
+        src_mram_offset = src_start_offset + 1024*1024;
+        dst_mram_offset = dst_start_offset + 1024*1024 + communication_buffer_offset;
 
         for(uint32_t i=(iter_length/num_thread)*thread_id; i<(iter_length/num_thread)*(thread_id+1); i++){
             void *dst_rank_addr_array[8*num_iter_dst];
@@ -4495,7 +4495,8 @@ void xeon_sp_trans_all_gather_rg(void *base_region_addr_src, void **base_region_
                 RNS_COPY_ag(0, 0, num_iter_dst, src_rank_addr_iter, dst_rank_addr_array);
             }
 
-            RNS_FLUSH_SRC(1, src_rank_addr_iter);
+            _mm_mfence();
+            RNS_FLUSH_DST(1, src_rank_addr_iter);
             for(uint32_t j=0; j<num_iter_dst*8; j++){
                 RNS_FLUSH_DST(1, dst_rank_addr_array[j]);
             }
@@ -4505,14 +4506,14 @@ void xeon_sp_trans_all_gather_rg(void *base_region_addr_src, void **base_region_
 
             
         }
-        
+        _mm_mfence();
     }
 
         
     else{ //perepndicular to the entangled group
         
-        src_mram_offset = src_start_offset + 1024*1024 + 8*(iter_length/num_thread)*thread_id;
-        dst_mram_offset = dst_start_offset + 1024*1024 + communication_buffer_offset + 8*(iter_length/num_thread)*thread_id;
+        src_mram_offset = src_start_offset + 1024*1024;
+        dst_mram_offset = dst_start_offset + 1024*1024 + communication_buffer_offset;
 
         for(uint32_t i=(iter_length/num_thread)*thread_id; i<(iter_length/num_thread)*(thread_id+1); i++){
             void *dst_rank_addr_array[num_iter_dst];
@@ -4535,7 +4536,8 @@ void xeon_sp_trans_all_gather_rg(void *base_region_addr_src, void **base_region_
             
             S_COPY_ag(0, 0, num_iter_dst, src_rank_addr_iter, dst_rank_addr_array);
 
-            RNS_FLUSH_SRC(1, src_rank_addr_iter);
+            _mm_mfence();
+            RNS_FLUSH_DST(1, src_rank_addr_iter);
             for(uint32_t j=0; j<num_iter_dst; j++){
                 RNS_FLUSH_DST(1, dst_rank_addr_array[j]);
             }
@@ -4543,8 +4545,9 @@ void xeon_sp_trans_all_gather_rg(void *base_region_addr_src, void **base_region_
             src_mram_offset+=8;
             dst_mram_offset+=8;
         }
+        _mm_mfence();
     }
-    _mm_mfence();
+    
     return;
 }
 

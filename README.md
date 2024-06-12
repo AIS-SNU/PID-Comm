@@ -90,8 +90,9 @@ A script is also available to test the tutorial code.
 cd tutorial;
 ./AllReduce_demo.sh;
 ```
-## Benchmarks: GNN_RSAR
+## Benchmarks: GNN_RSAR & GNN_ARAG
 GNN_RSAR is a GNN inference varient using reducescatter and allreduce in between each layer.
+GNN_ARAG is a GNN inference varient using allreduce and allgather in between each layer.
 Our version takes in a COO graph matrix as an input and preprocesses the graph first (partitioning, zero-padding, etc.).
 The base structure of the code is from SparseP, available at (https://github.com/CMU-SAFARI/SparseP).
 
@@ -99,7 +100,7 @@ The first kernel computes SPMM between the given sparse graph matrix and the fea
 The second kernel computes GEMM between the mid-result matrix and weight matrix.
 The result of the second computation is used again in the next layer as the new feature matrix.
 
-There is another kernel names data_relocate_comm. 
+There is another kernel names data_relocate_comm and data_relocate_AG, each for GNN_RSAR and GNN_ARAG. 
 This is used to relocate data after computation, so as to easily execute collective communication for the next layer.
 
 A sample run.sh script is available.
@@ -112,3 +113,6 @@ to avoid any errors or miscalculations.
 
 pubmed and citeseer are given as input matrices.
 To test out other matrices, make sure to use a COO matrix for the application code to work.
+
+## TO DO
+To add other benchmarks later on...

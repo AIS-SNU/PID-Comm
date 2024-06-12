@@ -5163,11 +5163,11 @@ void *thread_all_gather_rns(void *thread_parameter){
         cur_iter_dst = cur_remain;
 
         if(!comm_type){
-            src_start_offset_iter = src_start_offset + cur_iter_dst * 8 * dpu_byte_length;
+            src_start_offset_iter = src_start_offset;
             dst_start_offset_iter = dst_start_offset + cur_iter_src * 8 * dpu_byte_length;
         }
         else{
-            src_start_offset_iter = src_start_offset + cur_iter_dst * 1 * dpu_byte_length;
+            src_start_offset_iter = src_start_offset;
             dst_start_offset_iter = dst_start_offset + cur_iter_src * 1 * dpu_byte_length;
         }
 

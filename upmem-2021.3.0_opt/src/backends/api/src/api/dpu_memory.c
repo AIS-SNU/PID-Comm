@@ -1764,6 +1764,11 @@ void pidcomm_all_reduce(hypercube_manager* manager, char* comm, uint32_t total_d
         // Run kernel on DPUs
         DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
     }
+    i=0;
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
+    }
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
 }
 
 __API_SYMBOL__
@@ -1816,6 +1821,12 @@ void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_da
     }
     //relocate before kernel
 
+    i=0;
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
+    }
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
+
     all_gather(&dpu_set, start_offset, start_offset, total_data_size/num_comm_dpu, comm_type, buffer_offset, dimension, axis_len, comm_axis);
 
     i=0;
@@ -1851,7 +1862,7 @@ void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_da
     }
     else if(!comm_type  || (axis_len[0]<8 && comm_axis[1]==1) || (axis_len[0]*axis_len[1]==4 && (comm_axis[1] == 1 || comm_axis[2] == 1))){
         // DPU_ASSERT(dpu_load(dpu_set, getenv("DPU_ALLTOALL_X_2"), NULL));
-        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_REVERSE_CLOCKWISE_INT8, NULL));
+        DPU_ASSERT(dpu_load(dpu_set, DPU_BINARY_RELOCATE_REVERSE_CLOCKWISE, NULL));
 
         for(int i=0; i<nr_dpus; i++){
             dpu_argument[i].each_dpu = i;
@@ -1894,6 +1905,12 @@ void pidcomm_allgather(hypercube_manager* manager, char* comm, uint32_t total_da
 
         DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
     }
+
+    i=0;
+    DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
+        DPU_ASSERT(dpu_prepare_xfer(dpu, result[i]));
+    }
+    DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_FROM_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 8, DPU_XFER_DEFAULT));
 }
 
 __API_SYMBOL__

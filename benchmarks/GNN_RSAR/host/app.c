@@ -473,7 +473,6 @@ int main(int argc, char **argv) {
     DPU_ASSERT(dpu_launch(dpu_set, DPU_SYNCHRONOUS));
     stopTimer(&timer, 2);
 
-    //retrieve results
 
 /*****************************Relocate data for faster communication************************************/
 
