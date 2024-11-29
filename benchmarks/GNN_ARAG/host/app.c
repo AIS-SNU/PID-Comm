@@ -511,7 +511,7 @@ int main(int argc, char **argv) {
 
 /*****************************Conventional AllReduce*****************************/
 
-    if(PIDComm_lib == 1){
+    if(PIDComm_lib == 0){
         //retrieve results
         startTimer(&timer, 3);
         
@@ -530,7 +530,7 @@ int main(int argc, char **argv) {
 
 /****************************************PIDComm allreduce*************************************************/
 
-    if(PIDComm_lib == 0){
+    if(PIDComm_lib == 1){
         start_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_cols_per_dpu_w * weight->nrows * sizeof(T);
         target_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_cols_per_dpu_w * weight->nrows * sizeof(T) + max_cols_per_dpu_w * max_rows_per_dpu_mid * sizeof(T);
         buffer_offset = 32*1024*1024;
@@ -611,7 +611,7 @@ int main(int argc, char **argv) {
 
     DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2 * max_nnz_per_dpu * sizeof(struct elem_t), max_cols_per_dpu_w * weight->nrows * sizeof(T), DPU_XFER_DEFAULT));
  
-    if(PIDComm_lib == 1){
+    if(PIDComm_lib == 0){
         i = 0;
         DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus) {
             DPU_ASSERT(dpu_prepare_xfer(dpu, new_mid_cycle[i/nr_of_partitions]));
@@ -722,7 +722,7 @@ int main(int argc, char **argv) {
 /*************************************conventional AllReduce********************************************/
 
         //retrieve results
-        if(PIDComm_lib == 1){
+        if(PIDComm_lib == 0){
             startTimer(&timer, 3);
             i=0;
             DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus){
@@ -739,7 +739,7 @@ int main(int argc, char **argv) {
 
 /****************************************PIDComm AllReduce************************************************/
 
-        if(PIDComm_lib == 0){
+        if(PIDComm_lib == 1){
             start_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_cols_per_dpu_w * weight->nrows * sizeof(T);
             target_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_cols_per_dpu_w * weight->nrows * sizeof(T) + max_cols_per_dpu_w * max_rows_per_dpu_mid * sizeof(T);
             buffer_offset = 32*1024*1024;
@@ -785,7 +785,7 @@ int main(int argc, char **argv) {
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2 * max_nnz_per_dpu * sizeof(struct elem_t), max_cols_per_dpu_w * weight->nrows * sizeof(T), DPU_XFER_DEFAULT));
 
         //load mid-result is conventional communication methods are used
-        if(PIDComm_lib == 1){
+        if(PIDComm_lib == 0){
             i = 0;
             DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus) {
                 DPU_ASSERT(dpu_prepare_xfer(dpu, new_mid_cycle[i%nr_of_partitions]));
@@ -895,7 +895,7 @@ int main(int argc, char **argv) {
 
 /*************************************all reduce x host codes********************************************/
 
-        if(PIDComm_lib == 1){
+        if(PIDComm_lib == 0){
             //retrieve results
             startTimer(&timer, 3);
             i=0;
@@ -913,7 +913,7 @@ int main(int argc, char **argv) {
 
 /****************************************ALL-REDUCE x library CODES************************************************/
 
-        if(PIDComm_lib == 0){
+        if(PIDComm_lib == 1){
             start_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_cols_per_dpu_w * weight->nrows * sizeof(T);
             target_offset = 2 * max_nnz_per_dpu * sizeof(struct elem_t) + max_cols_per_dpu_w * weight->nrows * sizeof(T) + max_cols_per_dpu_w * max_rows_per_dpu_mid * sizeof(T);
             buffer_offset = 32*1024*1024;
@@ -959,7 +959,7 @@ int main(int argc, char **argv) {
 
         DPU_ASSERT(dpu_push_xfer(dpu_set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 2 * max_nnz_per_dpu * sizeof(struct elem_t), max_cols_per_dpu_w * weight->nrows * sizeof(T), DPU_XFER_DEFAULT));
 
-        if(PIDComm_lib == 1){
+        if(PIDComm_lib == 0){
             i = 0;
             DPU_FOREACH_ENTANGLED_GROUP(dpu_set, dpu, i, nr_dpus) {
                 //set address to start data sending

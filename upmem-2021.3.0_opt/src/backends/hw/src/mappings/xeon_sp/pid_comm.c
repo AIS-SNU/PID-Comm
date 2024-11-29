@@ -2948,8 +2948,9 @@ void xeon_sp_trans_all_reduce_y_rg(void **base_region_addr_src, void *base_regio
             RNS_FLUSH_DST(iteration, src_rank_addr_iter[j]);
         }
         for(uint32_t j=0; j<num_iter_src; j++){
-            RNS_FLUSH_DST(iteration, dst_rank_addr_iter[j]);
+            RNS_FLUSH_SRC(iteration, dst_rank_addr_iter[j]);
         }
+
 
         src_mram_offset+=8;
         dst_mram_offset+=8;
